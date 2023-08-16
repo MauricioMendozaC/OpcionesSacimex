@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
-import Presentacion from '../components/home/Presentacion';
-import Productos from '../components/home/Productos';
-import Conocenos from '../components/home/Conocenos';
-import Sucursales from '../components/home/Contacto';
+import Presentacion from '../components/Inicio/Presentacion';
+import Productos from '../components/Inicio/Productos';
+import Conocenos from '../components/Inicio/Conocenos';
+import Sucursales from '../components/Inicio/Contacto';
 import Footer from '../components/Footer';
 import VentanaEmergente from '../components/VentanaEmergente';
 

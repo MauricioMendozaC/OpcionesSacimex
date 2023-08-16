@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Imagen from '../components/Imagen';
 import Titulo from '../components/Titulo';
-import DatosCreditosIndividuales from '../components/DatosCreditosIndividuales';
+import DatosCreditosIndividuales from '../components/CreditoIndividual/DatosCreditosIndividuales';
 import Footer from '../components/Footer';
 import VentanaEmergente from '../components/VentanaEmergente';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';

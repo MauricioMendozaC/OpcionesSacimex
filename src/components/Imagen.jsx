@@ -17,8 +17,8 @@ const Imagen = ({ tamano, imagen, alt, extras, extrasImg }) => {
 export default Imagen;
 
 const PrincipalContenedor = styled.div`
-  ${({ $extras }) => $extras && ($extras)};
   ${({ $tamano }) => $tamano && (`width: ${$tamano};`)};
+  ${({ $extras }) => $extras && ($extras)};
 
   img {
     ${({ $extrasImg }) => $extrasImg && ($extrasImg)};
