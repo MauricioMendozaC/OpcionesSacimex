@@ -52,7 +52,7 @@ export default Boton;
 const PrincipalContenedor = styled.a`
   background-color: ${({ $sacialianza }) => $sacialianza ? '#F5A200' : '#257140'};
   border-radius: 3px;
-  color: #FFFFFF;
+  color: ${({ $sacialianza }) => $sacialianza ? '#005217' : '#FFFFFF'};
   cursor: pointer;
   font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;

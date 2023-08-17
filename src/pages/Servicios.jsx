@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Titulo from '../components/Titulo';
 import Logo from '../components/Servicios/Logo';
-import Imagen from '../components/Imagen';
 import Footer from '../components/Footer';
 import VentanaEmergente from '../components/VentanaEmergente'; 
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
@@ -38,7 +37,7 @@ const Servicios = () => {
       <PrincipalContenedor
         $mostrarAnimaciones={mostrarAnimaciones}>
           <Titulo texto='Servicios'/>
-          <StyledH3>En nuestras sucursales, te ofrecemos la posibilidad de pagar por los siguientes servicios:</StyledH3>
+          <StyledH4>En nuestras sucursales, te ofrecemos la posibilidad de pagar por los siguientes servicios:</StyledH4>
           <ImagenesContenedor>
             <Logo
               href='http://servicios-en-linea.sapao.gob.mx'
@@ -209,7 +208,7 @@ const PrincipalContenedor = styled.div`
   width: 100%;
 `;
 
-const StyledH3 = styled.h3`
+const StyledH4 = styled.h4`
   color: #00632F;
   font-family: 'Presidencia Fina', sans-serif;
   font-size: 1.25em;

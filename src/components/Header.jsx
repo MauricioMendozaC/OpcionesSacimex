@@ -117,7 +117,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 3}>
                   <SubLinkA href='/EducacionFinanciera'>Educación financiera</SubLinkA>
-                  <SubLinkA>Red de oficios y profesiones</SubLinkA>
+                  <SubLinkA href='/RedDeProfesionales'>Red de oficios y profesiones</SubLinkA>
                   <SubLinkA>Historias de éxito</SubLinkA>
                 </SubLinksContenedor>
               </LinkDesplegable>

@@ -8,6 +8,7 @@ import Comisiones from './pages/Comisiones';
 import EducacionFinanciera from './pages/EducacionFinanciera';
 import RastreaTusCentavos from './pages/RastreaTusCentavos';
 import Servicios from './pages/Servicios';
+import RedDeProfesionales from './pages/RedDeProfesionales';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/EducacionFinanciera' element={<EducacionFinanciera/>}/>
         <Route path='/EducacionFinanciera/RastreaTusCentavos' element={<RastreaTusCentavos/>}/>
         <Route path='/Servicios' element={<Servicios/>}/>
+        <Route path='/RedDeProfesionales' element={<RedDeProfesionales/>}/>
       </Routes>
     </Router>
   );

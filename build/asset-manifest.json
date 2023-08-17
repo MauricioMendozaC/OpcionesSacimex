@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.js": "/static/js/main.4b61b435.js",
+    "static/media/SomosCredito.png": "/static/media/SomosCredito.62e29e11ba39d7c8bbbf.png",
+    "static/media/SaciCrece.png": "/static/media/SaciCrece.afb7870f3007c4e6e227.png",
+    "static/media/Foto2.jpg": "/static/media/Foto2.99c84de2d96fbf7921cb.jpg",
+    "static/media/SaciMotor.png": "/static/media/SaciMotor.b3081156f9595a38777d.png",
+    "static/media/ELLA.png": "/static/media/ELLA.dfe641fdc560d52fff6f.png",
+    "static/media/Damas.png": "/static/media/Damas.8851e437ca39ee832380.png",
+    "static/media/EducacionFinanciera.jpg": "/static/media/EducacionFinanciera.35e627bc39561de95cb9.jpg",
+    "static/media/Foto1.jpg": "/static/media/Foto1.36ba4bb0981fece85b39.jpg",
+    "static/media/Foto3.jpg": "/static/media/Foto3.b2cee28810126725fd9a.jpg",
+    "static/media/FotoGrupal.jpg": "/static/media/FotoGrupal.9c8f619ca94a4955da37.jpg",
+    "static/media/PreviewConsejosParaElRegresoAClases.jpg": "/static/media/PreviewConsejosParaElRegresoAClases.243db3fc29c7e548e0d3.jpg",
+    "static/media/Constructor.svg": "/static/media/Constructor.a2dff83b8b850507f15038a03cc65f92.svg",
+    "static/media/PreviewFinanzasJovenes.jpg": "/static/media/PreviewFinanzasJovenes.e3ca7dc8c57396906a96.jpg",
+    "static/media/SacimexLogo.png": "/static/media/SacimexLogo.097522923bb2ad1f092c.png",
+    "static/media/PreviewInclusionFinancieraDeLasMujeres.jpg": "/static/media/PreviewInclusionFinancieraDeLasMujeres.a84ca0541f385bd96fd0.jpg",
+    "static/media/PreviewConduguiasYFolletos.jpg": "/static/media/PreviewConduguiasYFolletos.e5bae41f36394edec0e9.jpg",
+    "static/media/PreviewCuadernos.jpg": "/static/media/PreviewCuadernos.2643e795c52bdd530efd.jpg",
+    "static/media/GastosHormiga.svg": "/static/media/GastosHormiga.6a5ac20c4880807b3c5fd11c1c2f3290.svg",
+    "static/media/MisionLogo.png": "/static/media/MisionLogo.f18d4eb8514b824e480d.png",
+    "static/media/SaciAlianza.png": "/static/media/SaciAlianza.c96a46ed71b8fd413eda.png",
+    "static/media/VisionLogo.png": "/static/media/VisionLogo.5674563d692b796d3c90.png",
+    "static/media/Compromiso.png": "/static/media/Compromiso.1c64c00bcdcaf0531c91.png",
+    "static/media/Paso4.png": "/static/media/Paso4.b104088d7f3c11542f65.png",
+    "static/media/Paso1.png": "/static/media/Paso1.5b38f8b734db038d9350.png",
+    "static/media/CreditoGrupalT.png": "/static/media/CreditoGrupalT.be501752a31b3dd6c207.png",
+    "static/media/Honestidad.png": "/static/media/Honestidad.47b4f20707500656959f.png",
+    "static/media/CreditoIndividualT.png": "/static/media/CreditoIndividualT.29526a22b5289794af45.png",
+    "static/media/Respeto.png": "/static/media/Respeto.9d733350f4035a52f43b.png",
+    "static/media/Paso3.png": "/static/media/Paso3.5ff1c0bf993119065f22.png",
+    "index.html": "/index.html",
+    "main.4b61b435.js.map": "/static/js/main.4b61b435.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.4b61b435.js"
+  ]
+}

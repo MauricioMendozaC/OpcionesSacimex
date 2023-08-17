@@ -5,12 +5,6 @@ import { CiInstagram, CiFacebook, CiTwitter } from 'react-icons/ci';
 import Imagen from './Imagen';
 import InformacionEntidades from './InformacionEntidades';
 import sacimexLogo from '../assets/img/SacimexLogoBlanco.png';
-import buroLogo from '../assets/img/BuroLogo.png';
-import CNBVLogo from '../assets/img/CNBVLogo.png';
-import FNDLogo from '../assets/img/FNDLogo.png';
-import CONDUSEFLogo from '../assets/img/CONDUSEFLogo.png';
-import CDCLogo from '../assets/img/CDCLogo.png';
-import SHCPLogo from '../assets/img/SHCPLogo.png';
 
 const AnimacionEntradaRedes = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -122,7 +116,7 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
             target='_blank'>
               <Imagen
                 tamano='100%'
-                imagen={buroLogo}
+                imagen='https://www.intercam.com.mx/wp-content/uploads/2019/07/logo-buro-entidades-financieras.png'
                 extras={extras}
                 alt='Logo Buro de Entidades Financieras'/>
           </ImagenEntidadesContenedor>
@@ -133,7 +127,7 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
             target='_blank'>
               <Imagen
                 tamano='100%'
-                imagen={CNBVLogo}
+                imagen='https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Logo_de_la_CNBV.svg/80px-Logo_de_Financiera_Rural.svg.png'
                 extras={extras}
                 alt='Logo Comisión Nacional Bancaria y de Valores'/>
           </ImagenEntidadesContenedor>
@@ -144,7 +138,7 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
             target='_blank'>
               <Imagen
                 tamano='100%'
-                imagen={FNDLogo}
+                imagen='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Logo_de_Financiera_Rural.svg/80px-Logo_de_Financiera_Rural.svg.png'
                 extras={extras}
                 alt='Logo Financiera Nacional de Desarrollo'/>
           </ImagenEntidadesContenedor>
@@ -155,7 +149,7 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
             target='_blank'>
               <Imagen
                 tamano='100%'
-                imagen={CONDUSEFLogo}
+                imagen='https://blog.bayport.mx/wp-content/uploads/2021/07/Condusef.jpg'
                 extras={extras}
                 alt='Logo Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros'/>
           </ImagenEntidadesContenedor>
@@ -166,7 +160,7 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
             target='_blank'>
               <Imagen
                 tamano='100%'
-                imagen={CDCLogo}
+                imagen='https://otorgantes.circulodecredito.com.mx/CCreditoPM/html/view/images/logo_inicio.gif;jsessionid=hQDJsTc9iDGCUlf9zSqBMC5iqj7hcdzxKn1A_ktwlFIxErMrUqoX!-1169947207'
                 extras={extras}
                 alt='Logo Círculo de Crédito'/>
           </ImagenEntidadesContenedor>
@@ -177,7 +171,7 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
             target='_blank'>
               <Imagen
                 tamano='100%'
-                imagen={SHCPLogo}
+                imagen='https://upload.wikimedia.org/wikipedia/commons/e/e6/SHCP2018-2024.png'
                 extras={extras}
                 alt='Logo Secretaría de Hacienda y Crédito Público'/>
           </ImagenEntidadesContenedor>
@@ -191,7 +185,10 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
 
 export default Footer;
 
-const extras = 'background-color: #FFF;border-radius: 5px;';
+const extras = `
+  background-color: #FFFFFF;
+  border-radius: 5px;
+`;
 
 const StyledDiv = styled.div`
   background-color: #005520;

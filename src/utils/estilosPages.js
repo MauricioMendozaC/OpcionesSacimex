@@ -25,7 +25,7 @@ export const EstilosGlobales = createGlobalStyle`
   }
 `;
 
-export const CentrarPrincipalContenedor = styled.div`
+export const CentrarPrincipalContenedor = styled.section`
   display: grid;
   place-items: center;
   width: 100%;
