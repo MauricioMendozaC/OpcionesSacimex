@@ -2,124 +2,134 @@ import styled from 'styled-components';
 
 const DatosCreditosIndividuales = ({ creditoActivo }) => {
   return(<>
-    <Parrafo>
-      {creditoActivo === 1 && (`¡Descubre "Saci-Motor"! Un producto financiero revolucionario y solidario, diseñado para grupos 
-      de personas auto seleccionables (hombres y mujeres) que valoran el apoyo mutuo y desean avanzar juntos hacia un futuro 
-      financiero próspero.`)}
-      {creditoActivo === 2 && (`Descubre "Saci-Crece"! Un producto de tecnología individual diseñado para personas con capacidad 
-      económica demostrada y la habilidad legal para contratarse. Ya seas empleado o desarrolles actividades productivas lícitas, 
-      "Saci-Crece" está diseñado para ayudarte a alcanzar tus metas financieras y potenciar tu crecimiento.`)}
-      {creditoActivo === 3 && (`¡Desbloquea nuevas oportunidades para tu negocio con nuestro crédito comercial a medida! ¿Estás 
-      listo para expandir, renovar o mejorar tu empresa? Nuestro crédito te ofrece flexibilidad y conveniencia para lograrlo.`)}
-    </Parrafo>
-    <StyledUl>
-      {(creditoActivo ===1 || creditoActivo === 2) && (<>
-        <li>Comienza tu proceso sin comisión de apertura.</li>
-        <li>Disponible para todas las personas con edades de 21 a 65 años.</li>
-      </>)}
-      {(creditoActivo === 1) && (<>
-        <li>Puedes elegir tener integrantes adicionales o ser el único solicitante.</li>
-        <li>Cumple tu meta de tener un automóvil con nuestro crédito diseñado especialmente para potenciar tu trabajo.</li>
-        <li>Escoge entre plazos de 12 a 60 meses.</li>
-        <li>Elige entre pagos semanales, catorcenales, quincenales o mensuales.</li>
-      </>)}
-      {(creditoActivo === 2) && (<>
-        <li>Financia tus proyectos comerciales, consumo o vivienda.</li>
-        <li>Escoge entre plazos de 6 a 60 meses.</li>
-        <li>Elige entre pagos mensuales y semanales iguales y fijos.</li>
-      </>)}
-      {(creditoActivo === 3) && (<>
-        <li>Disponible para todas las personas con edades de 21 a 65 años.</li>
-        <li>Escoge entre crédito comercial revolvente o simple.</li>
-        <li>Escoge entre plazos de 3, 6, 12, 18 y 24 meses según el destino dispuesto de los fondos.</li>
-        <li>Contrato de 24 a 60 meses, ofreciéndote comodidad en tus plazos.</li>
-        <li>Disponible para todas las personas con edades de 21 a 65 años.</li>
-        <li>Realizamos visitas de inspección para entender tus necesidades en detalle.</li>
-      </>)}
-    </StyledUl>
-    <StyledDiv>
-      <StyledH3>¿Listo para tu Crédito? Estos son los requisitos:</StyledH3>
-      {(creditoActivo === 3) && (
-        <StyledH4>Personas físicas y/o representantes:</StyledH4>
-      )}
-      <StyledUl>
-        {(creditoActivo === 1 || creditoActivo === 2) && (<>
-          <li>Tener entre 21 y 65 años.</li>
-          <li>Tener actividad económica lícita y verificada por nuestros asesores.</li>
-          <li>Contar con un aval.</li>
-        </>)}
-        {(creditoActivo === 3) && (<>
-          <li>Tener entre 21 y 65 años.</li>
-          <li>Contar con un aval.</li>
-          <li>Acta de nacimiento</li>
-          <li>Acta de matrimonio</li>
-          <li>Identificación vigente.</li>
-          <li>Comprobante de domicilio (menor de tres meses).</li>
-          <li>CURP</li>
-          <li>Constancia de situación fiscal.</li>
-          <li>Estados financieros.</li>
-          <li>3 estados de cuenta bancaria.</li>
-        </>)}
-      </StyledUl>
-    </StyledDiv>
-    {(creditoActivo === 1 || creditoActivo === 2) && (
-      <StyledDiv>
-        <StyledH4>Requisitos del aval:</StyledH4>
+    {creditoActivo === 1 && (<>
+      <div>
+        <Parrafo>Con Saci-Motor inicia una etapa, es un crédito refaccionario, destinado a la compra de automotores que ponen 
+        en marcha tu actividad económica segmentado en:</Parrafo>
         <StyledUl>
-          <li>Tener entre 21 y 70 años.</li>
-          <li>Tener actividad económica lícita y verificada por nuestros asesores.</li>
+          <li>Moto taxis.</li>
+          <li>Resto de automotores.</li>
         </StyledUl>
-      </StyledDiv>
-    )}
-    {(creditoActivo === 1 || creditoActivo === 2) && (<>
+      </div>
       <StyledDiv>
-        <StyledH4>¿Qué documentos necesitas?</StyledH4>
+        <StyledH3>Moto taxis</StyledH3>
+        <StyledH4>Características básicas:</StyledH4>
         <StyledUl>
+          <li>Sin comisiones.</li>
+          <li>Edad de 21 a 65 años.</li>
+          <li>Del 20% al 100% de la unidad.</li>
+          <li>Garantía líquida del 10% del crédito.</li>
+          <li>Saldo deudor y apoyo funerario básico.</li>
+          <li>Pagos fijos semanales con plazos de 12 a 36 meses.</li>
+          <li>Tasa mensual de 2.5% a 3.5% según riesgo e historial.</li>
+          <li>(Aplican restricciones o condiciones por historial de crédito).</li>
+        </StyledUl>
+        <StyledH4>Requisitos:</StyledH4>
+        <StyledUl>
+          <li>Endoso de factura, aval y resguardo de copia de llaves.</li>
+          <li>Aval de 21 a 70 años (en grupo de 3 o más no se requiere aval).</li>
+          <li>Seguro, coberturas y accesorios de la unidad a cuenta del cliente.</li>
+          <li>Comprobante de domicilio menor a 3 meses (cliente y aval).</li>
+          <li>Verificación de actividad y visita (cliente y aval).</li>
+          <li>INE vigente (cliente y aval).</li>
           <li>Acta de nacimiento.</li>
-          <li>Identificación vigente.</li>
-          <li>Comprobante de domicilio (menor de tres meses).</li>
-          <li>CURP.</li>
+        </StyledUl>
+      </StyledDiv>
+      <StyledDiv>
+        <StyledH3>Otros automotores</StyledH3>
+        <StyledH4>Características básicas:</StyledH4>
+        <StyledUl>
+          <li>Sin comisiones.</li>
+          <li>Edad de 21 a 65 años.</li>
+          <li>Del 20% al 100% de la unidad.</li>
+          <li>Garantía líquida del 10% del crédito.</li>
+          <li>Saldo deudor y apoyo funerario básico.</li>
+          <li>Pagos fijos mensuales con plazos de 12 a 60 meses.</li>
+          <li>Tasa mensual de 2.10% a 2.25% según riesgo e historial.</li>
+          <li>(Aplican restricciones o condiciones por historial de crédito).</li>
+        </StyledUl>
+        <StyledH4>Requisitos:</StyledH4>
+        <StyledUl>
+          <li>Endoso de factura, aval y resguardo de copia de llaves.</li>
+          <li>Aval de 21 a 70 años (en grupo de 3 o más no se requiere aval).</li>
+          <li>Seguro, coberturas y accesorios de la unidad a cuenta del cliente.</li>
+          <li>Comprobante de domicilio menor a 3 meses (cliente y aval).</li>
+          <li>Verificación de actividad y visita (cliente y aval).</li>
+          <li>INE vigente (cliente y aval).</li>
+          <li>Acta de nacimiento.</li>
         </StyledUl>
       </StyledDiv>
     </>)}
-    {(creditoActivo === 1 || creditoActivo === 2) && (<>
-      <StyledDiv>
-        <StyledH4>¿Qué documentos necesita tu aval?</StyledH4>
-        <StyledUl>       
-          <li>Identificación vigente.</li>
-          <li>Comprobante de domicilio (menor de tres meses).</li>
-          <li>CURP.</li>
+    {creditoActivo === 2 && (<>
+      <Parrafo>Saci-Crece es para ti si exiges un crédito que se adapte a tu proyecto y personalidad única, ya que es un crédito 
+      flexible para cualquier destino sea comercial, personal o vivienda.</Parrafo>
+      <StyledH4>Características básicas:</StyledH4>
+      <StyledUl>
+        <li>Sin comisiones.</li>
+        <li>Hasta 1,000,000.</li>
+        <li>Garantía del 10% del crédito.</li>
+        <li>Saldo deudor y apoyo funerario por muerte.</li>
+        <li>Pagos fijos mensuales con plazos de 12 a 60 meses.</li>
+        <li>Tasa mensual del 2% al 3.5% según riesgo, monto y garantía.</li>
+          <li>(Aplican restricciones o condiciones por historial de crédito).</li>
+      </StyledUl>
+      <StyledH4>Requisitos:</StyledH4>
+        <StyledUl>
+          <li>Edad de 21 a 65 años.</li>
+          <li>Garantía líquida, mueble y/o inmueble.</li>
+          <li>Historial y puntuación de crédito aceptable.</li>
+          <li>Seguro, coberturas y accesorios a cuenta del cliente.</li>
+          <li>Comprobante de domicilio menor a 3 meses (cliente y aval).</li>
+          <li>Verificación de actividad y visita (cliente y aval).</li>
+          <li>INE vigente (cliente y aval).</li>
+          <li>Acta de nacimiento.</li>
         </StyledUl>
-      </StyledDiv>
     </>)}
-    {(creditoActivo === 3) && (<>
-      <StyledDiv>
-        <StyledH4>Aval:</StyledH4>
-        <StyledUl>       
-          <li>Tener entre 21 y 65 años.</li>
-          <li>Acta de nacimiento</li>
-          <li>Acta de matrimonio</li>
-          <li>Identificación vigente.</li>
-          <li>Comprobante de domicilio (menor de tres meses).</li>
-          <li>CURP</li>
-        </StyledUl>
-      </StyledDiv>
-    </>)}
-    {(creditoActivo === 3) && (<>
-      <StyledDiv>
-        <StyledH4>Persona moral:</StyledH4>
-        <StyledUl>       
-          <li>Acta constitutiva con inscripción al registro público.</li>
-          <li>Poderes de los representantes.</li>
-          <li>Estructura Accionaria.</li>
-          <li>Documentos representante legal: INE, CURP y comprobante.</li>
-          <li>Comprobante de domicilio de la empresa.</li>
-          <li>Consulta en SIC de la empresa, accionistas y representantes.</li>
-          <li>Organigrama con nombre completo de cargos hasta jerarquía de nivel 3.</li>
-          <li>Últimos 3 estados de cuentas bancario.</li>
-          <li>Balance y estado de resultados de el último año y mes.</li>
-        </StyledUl>
-      </StyledDiv>
+    {creditoActivo === 3 && (<>
+      <Parrafo>Línea Sacimex es el crédito revolvente que desbloquea nuevas oportunidades para tu empresa o negocio, destina estos recursos a capital de trabajo o capital de inversión según necesidades o proyectos, con este contrato adicionalmente tendrás opciones a créditos simples.</Parrafo>
+      <StyledH4>Características básicas:</StyledH4>
+      <StyledUl>
+        <li>Monto hasta 3.5 millones.</li>
+        <li>Contrato de 24 a 60 meses.</li>
+        <li>Comisión por apertura: 0.5% + IVA</li>
+        <li>Comisión por disposición: 0.5% + IVA.</li>
+        <li>Disposiciones de 3, 6, 12, 18 y 24 meses.</li>
+        <li>Aplican restricciones o condiciones por historial de crédito.</li>
+        <li>Tasa mensual del 2.25% al 2.75% según riesgo, monto y garantía.</li>
+      </StyledUl>
+      <StyledH4>Requisitos generales:</StyledH4>
+      <StyledUl>
+        <li>Edad de 21 a 65 años.</li>
+        <li>Antigüedad comercial 1 año.</li>
+        <li>Garantía del 10% de la disposición.</li>
+        <li>Garantía personal cuando apliquen.</li>
+        <li>Garantías reales mueble y/o inmueble.</li>
+        <li>Historial y puntuación de crédito aceptable.</li>
+        <li>Verificación de actividad y formato de visita.</li>
+        <li>Comprobante de domicilio menor a 3 meses.</li>
+        <li>Seguro, coberturas y accesorios a cuenta del cliente.</li>
+      </StyledUl>
+      <StyledH4>Requisitos Persona Física:</StyledH4>
+      <StyledUl>
+        <li>Acta de nacimiento.</li>
+        <li>Acta de matrimonio.</li>
+        <li>Identificación vigente.</li>
+        <li>Constancia de Situación Fiscal y 32-D.</li>
+        <li>Últimos 3 estados de cuenta bancarios.</li>
+        <li>Balance y estado de resultados del último año y mes.</li>
+      </StyledUl>
+      <StyledH4>Requisitos Persona Moral:</StyledH4>
+      <StyledUl>
+        <li>Acta constitutiva con inscripción al registro público.</li>
+        <li>Poderes de los representantes.</li>
+        <li>Estructura Accionaria.</li>
+        <li>Documentos del representante legal: INE y comprobante.</li>
+        <li>Consulta en SIC de la empresa, accionistas y representantes.</li>
+        <li>Organigrama con nombre completo de cargos hasta jerarquía de nivel 3.</li>
+        <li>Últimos 3 estados de cuenta bancarios.</li>
+        <li>Balance y estado de resultados del último año y mes.</li>
+        <li>Formato 32 -D de la empresa y representante legal.</li>
+      </StyledUl>
     </>)}
   </>);
 };

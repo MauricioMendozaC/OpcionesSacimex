@@ -69,6 +69,9 @@ const CreditoIndividual = () => {
                 onClick={() => setCreditoActivo(3)}>
                   Línea Sacimex
               </BotonCredito>
+              <BotonSaci href='/SaciAlianza'>
+                  Saci-Alianza
+              </BotonSaci>
             </Botones>
             <Informacion>
               {creditoActivo === 1 && (<>
@@ -82,12 +85,6 @@ const CreditoIndividual = () => {
                   tamano='200px'
                   imagen={SaciCrece}
                   alt='Saci-Crece'/>
-              </>)}
-              {creditoActivo === 3 && (<>
-                <Imagen
-                  tamano='200px'
-                  imagen={SaciCrece}
-                  alt='Línea de crédito'/>
               </>)}
               <DatosCreditosIndividuales creditoActivo={creditoActivo}/>
             </Informacion>
@@ -153,6 +150,20 @@ const BotonCredito = styled.button`
   font-size: 0.875em;
   letter-spacing: 1px;
   padding: 5px 10px;
+  transition: background .3s;
+`;
+
+const BotonSaci = styled.a`
+  background-color: ${({ $activo }) => $activo ? '#FFFFFF' : '#F5A200'};
+  border: none;
+  border-radius: 3px 3px 0 0;
+  color: #005520;
+  cursor: pointer;
+  font-family: 'Presidencia Firme', sans-serif;
+  font-size: 0.875em;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  text-decoration: none;
   transition: background .3s;
 `;
 

@@ -118,7 +118,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                 <SubLinksContenedor $desplegar={linkDesplegado === 3}>
                   <SubLinkA href='/EducacionFinanciera'>Educación financiera</SubLinkA>
                   <SubLinkA href='/RedDeProfesionales'>Red de oficios y profesiones</SubLinkA>
-                  <SubLinkA>Historias de éxito</SubLinkA>
+                  <SubLinkA href='/HistoriasDeExito'>Historias de éxito</SubLinkA>
                 </SubLinksContenedor>
               </LinkDesplegable>
               <LinkDesplegable>
@@ -130,7 +130,6 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 4}>
                   <SubLinkA>Oportunidades de carrera</SubLinkA>
-                  <SubLinkA>Proceso de aplicación</SubLinkA>
                   <SubLinkA>Contacta con Desarrollo Humano</SubLinkA>
                 </SubLinksContenedor>
               </LinkDesplegable>

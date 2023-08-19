@@ -81,6 +81,8 @@ const SolicitaCredito  = () => {
             <PasoTexto>Una vez que el asesor haya revisado la solicitud y aprobado el crédito, el último paso es recibir el dinero solicitado.</PasoTexto>
           </Paso>
       </PasosContenedor>
+      <PasoTitulo>Si tu empresa tiene antiguedad mayor a tres años, con más de 10 empleados y te gustaría que ofreciera este 
+      beneficio a los trabajadores ¡Comunícate con notrosotros!</PasoTitulo>
       <Boton
         texto='Inicia aquí'
         referencia='http://convenio.opcionessacimex.com/'/>

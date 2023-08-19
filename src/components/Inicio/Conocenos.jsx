@@ -54,7 +54,7 @@ const Conocenos = () => {
           <SubTitulo>Sobre Opciones Sacimex.</SubTitulo>
           <Texto>Somos una Sociedad Financiera de Objeto Múltiple (SOFOM) con un enfoque especial en brindar apoyo financiero 
             a comunidades con limitado acceso al sector. Desde nuestro inicio con tres sucursales el 3 de Septiembre de 2008, 
-            hemos crecido para estar cerca de ti con 12 unidades de negocio en Oaxaca y Puebla.<br/>Nuestra prioridad es tu 
+            hemos crecido para estar cerca de ti con 12 unidades de negocio en Oaxaca y Puebla.<br/><br/>Nuestra prioridad es tu 
             tranquilidad, por eso operamos bajo la atenta inspección y vigilancia de la CNBV (<i>Comisión Nacional Bancaria y 
             de Valores</i>) y CONDUSEF (<i>Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios 
             Financieros</i>), asegurando un camino financiero sólido y confiable para ti y aquellos cercanos a ti.</Texto>

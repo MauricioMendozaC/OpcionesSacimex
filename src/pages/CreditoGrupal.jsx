@@ -33,6 +33,7 @@ const CreditoGrupal = () => {
       <meta
         name='description'
         content='Potencia tus proyectos con créditos grupales en Opciones Sacimex.'/>
+      <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet"/>
       <title>Opciones Sacimex - Créditos grupales</title>
     </Helmet>
     <Header
@@ -59,7 +60,7 @@ const CreditoGrupal = () => {
               <BotonCredito
                 $activo={creditoActivo === 1}
                 onClick={() => setCreditoActivo(1)}>
-                  Somos Crédito
+                  Ella-Sabiduría
               </BotonCredito>
               <BotonCredito
                 $activo={creditoActivo === 2}
@@ -69,11 +70,11 @@ const CreditoGrupal = () => {
               <BotonCredito
                 $activo={creditoActivo === 3}
                 onClick={() => setCreditoActivo(3)}>
-                  Ella-Sabiduría
+                  Somos crédito
               </BotonCredito>
             </Botones>
             <Informacion>
-              {creditoActivo === 1 && (<>
+              {creditoActivo === 3 && (<>
                 <Imagen
                   tamano='200px'
                   imagen={somosCredito}
@@ -85,7 +86,7 @@ const CreditoGrupal = () => {
                   imagen={DamasCredito}
                   alt='Da-Más crédito'/>
               </>)}
-              {creditoActivo === 3 && (<>
+              {creditoActivo === 1 && (<>
                 <Imagen
                   tamano='200px'
                   imagen={EllaSabiduria}

@@ -2,60 +2,93 @@ import styled from 'styled-components';
 
 const DatosCreditosGrupales = ({ creditoActivo }) => {
   return(<>
-    <Parrafo>
-      {creditoActivo === 1 && (`¡Descubre "Somos Crédito"! Un innovador préstamo grupal solidario mixto, diseñado para personas 
-        auto seleccionables (hombres y mujeres) que valoran el apoyo mutuo. Aprende sobre finanzas mientras alcanzas tus metas 
-        junto a tu comunidad. ¡Únete ahora y haz realidad tus sueños!`)}
-      {creditoActivo === 2 && (`¡Descubre "Da-más Crédito"! Un préstamo grupal solidario mixto, diseñado para mujeres auto 
-        seleccionables que valoran el apoyo mutuo. Aprende de forma cíclica y secuencial sobre finanzas mientras alcanzas tus 
-        metas junto a otras mujeres con objetivos similares. ¡Únete ahora y construyamos juntas un futuro financiero próspero!`)}
-      {creditoActivo === 3 && (`¡Descubre "Ella-Sabiduría"! Un producto financiero único, administrado por un centro 
-        especializado, formado por grupos solidarios de mujeres auto seleccionables que se apoyan mutuamente. Comprometidas con 
-        una metodología financiera de aprendizaje cíclico, educativo y secuencial, basada en principios solidarios.`)}
-    </Parrafo>
-    <StyledUl>
-      {(creditoActivo === 1 || creditoActivo === 2) && (<>
-        <li>Únete a un grupo solidario de 5 a 15 integrantes.</li>
-        <li>Sin comisión de apertura.</li>
-        <li>Alcancen juntos sus objetivos comerciales, de consumo o vivienda.</li>
-        <li>Escoge entre plazos de 4, 5, 6 y 7 meses.</li>
-        <li>Realiza pagos iguales semanales, catorcenales o quincenales.</li>
-        <li>Te visitamos en tu domicilio para entender tus necesidades.</li>
-      </>)}
-      {creditoActivo === 1 && (<li>Disponible para todas las personas que tengan entre 19 y 75 años.</li>)}
-      {(creditoActivo === 3) && (<>
-        <li>Únete a un grupo de 15 o más integrantes</li>
-        <li>Impulsa tu negocio con nuestro crédito diseñado para proyectos comerciales.</li>
-        <li>Obtén financiamiento a una tasa global mensual del 5.68%.</li>
-        <li>Plazo de 5 meses, ofreciéndote agilidad en tus metas.</li>
-        <li>Realiza pagos fijos semanales iguales.</li>
-        <li>Apertura tu crédito con únicamente $ 150.</li>
-      </>)}
-    </StyledUl>
-    <StyledDiv>
-      <StyledH3>¿Listo para tu Crédito? Estos son los requisitos:</StyledH3>
+    {creditoActivo === 3 && (<>
+      <Parrafo>¡Descubre <SomosSpan>Somos Crédito</SomosSpan>! Un innovador crédito grupal mixto y reducido, diseñado para 
+      emprendedores que valoran la cooperación y el apoyo mutuo entre los integrantes que logran sus metas con un objeto en 
+      común, sin distinción de género o actividad económica.</Parrafo>
+      <StyledH3>Ventajas:</StyledH3>
       <StyledUl>
-        {(creditoActivo === 2 || creditoActivo === 3) && (<>
-          <li>Ser una mujer emprendedora.</li>
-        </>)}
-        {(creditoActivo === 1 || creditoActivo === 2 || creditoActivo === 3) && (<>
-          <li>Tener entre 19 y 75 años.</li>
-          <li>Actividad económica lícita y verificada por nuestros asesores.</li>
-        </>)}
-        {(creditoActivo === 3) && (<>
-          <li>Ingresos mensuales menores a $ 10,000.</li>
-        </>)}
+        <li>Saldo deudor y apoyo funerario básico por muerte.</li>
+        <li>Sin más avales que tu grupo y tu puntuación de crédito.</li>
+        <li>Incrementos de acuerdo a capacidad y montos trabajados.</li>
+        <li>Sin comisiones y libertad de destino comercial, consumo o vivienda.</li>
+        <li>Facilita el acceso a créditos mayores o adicionales según comportamiento.</li>
       </StyledUl>
-    </StyledDiv>
-    <StyledDiv>
-      <StyledH4>¿Qué documentos necesitas?</StyledH4>
-      <StyledUl>       
+      <StyledH3>Características básicas:</StyledH3>
+      <StyledUl>
+        <li>De 5 a 12 integrantes con un 20% de hombres.</li>
+        <li>Montos secuenciales de 5 mil a 60 mil pesos.</li>
+        <li>Plazos de 4, 5, 6 y 7 meses con pagos iguales.</li>
+        <li>Pago semanales, catorcenales o quincenales.</li>
+        <li>Tasas sobre saldos insolutos menores cada ciclo.</li>
+        <li>Primer ciclo: $55 semanales por 6 meses por cada $1,000.</li>
+      </StyledUl>
+      <StyledH3>Requisitos:</StyledH3>
+      <StyledUl>
+        <li>Comprobante de domicilio menor a 3 meses.</li>
+        <li>Verificación económica o visita domiciliaria.</li>
         <li>Acta de nacimiento.</li>
-        <li>Identificación vigente.</li>
-        <li>Comprobante de domicilio.</li>
-        <li>CURP.</li>
+        <li>INE vigente.</li>
       </StyledUl>
-    </StyledDiv>
+    </>)}
+    {creditoActivo === 2 && (<>
+      <Parrafo>¡Disfruta <DamasSpan>Da-más crédito</DamasSpan> ! tu siguiente nivel de crecimiento financiero. Este crédito se 
+      basa en la confianza y la solidaridad de grupos reducidos de mujeres que pueden ejercen cualquier actividad económica 
+      lícita con capacidad suficiente para montos de hasta 60 mil pesos en pagos fijos.</Parrafo>
+      <StyledH3>Ventajas:</StyledH3>
+      <StyledUl>
+        <li>Saldo deudor y apoyo funerario básico por muerte.</li>
+        <li>Sin más avales que tu grupo y tu puntuación de crédito.</li>
+        <li>Incrementos de acuerdo a capacidad y montos trabajados.</li>
+        <li>Fomenta el trabajo en equipo, la cooperación y el apoyo mutuo.</li>
+        <li>Sin comisiones y libertad de destino comercial, consumo o vivienda.</li>
+        <li>Facilita el acceso a créditos mayores o adicionales según comportamiento.</li>
+      </StyledUl>
+      <StyledH3>Características básicas:</StyledH3>
+      <StyledUl>
+        <li>Grupos de 5 a 12 mujeres de 19 a 75 años.</li>
+        <li>Montos secuenciales de 5 mil a 60 mil pesos.</li>
+        <li>Plazos de 4, 5, 6 y 7 meses con pagos iguales.</li>
+        <li>Pago semanales, catorcenales o quincenales.</li>
+        <li>Tasas sobre saldos insolutos menores cada ciclo.</li>
+        <li>Primer ciclo: $55 semanales por 6 meses por cada $1,000.</li>
+      </StyledUl>
+      <StyledH3>Requisitos:</StyledH3>
+      <StyledUl>
+        <li>Comprobante de domicilio menor a 3 meses.</li>
+        <li>Verificación económica o visita domiciliaria.</li>
+        <li>Acta de nacimiento.</li>
+        <li>INE vigente.</li>
+      </StyledUl>
+    </>)}
+    {creditoActivo === 1 && (<>
+      <Parrafo>Solicita <EllaSpan>Ella-Sabiduría</EllaSpan>, es una forma de financiamiento educativo grupal de mujeres, no 
+      asalariadas y con actividades totalmente productivas, las integrantes se eligen libremente y se comprometen a pagar las 
+      cuotas puntualmente en el centro de reunión elegido por ellas, respaldándose entre sí en caso de dificultades.</Parrafo>
+      <StyledH3>Ventajas:</StyledH3>
+      <StyledUl>
+        <li>Saldo deudor y apoyo funerario básico por muerte del titular.</li>
+        <li>El historial no rechaza el crédito, pero el compromiso es no empeorarlo.</li>
+        <li>Sin necesidad de tener un aval, una garantía o un buen historial crediticio.</li>
+        <li>Incremento máximo de $2,000 es por ciclo según comportamiento de pago.</li>
+        <li>Facilita el acceso a créditos mayores en el futuro, si se cumplen los compromisos.</li>
+      </StyledUl>
+      <StyledH3>Características:</StyledH3>
+      <StyledUl>
+        <li>Grupo de mínimo de 15 mujeres de 19 a 75 años.</li>
+        <li>No asalariadas, ingreso máximo 10 mil por mes.</li>
+        <li>Tasa global de 5.68% ($67.00 por cada mil).</li>
+        <li>Montos de 3 mil a 12 mil pesos.</li>
+        <li>20 pagos semanales iguales.</li>
+        <li>Comisión $150 por persona.</li>
+      </StyledUl>
+      <StyledH3>Requisitos:</StyledH3>
+      <StyledUl>
+        <li>Comprobante de domicilio menor a 3 meses.</li>
+        <li>Acta de nacimiento.</li>
+        <li>INE vigente.</li>
+      </StyledUl>
+    </>)}
   </>);
 };
 
@@ -67,6 +100,24 @@ const Parrafo = styled.p`
   font-size: 0.875em;
   text-align: justify;
   width: 100%;
+`;
+
+const EllaSpan = styled.span`
+  color: #F65E1D;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.25em;
+`;
+
+const DamasSpan = styled.span`
+  color: #C90076;
+  font-family: 'Caveat', cursive;
+  font-size: 1.25em;
+`;
+
+const SomosSpan = styled.span`
+  color: #00AB56;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.25em;
 `;
 
 const StyledUl = styled.ul`
@@ -92,15 +143,4 @@ const StyledH3 = styled.h3`
   font-size: 1em;
   letter-spacing: 1px;
   text-align: center;
-`;
-
-const StyledH4 = styled.h4`
-  color: #257140;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 1em;
-  text-align: center;
-`;
-
-const StyledDiv = styled.div`
-  width: 100%;
 `;

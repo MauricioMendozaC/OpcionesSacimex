@@ -43,12 +43,13 @@ const RedDeProfesionales = () => {
             imagen={Constructor}
             alt='Oficios y profesiones'/>
           <Parrafo>En <b>Opciones Sacimex</b>, creemos en la importancia de reconocer y respaldar las habilidades y conocimientos 
-            únicos que cada individuo aporta a su ocupación, y es por eso que hemos decidido destacar las diversas profesiones y 
-            oficios de nuestros valiosos clientes.</Parrafo>
+            únicos que cada individuo aporta a su comunidad, es por eso que hemos decidido formalizar una red de las diversas 
+            profesiones y oficios de nuestros clientes y no clientes para impulsar su trayectoria y bienestar al siguiente 
+            nivel.</Parrafo>
         </ImagenTextoContenedor>
-        <StyledH4>¿Listo para destacar tu profesión u oficio? ¡Completa el formulario y forma parte de nuestra comunidad!</StyledH4>
+        <StyledH4>¿Listo para destacar tu profesión u oficio en tu localidad? ¡Completa el formulario y forma parte de nuestra comunidad!</StyledH4>
         <InputsContenedor>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeThs1njygICIaPId2eol2Pnx9L_0MHspCcXGoMb7wOhbhNjQ/viewform?embedded=true" width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeThs1njygICIaPId2eol2Pnx9L_0MHspCcXGoMb7wOhbhNjQ/viewform?embedded=true" width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
         </InputsContenedor>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>

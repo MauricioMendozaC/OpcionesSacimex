@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.4b61b435.js",
+    "main.js": "/static/js/main.cd74e51f.js",
     "static/media/SomosCredito.png": "/static/media/SomosCredito.62e29e11ba39d7c8bbbf.png",
     "static/media/SaciCrece.png": "/static/media/SaciCrece.afb7870f3007c4e6e227.png",
     "static/media/Foto2.jpg": "/static/media/Foto2.99c84de2d96fbf7921cb.jpg",
@@ -31,9 +31,9 @@
     "static/media/Respeto.png": "/static/media/Respeto.9d733350f4035a52f43b.png",
     "static/media/Paso3.png": "/static/media/Paso3.5ff1c0bf993119065f22.png",
     "index.html": "/index.html",
-    "main.4b61b435.js.map": "/static/js/main.4b61b435.js.map"
+    "main.cd74e51f.js.map": "/static/js/main.cd74e51f.js.map"
   },
   "entrypoints": [
-    "static/js/main.4b61b435.js"
+    "static/js/main.cd74e51f.js"
   ]
 }
