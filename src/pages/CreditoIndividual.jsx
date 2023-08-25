@@ -33,6 +33,7 @@ const CreditoIndividual = () => {
         name='description'
         content='Obtén el impulso financiero que necesitas con nuestros créditos individuales en Opciones Sacimex.'/>
       <title>Opciones Sacimex - Créditos individuales</title>
+      <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Marck+Script&family=Pacifico&display=swap" rel="stylesheet"/>
     </Helmet>
     <Header
       mostrarAnimaciones={mostrarAnimaciones}

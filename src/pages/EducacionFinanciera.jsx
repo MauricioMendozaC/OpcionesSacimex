@@ -103,11 +103,11 @@ const EducacionFinanciera = () => {
             <StyledSpan>https://webappsos.condusef.gob.mx/EducaTuCartera/cuadernos.html</StyledSpan>
         </StyledA>
         </PreviewsContenedor>
-        <StyledH4>También puedes hacer uso de nuestras calculadoras interactivas:</StyledH4>
+        {/*<StyledH4>También puedes hacer uso de nuestras calculadoras interactivas:</StyledH4>
         <BotonCalculadora
           href='/EducacionFinanciera/RastreaTusCentavos'>
             Rastrea tus Centavos
-        </BotonCalculadora>
+        </BotonCalculadora>*/}
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
@@ -234,7 +234,7 @@ const Opacidad = styled.div`
   };
 `;
 
-const BotonCalculadora = styled.a`
+/*const BotonCalculadora = styled.a`
   background-color: #00632F;
   color: #FFF;
   font-family: 'Presidencia Firme', sans-serif;
@@ -242,4 +242,4 @@ const BotonCalculadora = styled.a`
   letter-spacing: 1px;
   padding: 9px 18px;
   text-decoration: none;
-`;
+`;*/

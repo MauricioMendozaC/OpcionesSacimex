@@ -48,9 +48,9 @@ const RedDeProfesionales = () => {
             nivel.</Parrafo>
         </ImagenTextoContenedor>
         <StyledH4>¿Listo para destacar tu profesión u oficio en tu localidad? ¡Completa el formulario y forma parte de nuestra comunidad!</StyledH4>
-        <InputsContenedor>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeThs1njygICIaPId2eol2Pnx9L_0MHspCcXGoMb7wOhbhNjQ/viewform?embedded=true" width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-        </InputsContenedor>
+        
+          <StyledIframe src="https://docs.google.com/forms/d/e/1FAIpQLSeThs1njygICIaPId2eol2Pnx9L_0MHspCcXGoMb7wOhbhNjQ/viewform?embedded=true" width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Cargando…</StyledIframe>
+        
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
@@ -114,6 +114,7 @@ const StyledH4 = styled.h4`
   width: 90%;
 `;
 
-const InputsContenedor = styled.div`
-
+const StyledIframe = styled.iframe`
+  max-width: 820px;
+  width: 100%;
 `;

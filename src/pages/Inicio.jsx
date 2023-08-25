@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Presentacion from '../components/Inicio/Presentacion';
 import Productos from '../components/Inicio/Productos';
@@ -14,8 +15,24 @@ const Inicio = () => {
   const [evitarScroll, setEvitarScroll] = useState(false);
   const [estadoAviso, setEstadoAviso] = useState(null);
 
+  const id = useParams();
+
+  const ScrollAutomatico = id => {
+    const elemento = document.getElementById(id.id);
+
+    if(elemento) {
+
+      elemento.scrollIntoView({
+        behavior: 'smooth', // Puedes ajustar el comportamiento de desplazamiento
+        block: 'start',     // Ajusta la alineación vertical del elemento ('start', 'center', 'end', o 'nearest')
+        inline: 'nearest'   // Ajusta la alineación horizontal del elemento ('start', 'center', 'end', o 'nearest')
+      });
+    };
+  };
+
   useEffect( () => {
     setMostrarAnimaciones(true);
+    ScrollAutomatico(id);
   },[]);
 
   const manejarScroll = (estado) => {

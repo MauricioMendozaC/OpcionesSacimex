@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlinePlus } from 'react-icons/ai';
+import CafeImagen from '../../assets/img/Cafe.jpg';
 
 const Calculadora = () => {
   const [pasoActivo, setPasoActivo] = useState(1);
@@ -97,8 +98,9 @@ const Calculadora = () => {
           {pasoActivo === 2 && ('Finalizar')}
       </StyledButton>
       {(pasoActivo === 2 || pasoActivo === 3) && (<StyledButton $reiniciar onClick={limpiar}>Reiniciar calculadora</StyledButton>)}
-      <TiposDeGastoContenedor>
+      <TiposDeGastoContenedor $mostrar={ventanaGastos}>
         <TiposDeGasto>
+          
           <span>Café</span>
         </TiposDeGasto>
       </TiposDeGastoContenedor>
@@ -223,7 +225,7 @@ const GastosTotalesContenedor = styled.div`
 `;
 
 const TiposDeGastoContenedor = styled.div`
-  display: flex;
+  display: ${({ $mostrar }) => $mostrar ? 'flex' : 'none'};
   flex-wrap: wrap;
   justify-content: center;
   width: 300px;

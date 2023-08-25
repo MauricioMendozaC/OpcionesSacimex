@@ -11,6 +11,8 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [linkDesplegado, setLinkDesplegado] = useState(null);
 
+  const id = 'si';
+
   const usarMenu = checked => {
     setIsChecked(checked);
     evitarScroll(checked);
@@ -36,7 +38,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
               $checked={isChecked} $barraVerde={barraVerde}/>
         </BotonHamburguesa>
       <LogoContenedor
-        href='/'
+        href='/Inicio'
         $mostrarAnimaciones={mostrarAnimaciones}>
           <Imagen
             tamano='120px'
@@ -55,10 +57,10 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                     {linkDesplegado === 1 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 1}>
-                  <SubLinkA href='/CreditoGrupal'>Crédito grupal</SubLinkA>
-                  <SubLinkA href='/CreditoIndividual'>Crédito individual</SubLinkA>
-                  <SubLinkA href='/Servicios'>Servicios</SubLinkA>
-                  <SubLinkA>Promociones</SubLinkA>
+                  <a href='/CreditoGrupal'>Crédito grupal</a>
+                  <a href='/CreditoIndividual'>Crédito individual</a>
+                  <a href='/Servicios'>Servicios</a>
+                  <a>Promociones</a>
                 </SubLinksContenedor>
               </LinkDesplegable>
               <LinkDesplegable>
@@ -70,41 +72,35 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 2}>
                   {!barraVerde && (<>
-                    <SubLinkSpan>
-                      <Link
-                        to='conocenos'
-                        smooth={true}
-                        duration={500}
-                        offset={-100}
-                        onClick={() => usarMenu(false)}>
-                          Quiénes somos
-                      </Link>
-                    </SubLinkSpan>
-                    <SubLinkSpan> 
-                      <Link
-                        to='valores'
-                        smooth={true}
-                        duration={500}
-                        offset={-100}
-                        onClick={() => usarMenu(false)}>
-                          Filosofía y valores
-                      </Link>
-                    </SubLinkSpan>
-                    <SubLinkSpan>
-                      <Link
-                        to='directorio'
-                        smooth={true}
-                        duration={500}
-                        offset={-100}
-                        onClick={() => usarMenu(false)}>
-                          Ubicación y contacto
-                      </Link>
-                    </SubLinkSpan>
+                    <Link
+                      to='conocenos'
+                      smooth={true}
+                      duration={500}
+                      offset={-100}
+                      onClick={() => usarMenu(false)}>
+                        Quiénes somos
+                    </Link>
+                    <Link
+                      to='valores'
+                      smooth={true}
+                      duration={500}
+                      offset={-100}
+                      onClick={() => usarMenu(false)}>
+                        Filosofía y valores
+                    </Link>
+                    <Link
+                      to='contacto'
+                      smooth={true}
+                      duration={500}
+                      offset={-100}
+                      onClick={() => usarMenu(false)}>
+                        Ubicación y contacto
+                    </Link>
                   </>)}
                   {barraVerde && (<>
-                    <SubLinkA href='/#conocenos'>Quiénes somos</SubLinkA>
-                    <SubLinkA href='/#valores'>Filosofía y valores</SubLinkA>
-                    <SubLinkA href='/#directorio'>Ubicación y contacto</SubLinkA>
+                    <a href='/conocenos'>Quiénes somos</a>
+                    <a href='/valores'>Filosofía y valores</a>
+                    <a href='/contacto'>Ubicación y contacto</a>
                   </>)}
                 </SubLinksContenedor>
               </LinkDesplegable>
@@ -116,9 +112,9 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                     {linkDesplegado === 3 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 3}>
-                  <SubLinkA href='/EducacionFinanciera'>Educación financiera</SubLinkA>
-                  <SubLinkA href='/RedDeProfesionales'>Red de oficios y profesiones</SubLinkA>
-                  <SubLinkA href='/HistoriasDeExito'>Historias de éxito</SubLinkA>
+                  <a href='/EducacionFinanciera'>Educación financiera</a>
+                  <a href='/RedDeProfesionales'>Red de oficios y profesiones</a>
+                  <a href='/HistoriasDeExito'>Historias de éxito</a>
                 </SubLinksContenedor>
               </LinkDesplegable>
               <LinkDesplegable>
@@ -129,8 +125,8 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                    {linkDesplegado === 4 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 4}>
-                  <SubLinkA>Oportunidades de carrera</SubLinkA>
-                  <SubLinkA>Contacta con Desarrollo Humano</SubLinkA>
+                  <a>Oportunidades de carrera</a>
+                  <a href='/EnviaUnMensaje'>Contacta con Desarrollo Humano</a>
                 </SubLinksContenedor>
               </LinkDesplegable>
             </LinksContenedor>
@@ -281,27 +277,11 @@ const SubLinksContenedor = styled.div`
   height: ${({ $desplegar }) => $desplegar ? '170px' : '0'};
   overflow: hidden;
   transition: height .3s;
-`;
 
-const SubLinkSpan = styled.span`
-  border-radius: 20px;
-  color: #257140;
-  cursor: pointer;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 1em;
-  padding: 7px 20px;
-  transition: background .1s, color .1s;
-
-  &:hover {
-    background-color: #257140;
-    color: #FFFFFF;
-  };
-`;
-
-const SubLinkA = styled.a`
-  border-radius: 20px;
-  color: #257140;
-  cursor: pointer;
+  a {
+    border-radius: 20px;
+    color: #257140;
+    cursor: pointer;
   font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   padding: 7px 20px;
@@ -312,6 +292,7 @@ const SubLinkA = styled.a`
   &:hover {
     background-color: #257140;
     color: #FFFFFF;
+  };
   };
 `;
 

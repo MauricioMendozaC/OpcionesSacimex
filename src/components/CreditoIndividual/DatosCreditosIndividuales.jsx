@@ -4,7 +4,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
   return(<>
     {creditoActivo === 1 && (<>
       <div>
-        <Parrafo>Con Saci-Motor inicia una etapa, es un crédito refaccionario, destinado a la compra de automotores que ponen 
+        <Parrafo>Con <MotorSpan>Saci-Motor</MotorSpan> inicia una etapa, es un crédito refaccionario, destinado a la compra de automotores que ponen 
         en marcha tu actividad económica segmentado en:</Parrafo>
         <StyledUl>
           <li>Moto taxis.</li>
@@ -61,7 +61,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
       </StyledDiv>
     </>)}
     {creditoActivo === 2 && (<>
-      <Parrafo>Saci-Crece es para ti si exiges un crédito que se adapte a tu proyecto y personalidad única, ya que es un crédito 
+      <Parrafo><CreceSpan>Saci-Crece</CreceSpan> es para ti si exiges un crédito que se adapte a tu proyecto y personalidad única, ya que es un crédito 
       flexible para cualquier destino sea comercial, personal o vivienda.</Parrafo>
       <StyledH4>Características básicas:</StyledH4>
       <StyledUl>
@@ -86,7 +86,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         </StyledUl>
     </>)}
     {creditoActivo === 3 && (<>
-      <Parrafo>Línea Sacimex es el crédito revolvente que desbloquea nuevas oportunidades para tu empresa o negocio, destina estos recursos a capital de trabajo o capital de inversión según necesidades o proyectos, con este contrato adicionalmente tendrás opciones a créditos simples.</Parrafo>
+      <Parrafo><LineaSpan>Línea Sacimex</LineaSpan> es el crédito revolvente que desbloquea nuevas oportunidades para tu empresa o negocio, destina estos recursos a capital de trabajo o capital de inversión según necesidades o proyectos, con este contrato adicionalmente tendrás opciones a créditos simples.</Parrafo>
       <StyledH4>Características básicas:</StyledH4>
       <StyledUl>
         <li>Monto hasta 3.5 millones.</li>
@@ -142,6 +142,24 @@ const Parrafo = styled.p`
   font-size: 0.875em;
   text-align: justify;
   width: 100%;
+`;
+
+const MotorSpan = styled.span`
+  color: #EE0000;
+  font-family: 'Pacifico', cursive;
+  font-size: 0.875em;
+`;
+
+const LineaSpan = styled.span`
+  color: #3975b7;
+  font-family: 'Marck Script', cursive;
+  font-size: 1.25em;
+`;
+
+const CreceSpan = styled.span`
+  color: #24840C;
+  font-family: 'Kalam', cursive;
+  font-size: 1em;
 `;
 
 const StyledUl = styled.ul`

@@ -78,14 +78,15 @@ const SolicitaCredito  = () => {
             <Imagen
               tamano='100px'
               imagen={paso4}/>
-            <PasoTexto>Una vez que el asesor haya revisado la solicitud y aprobado el crédito, el último paso es recibir el dinero solicitado.</PasoTexto>
+            <PasoTexto>Una vez que el asesor haya revisado la solicitud y aprobado el crédito, el último paso es recibir el 
+              dinero solicitado.</PasoTexto>
           </Paso>
       </PasosContenedor>
-      <PasoTitulo>Si tu empresa tiene antiguedad mayor a tres años, con más de 10 empleados y te gustaría que ofreciera este 
-      beneficio a los trabajadores ¡Comunícate con notrosotros!</PasoTitulo>
       <Boton
         texto='Inicia aquí'
         referencia='http://convenio.opcionessacimex.com/'/>
+      <PasoTitulo $padding>Si tu empresa tiene antigüedad mayor a tres años, con más de 10 empleados y te gustaría que ofreciera este 
+      beneficio a los trabajadores ¡Comunícate con nosotros!</PasoTitulo>
     </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
@@ -156,6 +157,7 @@ const PasoTitulo = styled.h4`
   font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;
   letter-spacing: 1px;
+  ${({ $padding }) => $padding && ('padding: 0 30px;')}
   text-align: center;
 `;
 
