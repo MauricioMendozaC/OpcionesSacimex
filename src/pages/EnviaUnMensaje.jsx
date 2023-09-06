@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Titulo from '../components/Titulo'
 import Imagen from '../components/Imagen';
 import Footer from '../components/Footer';
-import VentanaEmergente from '../components/VentanaEmergente';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { validarNombre, validarEmail, validarMensaje } from '../utils/enviarCorreo';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import DHO from '../assets/img/DHO.jpg';
@@ -20,6 +20,9 @@ const EnviaUnMensaje = () => {
   const [error1, setError1] = useState(null);
   const [error2, setError2] = useState(null);
   const [error3, setError3] = useState(null);
+  const [enviado, setEnviado] = useState(false);
+  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
+  const [estadoUNE, setEstadoUNE] = useState(false);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -76,6 +79,9 @@ const EnviaUnMensaje = () => {
       document.getElementById('1').value = '';
       document.getElementById('2').value = '';
       document.getElementById('3').value = '';
+
+      setEnviado(true);
+      setInterval(() => setEnviado(false), 10000);
     };
   };
 
@@ -84,7 +90,7 @@ const EnviaUnMensaje = () => {
     <Helmet>
       <meta
         name='description'
-        content='¿Necesitas un experto en construcción, diseño, reparaciones o más? ¡Estás en el lugar adecuado!'/>
+        content=' Nuestro equipo de Desarrollo Humano está aquí para ayudarte.'/>
       <title>Opciones Sacimex - Envía un mensaje a DHO</title>
     </Helmet>
     <Header
@@ -147,16 +153,22 @@ const EnviaUnMensaje = () => {
             <MensajeError>{error3}</MensajeError> 
           </SpanInputContenedor>
         </ContenedorInputs>
+        <MensajeEnviado $activo={enviado}>
+          <AiOutlineCheckCircle/>
+          <span>Mensaje enviado</span>
+        </MensajeEnviado>
         <StyledButton onClick={manejarClick}>Enviar</StyledButton>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
+      estadoAviso={estadoAviso}
+      estadoDenuncia={estadoDenuncia}
+      estadoUNE={estadoUNE}
+      setEstadoUNE={setEstadoUNE}
       setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}/>
-    <VentanaEmergente
-        estadoAviso={estadoAviso}
-        setEstadoAviso={setEstadoAviso}
-        evitarScroll={manejarScroll}/>
+      evitarScroll={manejarScroll}
+      setEstadoDenuncia={setEstadoDenuncia}
+      manejarScroll={manejarScroll}/>
   </>);
 };
 
@@ -179,6 +191,10 @@ const PrincipalContenedor = styled.div`
   @media (min-width: 880px) {
     padding: 30px 0 60px;
   };
+
+  p {
+    font-family: 'Presidencia Fina', sans-serif;
+  };
 `;
 
 const ImagenTextoContenedor = styled.div`
@@ -191,7 +207,6 @@ const ImagenTextoContenedor = styled.div`
 
 const Parrafo = styled.p`
   color: #000000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   min-width: 300px;
   text-align: justify;
@@ -297,7 +312,6 @@ const StyledTextArea = styled.textarea`
 
 const MensajeError = styled.p`
   color: red;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   text-align: center;
 `;
@@ -315,5 +329,24 @@ const StyledButton = styled.button`
 
   &:hover {
     transform: scale(105%);
+  };
+`;
+
+const MensajeEnviado = styled.div`
+  align-items: center;
+  background-color: #00B85D;
+  color: #FFF;
+  border-radius: 25px;
+  display: flex;
+  gap: 15px;
+  height: 50px;
+  ${({ $activo }) => !$activo && ('opacity: 0;')}
+  padding: 0 15px;
+  ${({ $activo }) => !$activo && ('transform: scale(0);')}
+  transition: transform .3s, opacity .3s;
+
+  span {
+    font-family: 'Presidencia Firme', sans-serif;
+    font-size: 1em;
   };
 `;

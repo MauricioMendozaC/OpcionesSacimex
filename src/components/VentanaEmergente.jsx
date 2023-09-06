@@ -120,7 +120,7 @@ const PrincipalContenedor = styled.div`
 `;
 
 const Hoja = styled.div`
-  background-color: #FAFFF7;
+  background-color: #FFF;
   border-radius: 10px;
   height: 100vh;
   max-width: 500px;

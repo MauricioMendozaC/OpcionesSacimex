@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import 'intersection-observer';
 import styled, { css } from 'styled-components';
-import { CiInstagram, CiFacebook, CiTwitter } from 'react-icons/ci';
 import Imagen from './Imagen';
+import VentanaEmergente from '../components/VentanaEmergente';
+import DenunciaAnonima from '../components/DenunciaAnonima';
+import UnidadEspecializada from './UnidadEspecializada';
+import { CiInstagram, CiFacebook, CiTwitter } from 'react-icons/ci';
 import InformacionEntidades from './InformacionEntidades';
 import sacimexLogo from '../assets/img/SacimexLogoBlanco.png';
+import SolicitudAclaracionOpcionesSacimex from '../assets/documents/Solicitud-aclaracion-Opciones-Sacimex.pdf';
 
 const AnimacionEntradaRedes = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +43,7 @@ const AnimacionEntradaRedes = ({ children }) => {
   );
 };
 
-const Footer = ({ setEstadoAviso, evitarScroll }) => {
+const Footer = (props) => {
   const [entidadActivo, setEntidadActivo] = useState(0);
 
   useEffect(() => {
@@ -53,11 +57,21 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
   }, []);
 
   const usarClickAviso = item => {
-    setEstadoAviso(item);
-    evitarScroll(true);
+    props.setEstadoAviso(item);
+    props.evitarScroll(true);
   };
 
-  return(
+  const usarClickDenuncia = () => {
+    props.setEstadoDenuncia(true);
+    props.evitarScroll(true);
+  };
+
+  const usarClickUNE = () => {
+    props.setEstadoUNE(true);
+    props.evitarScroll(true);
+  };
+
+  return(<>
     <PrincipalContenedor>
       <AnimacionEntradaRedes>
         <Redes
@@ -101,9 +115,22 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
           </TextosAcercaDeContenedor>
           <TextosAcercaDeContenedor>
             <TitulosAcercaDe>Aclaraciones</TitulosAcercaDe>
-            <TextoAcercaDe>Formato de aclaración</TextoAcercaDe>
-            <TextoAcercaDe>Unidad Especializada UNE</TextoAcercaDe>
-            <TextoAcercaDe>Denuncia anónima</TextoAcercaDe>
+            <TextoAcercaDe
+              href={SolicitudAclaracionOpcionesSacimex}
+              rel='noopener noreferrer'
+              target='_blank'>
+                Formato de aclaración
+            </TextoAcercaDe>
+            <TextoAcercaDe
+              href='#!'
+              onClick={usarClickUNE}>
+                Unidad Especializada UNE
+            </TextoAcercaDe>
+            <TextoAcercaDe
+              href='#!'
+              onClick={usarClickDenuncia}>
+                Denuncia anónima
+            </TextoAcercaDe>
           </TextosAcercaDeContenedor>
       </AcercaDeContenedor>
       <StyledDiv>
@@ -180,7 +207,19 @@ const Footer = ({ setEstadoAviso, evitarScroll }) => {
       <InformacionEntidades
         entidadActivo={entidadActivo}/>
     </PrincipalContenedor>
-  );
+    <VentanaEmergente
+      estadoAviso={props.estadoAviso}
+      setEstadoAviso={props.setEstadoAviso}
+      evitarScroll={props.manejarScroll}/>
+    <DenunciaAnonima
+      estadoDenuncia={props.estadoDenuncia}
+      setEstadoDenuncia={props.setEstadoDenuncia}
+      evitarScroll={props.manejarScroll}/>
+    <UnidadEspecializada
+      estadoUNE={props.estadoUNE}
+      setEstadoUNE={props.setEstadoUNE}
+      evitarScroll={props.manejarScroll}/>
+  </>);
 };
 
 export default Footer;

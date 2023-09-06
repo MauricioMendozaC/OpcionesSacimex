@@ -110,6 +110,10 @@ const InfoExtraContenedor = styled.div`
   transform: translateY(${({ $visible }) => $visible ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
+
+  p {
+    font-family: 'Presidencia Fina', sans-serif;
+  };
 `;
 
 const SubTitulo = styled.h3`
@@ -119,7 +123,6 @@ const SubTitulo = styled.h3`
 `;
 
 const Texto = styled.p`
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: justify;
   width: 90%;
@@ -138,7 +141,6 @@ const ImagenContenedor = styled.div`
 `;
 
 const MisionVisionTexto = styled.p`
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: justify;
   width: 70%;

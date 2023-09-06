@@ -6,7 +6,6 @@ import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
 import Boton from '../components/Boton';
 import Footer from '../components/Footer';
-import VentanaEmergente from '../components/VentanaEmergente';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import paso1 from '../assets/img/Paso1.png';
 import paso2 from '../assets/img/Paso2.png';
@@ -17,6 +16,8 @@ const SolicitaCredito  = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
   const [estadoAviso, setEstadoAviso] = useState(null);
+  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
+  const [estadoUNE, setEstadoUNE] = useState(false);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -90,12 +91,14 @@ const SolicitaCredito  = () => {
     </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
+      estadoAviso={estadoAviso}
+      estadoDenuncia={estadoDenuncia}
+      estadoUNE={estadoUNE}
+      setEstadoUNE={setEstadoUNE}
       setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}/>
-    <VentanaEmergente
-        estadoAviso={estadoAviso}
-        setEstadoAviso={setEstadoAviso}
-        evitarScroll={manejarScroll}/>
+      evitarScroll={manejarScroll}
+      setEstadoDenuncia={setEstadoDenuncia}
+      manejarScroll={manejarScroll}/>
   </>);
 };
 

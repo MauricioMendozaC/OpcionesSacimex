@@ -8,12 +8,13 @@ import Productos from '../components/Inicio/Productos';
 import Conocenos from '../components/Inicio/Conocenos';
 import Sucursales from '../components/Inicio/Contacto';
 import Footer from '../components/Footer';
-import VentanaEmergente from '../components/VentanaEmergente';
 
 const Inicio = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
   const [estadoAviso, setEstadoAviso] = useState(null);
+  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
+  const [estadoUNE, setEstadoUNE] = useState(false);
 
   const id = useParams();
 
@@ -23,9 +24,9 @@ const Inicio = () => {
     if(elemento) {
 
       elemento.scrollIntoView({
-        behavior: 'smooth', // Puedes ajustar el comportamiento de desplazamiento
-        block: 'start',     // Ajusta la alineación vertical del elemento ('start', 'center', 'end', o 'nearest')
-        inline: 'nearest'   // Ajusta la alineación horizontal del elemento ('start', 'center', 'end', o 'nearest')
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
       });
     };
   };
@@ -58,12 +59,14 @@ const Inicio = () => {
       <Conocenos/>
       <Sucursales/>
       <Footer
-          setEstadoAviso={setEstadoAviso}
-          evitarScroll={manejarScroll}/>
-      <VentanaEmergente
         estadoAviso={estadoAviso}
+        estadoDenuncia={estadoDenuncia}
+        estadoUNE={estadoUNE}
+        setEstadoUNE={setEstadoUNE}
         setEstadoAviso={setEstadoAviso}
-        evitarScroll={manejarScroll}/>
+        evitarScroll={manejarScroll}
+        setEstadoDenuncia={setEstadoDenuncia}
+        manejarScroll={manejarScroll}/>
     </PrincipalContenedor>
   </>);
 }

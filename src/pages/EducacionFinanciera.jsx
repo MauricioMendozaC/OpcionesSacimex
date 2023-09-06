@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
 import Footer from '../components/Footer';
-import VentanaEmergente from '../components/VentanaEmergente';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import ImagenEducacion from '../assets/img/EducacionFinanciera.jpg';
 import PreviewInclusionFinancieraDeLasMujeres from '../assets/img/PreviewInclusionFinancieraDeLasMujeres.jpg';
@@ -19,6 +18,8 @@ const EducacionFinanciera = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
   const [estadoAviso, setEstadoAviso] = useState(null);
+  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
+  const [estadoUNE, setEstadoUNE] = useState(false);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -111,12 +112,14 @@ const EducacionFinanciera = () => {
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
+      estadoAviso={estadoAviso}
+      estadoDenuncia={estadoDenuncia}
+      estadoUNE={estadoUNE}
+      setEstadoUNE={setEstadoUNE}
       setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}/>
-    <VentanaEmergente
-        estadoAviso={estadoAviso}
-        setEstadoAviso={setEstadoAviso}
-        evitarScroll={manejarScroll}/>
+      evitarScroll={manejarScroll}
+      setEstadoDenuncia={setEstadoDenuncia}
+      manejarScroll={manejarScroll}/>
   </>);
 };
 

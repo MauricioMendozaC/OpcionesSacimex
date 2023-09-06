@@ -11,6 +11,7 @@ import Servicios from './pages/Servicios';
 import RedDeProfesionales from './pages/RedDeProfesionales';
 import HistoriasDeExito from './pages/HistoriasDeExito';
 import EnviaUnMensaje from './pages/EnviaUnMensaje';
+import BolsaDeTrabajo from './pages/BolsaDeTrabajo';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/RedDeProfesionales' element={<RedDeProfesionales/>}/>
         <Route path='/HistoriasDeExito' element={<HistoriasDeExito/>}/>
         <Route path='/EnviaUnMensaje' element={<EnviaUnMensaje/>}/>
+        <Route path='/OportunidadesDeCarrera' element={<BolsaDeTrabajo/>}/>
       </Routes>
     </Router>
   );

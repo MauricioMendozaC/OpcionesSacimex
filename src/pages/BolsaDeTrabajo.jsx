@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
-import Titulo from '../components/Titulo'
+import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
 import Footer from '../components/Footer';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
-import Constructor from '../assets/img/Constructor.svg';
+import OportunidadesDeCarrera from '../assets/img/OportunidadesDeCarrera.svg';
 
-const HistoriasDeExito = () => {
+const BolsaDeTrabajo = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
   const [estadoAviso, setEstadoAviso] = useState(null);
@@ -29,7 +29,7 @@ const HistoriasDeExito = () => {
       <meta
         name='description'
         content='¿Necesitas un experto en construcción, diseño, reparaciones o más? ¡Estás en el lugar adecuado!'/>
-      <title>Opciones Sacimex - Red de profesionales</title>
+      <title>Opciones Sacimex - Oportunidades de carrera</title>
     </Helmet>
     <Header
       mostrarAnimaciones={mostrarAnimaciones}
@@ -37,17 +37,20 @@ const HistoriasDeExito = () => {
       barraVerde/>
     <CentrarPrincipalContenedor>
       <PrincipalContenedor $mostrarAnimaciones={mostrarAnimaciones}>
-        <Titulo texto='Historias de éxito'/>
+        <Titulo texto='Oportunidades'/>
         <ImagenTextoContenedor>
+          <ContenedorTextos>
+            <Parrafo>Explora nuestras oportunidades y únete a nosotros en el camino hacia el éxito mutuo. Tu 
+            próximo paso profesional comienza aquí.</Parrafo>
+            <StyledH4>Si te interesa alguna de nuestras oportunidades laborales, por favor comunícate con nuestro equipo de 
+            Desarrollo Humano.</StyledH4>
+            <BotonDesarrolloHumano href='/EnviaUnMensaje'>Envía un mensaje</BotonDesarrolloHumano>
+          </ContenedorTextos>
           <Imagen
             tamano='300px'
-            imagen={Constructor}
-            alt='Oficios y profesiones'/>
-          <Parrafo>En <b>Opciones Sacimex</b>, creemos que cada trayectoria es un testimonio valioso. Por eso compartimos los 
-          logros alcanzados por nuestros clientes a través del tiempo. Únete a nosotros para celebrar estos 
-          triunfos y descubrir la inspiración que yace en cada camino recorrido.</Parrafo>
+            imagen={OportunidadesDeCarrera}/>
         </ImagenTextoContenedor>
-        <StyledH4>Pronto podrás encontrar tu historia aquí.</StyledH4>
+        <iframe title='w' src="https://docs.google.com/document/d/e/2PACX-1vQmO2z78J0fjh9FU6IGCjEMVChAtX3a3ErKLDye3-XtirdXd4EJRyrBwKMOn3LvsSNaJdblNv-inQYZ/pub?embedded=true"></iframe>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
@@ -62,7 +65,7 @@ const HistoriasDeExito = () => {
   </>);
 };
 
-export default HistoriasDeExito;
+export default BolsaDeTrabajo;
 
 const PrincipalContenedor = styled.div`
   align-items: center;
@@ -81,6 +84,16 @@ const PrincipalContenedor = styled.div`
   @media (min-width: 880px) {
     padding: 30px 0 60px;
   };
+
+  p {
+    font-family: 'Presidencia Fina', sans-serif;
+  };
+
+  iframe {
+    border: none;
+    height: 500px;
+    width: 100%;
+  };
 `;
 
 const ImagenTextoContenedor = styled.div`
@@ -91,13 +104,20 @@ const ImagenTextoContenedor = styled.div`
   justify-content: center;
 `;
 
+const ContenedorTextos = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 300px;
+  width: calc(100% - 310px);
+`;
+
 const Parrafo = styled.p`
   color: #000000;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 1em;
-  min-width: 300px;
+  font-size: 1.125em;
   text-align: justify;
-  width: calc(100% - 310px);
+  width: 100%;
 
   b {
     color: #005520;
@@ -110,5 +130,22 @@ const StyledH4 = styled.h4`
   font-size: 1.25em;
   letter-spacing: 1px;
   text-align: center;
-  width: 90%;
+  width: 100%;
+`;
+
+const BotonDesarrolloHumano = styled.a`
+  background-color: #F5A200;
+  border: none;
+  border-radius: 5px;
+  color: #004410;
+  cursor: pointer;
+  font-family: 'Presidencia Firme';
+  font-size: 1em;
+  padding: 9px 18px;
+  text-decoration: none;
+  transition: transform .3s;
+  
+  &:hover {
+    transform: scale(105%);
+  };
 `;

@@ -11,8 +11,6 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [linkDesplegado, setLinkDesplegado] = useState(null);
 
-  const id = 'si';
-
   const usarMenu = checked => {
     setIsChecked(checked);
     evitarScroll(checked);
@@ -125,7 +123,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                    {linkDesplegado === 4 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 4}>
-                  <a>Oportunidades de carrera</a>
+                  <a href='/OportunidadesDeCarrera'>Oportunidades de carrera</a>
                   <a href='/EnviaUnMensaje'>Contacta con Desarrollo Humano</a>
                 </SubLinksContenedor>
               </LinkDesplegable>
@@ -282,17 +280,17 @@ const SubLinksContenedor = styled.div`
     border-radius: 20px;
     color: #257140;
     cursor: pointer;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 1em;
-  padding: 7px 20px;
-  text-decoration: none;
-  transition: background .1s, color .1s;
-  width: auto;
+    font-family: 'Presidencia Fina', sans-serif;
+    font-size: 1em;
+    padding: 7px 20px;
+    text-decoration: none;
+    transition: background .1s, color .1s;
+    width: auto;
 
-  &:hover {
-    background-color: #257140;
-    color: #FFFFFF;
-  };
+    &:hover {
+      background-color: #257140;
+      color: #FFFFFF;
+    };
   };
 `;
 
@@ -313,9 +311,10 @@ const Opacidad = styled.div`
   backdrop-filter: blur(3px);
   background-color: rgba(32, 32, 32, 0.5);
   height: calc(100vh - 60px);
-  left: ${({ $checked }) => $checked ? '500px' : '-100%'};
+  opacity: ${({ $checked }) => $checked ? '1' : '0'};
   position: fixed;
+  right: ${({ $checked }) => $checked ? '0' : 'calc(0px - 100vw)'};
   top: 60px;
-  transition: left .3s;
+  transition: right .3s, opacity .3s;
   width: calc(100vw - 500px);
 `;

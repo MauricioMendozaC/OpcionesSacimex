@@ -5,13 +5,14 @@ import Header from '../components/Header';
 import Titulo from '../components/Titulo';
 import Logo from '../components/Servicios/Logo';
 import Footer from '../components/Footer';
-import VentanaEmergente from '../components/VentanaEmergente'; 
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 
 const Servicios = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
   const [estadoAviso, setEstadoAviso] = useState(null);
+  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
+  const [estadoUNE, setEstadoUNE] = useState(false);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -206,12 +207,14 @@ const Servicios = () => {
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
+      estadoAviso={estadoAviso}
+      estadoDenuncia={estadoDenuncia}
+      estadoUNE={estadoUNE}
+      setEstadoUNE={setEstadoUNE}
       setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}/>
-    <VentanaEmergente
-        estadoAviso={estadoAviso}
-        setEstadoAviso={setEstadoAviso}
-        evitarScroll={manejarScroll}/>
+      evitarScroll={manejarScroll}
+      setEstadoDenuncia={setEstadoDenuncia}
+      manejarScroll={manejarScroll}/>
   </>);
 };
 
