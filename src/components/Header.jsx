@@ -39,7 +39,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
         href='/Inicio'
         $mostrarAnimaciones={mostrarAnimaciones}>
           <Imagen
-            tamano='120px'
+            tamano='210px'
             imagen={barraVerde ? (sacimexLogoBlanco) : (sacimexLogo)}
             alt='Sacimex Logo'
             extras={imagenMediaQuery}/>
@@ -124,7 +124,6 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 4}>
                   <a href='/OportunidadesDeCarrera'>Oportunidades de carrera</a>
-                  <a href='/EnviaUnMensaje'>Contacta con Desarrollo Humano</a>
                 </SubLinksContenedor>
               </LinkDesplegable>
             </LinksContenedor>
@@ -146,7 +145,7 @@ export default Header;
 
 const imagenMediaQuery = `
   @media (min-width: 768px) {
-    width: 150px;
+    width: 210px;
   };
 `;
 
@@ -155,7 +154,7 @@ const PrincipalContenedor = styled.header`
   background: ${({ $barraVerde }) => $barraVerde ? '#257140' : '#FFFFFF'};
   border-bottom: 1px solid ${({ $barraVerde }) => $barraVerde ? '#005520' : '#CCCCCC'};
   display: flex;
-  height: 60px;
+  height: 70px;
   justify-content: space-between;
   left: 0;
   padding: 0 20px;
@@ -222,13 +221,13 @@ const BarraNavegacion = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 70px);
   justify-content: flex-start;
   left: ${({ $checked }) => $checked ? '0' : '-100%'};
   max-width: 500px;
   padding: 30px;
   position: fixed;
-  top: 60px;
+  top: 70px;
   transition:  left 0.3s ease-out;
   width: 100vw;
   z-index: 100;
@@ -310,11 +309,11 @@ const BotonContenedor = styled.div`
 const Opacidad = styled.div`
   backdrop-filter: blur(3px);
   background-color: rgba(32, 32, 32, 0.5);
-  height: calc(100vh - 60px);
+  height: calc(100vh - 70px);
   opacity: ${({ $checked }) => $checked ? '1' : '0'};
   position: fixed;
   right: ${({ $checked }) => $checked ? '0' : 'calc(0px - 100vw)'};
-  top: 60px;
+  top: 70px;
   transition: right .3s, opacity .3s;
   width: calc(100vw - 500px);
 `;

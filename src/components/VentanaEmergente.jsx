@@ -14,8 +14,7 @@ const AvisoPrivacidad = ({ estadoAviso, setEstadoAviso, evitarScroll }) => {
         <Hoja
           $mostrarAviso={estadoAviso}>
             <BotonCerrarPosicionador>
-              <BotonCerrarContenedor
-                onClick={usarClickCerrar}>
+              <BotonCerrarContenedor onClick={usarClickCerrar}>
                   <AiFillCloseCircle/>
               </BotonCerrarContenedor>
             </BotonCerrarPosicionador>
@@ -119,18 +118,6 @@ const PrincipalContenedor = styled.div`
   z-index: 101;
 `;
 
-const Hoja = styled.div`
-  background-color: #FFF;
-  border-radius: 10px;
-  height: 100vh;
-  max-width: 500px;
-  opacity: ${({ $mostrarAviso }) => $mostrarAviso ? '1' : '0'};
-  overflow: auto;
-  position: relative;
-  transition: opacity .3s;
-  width: 100%;
-`;
-
 const BotonCerrarPosicionador = styled.div`
   background: linear-gradient(180deg, rgba(250,255,247,1) 0%, rgba(250,255,247,1) 65%, rgba(250,255,247,0) 100%);
   border-radius: 10px;
@@ -202,5 +189,17 @@ const Lista = styled.ul`
   list-style-type: disc;
   padding-left: 20px;
   text-align: justify;
+  width: 100%;
+`;
+
+const Hoja = styled.div`
+  background-color: #FFF;
+  border-radius: 10px;
+  height: 100vh;
+  max-width: 500px;
+  opacity: ${({ $mostrarAviso }) => $mostrarAviso ? '1' : '0'};
+  overflow: auto;
+  position: relative;
+  transition: opacity .3s;
   width: 100%;
 `;

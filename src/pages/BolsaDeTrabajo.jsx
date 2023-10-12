@@ -4,9 +4,12 @@ import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
+import Vacantes from '../components/OportunidadesDeCarrera/Vacantes';
+import InfoVacante from '../components/OportunidadesDeCarrera/InfoVacante';
 import Footer from '../components/Footer';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import OportunidadesDeCarrera from '../assets/img/OportunidadesDeCarrera.svg';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 const BolsaDeTrabajo = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
@@ -14,6 +17,16 @@ const BolsaDeTrabajo = () => {
   const [estadoAviso, setEstadoAviso] = useState(null);
   const [estadoDenuncia, setEstadoDenuncia] = useState(false);
   const [estadoUNE, setEstadoUNE] = useState(false);
+  const [estadoInfoVacantes, setInfoVacantes] = useState(false);
+  const [vacanteActiva, setVacanteActiva] = useState(0);
+  const [vacantes, setVacantes] = useState([]);
+  const [infoMostrada, setInfoMostrada] = useState(1);
+
+  useEffect(() => {
+    fetch('./json/datosVacantes.json')
+      .then( res => res.json() )
+        .then( res => setVacantes(res) )
+  }, []);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -28,7 +41,7 @@ const BolsaDeTrabajo = () => {
     <Helmet>
       <meta
         name='description'
-        content='¿Necesitas un experto en construcción, diseño, reparaciones o más? ¡Estás en el lugar adecuado!'/>
+        content='Explora nuestras oportunidades de trabajo y únete a nosotros en el camino hacia el éxito mutuo.'/>
       <title>Opciones Sacimex - Oportunidades de carrera</title>
     </Helmet>
     <Header
@@ -42,17 +55,34 @@ const BolsaDeTrabajo = () => {
           <ContenedorTextos>
             <Parrafo>Explora nuestras oportunidades y únete a nosotros en el camino hacia el éxito mutuo. Tu 
             próximo paso profesional comienza aquí.</Parrafo>
-            <StyledH4>Si te interesa alguna de nuestras oportunidades laborales, por favor comunícate con nuestro equipo de 
-            Desarrollo Humano.</StyledH4>
-            <BotonDesarrolloHumano href='/EnviaUnMensaje'>Envía un mensaje</BotonDesarrolloHumano>
           </ContenedorTextos>
           <Imagen
             tamano='300px'
             imagen={OportunidadesDeCarrera}/>
         </ImagenTextoContenedor>
-        <iframe title='w' src="https://docs.google.com/document/d/e/2PACX-1vQmO2z78J0fjh9FU6IGCjEMVChAtX3a3ErKLDye3-XtirdXd4EJRyrBwKMOn3LvsSNaJdblNv-inQYZ/pub?embedded=true"></iframe>
+        <Vacantes
+          vacantes={vacantes}
+          setInfoVacantes={setInfoVacantes}
+          setVacanteActiva={setVacanteActiva}/>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
+    <Hoja $mostrar={estadoInfoVacantes}>
+      <BotonCerrarPosicionador>
+        <BotonCerrarContenedor onClick={() => {setInfoVacantes(false); setInfoMostrada(1)}}>
+          <AiFillCloseCircle/>
+        </BotonCerrarContenedor>
+      </BotonCerrarPosicionador>
+      <DegradadoFinal/>
+      <ContenedorTexto>
+        <InfoVacante
+          info={vacantes[vacanteActiva]}
+          infoMostrada={infoMostrada}
+          setInfoMostrada={setInfoMostrada}/>
+      </ContenedorTexto>
+    </Hoja>
+    <Opacidad
+      $mostrar={estadoInfoVacantes}
+      onClick={() => {setInfoVacantes(false); setInfoMostrada(1)}}/>
     <Footer
       estadoAviso={estadoAviso}
       estadoDenuncia={estadoDenuncia}
@@ -124,28 +154,69 @@ const Parrafo = styled.p`
   };
 `;
 
-const StyledH4 = styled.h4`
-  color: #00632F;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 1.25em;
-  letter-spacing: 1px;
-  text-align: center;
+const Hoja = styled.div`
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  height: 100vh;
+  left: ${({ $mostrar }) => $mostrar ? '0' : '-500px'};
+  max-width: 500px;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  transition: left .3s;
+  width: 100%;
+  z-index: 120;
+`;
+
+const BotonCerrarPosicionador = styled.div`
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%);
+  border-radius: 10px;
+  display: grid;
+  height: 40px;
+  max-width: 500px;
+  padding-right: 15px;
+  place-items: center end;
+  position: fixed;
+  top: 0;
   width: 100%;
 `;
 
-const BotonDesarrolloHumano = styled.a`
-  background-color: #F5A200;
+const BotonCerrarContenedor = styled.button`
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
-  color: #004410;
+  color: #888;
   cursor: pointer;
-  font-family: 'Presidencia Firme';
-  font-size: 1em;
-  padding: 9px 18px;
-  text-decoration: none;
-  transition: transform .3s;
-  
-  &:hover {
-    transform: scale(105%);
-  };
+  font-size: 16px;
+`;
+
+const DegradadoFinal = styled.div`
+  background: linear-gradient(0, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%);
+  border-radius: 0 0 10px 10px;
+  bottom: 0;
+  height: 40px;
+  max-width: 500px;
+  position: fixed;
+  width: 100%;
+`;
+
+const Opacidad = styled.div`
+  background-color: rgba(52, 58, 64, 0.6);
+  height: 100vh;
+  left: 0;
+  opacity: ${({ $mostrar }) => $mostrar ? '1' : '0'};
+  position: fixed;
+  top: 0;
+  transform: scale(${({ $mostrar }) => $mostrar ? '100%' : '0'});
+  transition: opacity .3s;
+  width: 100%;
+  z-index: 110;
+`;
+
+const ContenedorTexto = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
+  width: 100%;
 `;
