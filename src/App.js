@@ -38,8 +38,8 @@ const App = () => {
 const RedireccionarAInicio = () => {
   var URLactual = window.location;
 
-  if(URLactual.href === 'https://web.opcionessacimex.com/'){
-    window.location.replace('https://web.opcionessacimex.com/Inicio');
+  if(URLactual.href === 'https://opcionessacimex.com/'){
+    window.location.replace('https://opcionessacimex.com/Inicio');
   };
 };
 
