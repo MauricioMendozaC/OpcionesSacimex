@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-const Vacantes = ({ vacantes, setInfoVacantes, setVacanteActiva }) => {
-
-  const displayInformation = index => {
-    setInfoVacantes(true);
-    setVacanteActiva(index);
-  };
+const Vacantes = ({ vacantes, setWindowState, setVacanteSeleccionada }) => {
 
   return(<>
     {vacantes && vacantes.map((item, index) => (
@@ -17,7 +12,7 @@ const Vacantes = ({ vacantes, setInfoVacantes, setVacanteActiva }) => {
           ))}
         </ul>
         <VerMas>
-          <button onClick={() => displayInformation(index)}>Ver más...</button>
+          <button onClick={() => {setWindowState(4); setVacanteSeleccionada(index)}}>Ver más...</button>
         </VerMas>
       </Vacante>)
     ))}

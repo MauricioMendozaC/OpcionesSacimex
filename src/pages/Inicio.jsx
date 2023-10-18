@@ -8,13 +8,12 @@ import Productos from '../components/Inicio/Productos';
 import Conocenos from '../components/Inicio/Conocenos';
 import Sucursales from '../components/Inicio/Contacto';
 import Footer from '../components/Footer';
+import Ventana from '../components/Ventana';
+import { BloquearScroll } from '../utils/estilosPages';
 
 const Inicio = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
-  const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
+  const [windowState, setWindowState] = useState(null);
 
   const id = useParams();
 
@@ -36,12 +35,9 @@ const Inicio = () => {
     ScrollAutomatico(id);
   },[]);
 
-  const manejarScroll = (estado) => {
-    setEvitarScroll(estado);
-  };
-
   return (<>
-    <GlobalStyle $evitarScroll={evitarScroll}/>
+    <GlobalStyle/>
+    <BloquearScroll $evitarScroll={windowState}/>
     <Helmet>
       <meta
         name='description'
@@ -51,22 +47,17 @@ const Inicio = () => {
     </Helmet>
     <PrincipalContenedor>
       <Header
-        mostrarAnimaciones={mostrarAnimaciones}
-        evitarScroll={manejarScroll}/>
+        mostrarAnimaciones={mostrarAnimaciones}/>
       <Presentacion
         mostrarAnimaciones={mostrarAnimaciones}/>            
       <Productos/>
       <Conocenos/>
       <Sucursales/>
       <Footer
-        estadoAviso={estadoAviso}
-        estadoDenuncia={estadoDenuncia}
-        estadoUNE={estadoUNE}
-        setEstadoUNE={setEstadoUNE}
-        setEstadoAviso={setEstadoAviso}
-        evitarScroll={manejarScroll}
-        setEstadoDenuncia={setEstadoDenuncia}
-        manejarScroll={manejarScroll}/>
+        setWindowState={setWindowState}/>
+      <Ventana
+        windowState={windowState}
+        setWindowState={setWindowState}/>
     </PrincipalContenedor>
   </>);
 }
@@ -94,7 +85,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: repeating-linear-gradient( -45deg, #257140, #257140 2px, #00632F 2px, #00632F 10px );
     font-size: 20px;
-    ${({ $evitarScroll }) => $evitarScroll && ('overflow: hidden;overscroll-behavior: none;')}
   } 
 `;
 

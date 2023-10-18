@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import 'intersection-observer';
 import styled from "styled-components";
 
-const AnimacionEntradaBoton = ({ children, referencia, sacialianza }) => {
+const AnimacionEntradaBoton = ({ children, referencia, amarillo, newBlank }) => {
   const [isVisible, setIsVisible] = useState(false);
   const targetRef = useRef(null);
 
@@ -27,21 +27,23 @@ const AnimacionEntradaBoton = ({ children, referencia, sacialianza }) => {
 
   return (
     <PrincipalContenedor
+      target={newBlank && ('_blank')}
+      rel={newBlank && ('noopener noreferrer')}
       $visible={isVisible}
       href={referencia}
-      $sacialianza={sacialianza}
-      $verde={true}
+      $amarillo={amarillo}
       ref={targetRef}>
         {children}
     </PrincipalContenedor>
   );
 };
 
-const Boton = ({ texto, referencia, sacialianza }) => {
+const Boton = ({ texto, referencia, amarillo, newBlank }) => {
   return(
     <AnimacionEntradaBoton 
       referencia={referencia}
-      sacialianza={sacialianza}>
+      amarillo={amarillo}
+      newBlank={newBlank}>
         {texto}
     </AnimacionEntradaBoton>
   );
@@ -50,9 +52,9 @@ const Boton = ({ texto, referencia, sacialianza }) => {
 export default Boton;
 
 const PrincipalContenedor = styled.a`
-  background-color: ${({ $sacialianza }) => $sacialianza ? '#F5A200' : '#257140'};
+  background-color: ${({ $amarillo }) => $amarillo ? '#F5A200' : '#257140'};
   border-radius: 3px;
-  color: ${({ $sacialianza }) => $sacialianza ? '#005217' : '#FFFFFF'};
+  color: ${({ $amarillo }) => $amarillo ? '#005217' : '#FFFFFF'};
   cursor: pointer;
   font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;
@@ -64,6 +66,6 @@ const PrincipalContenedor = styled.a`
   transition: background .2s, opacity 2s, transform 2s;
 
   &:hover {
-    background-color: ${({ $sacialianza }) => $sacialianza ? '#D38000' : '#005520;'}
+    background-color: ${({ $amarillo }) => $amarillo ? '#D38000' : '#005520;'}
   };
 `;

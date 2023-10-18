@@ -11,7 +11,6 @@ export const EstilosGlobales = createGlobalStyle`
   body {
     background-color: ${({ $fondoGris }) => $fondoGris ? '#DDDDDD' : '#FFFFFF'};
     font-size: 20px;
-    ${({ $evitarScroll }) => $evitarScroll && ('overflow: hidden;overscroll-behavior: none;')}
   };
 
   @font-face {
@@ -23,6 +22,12 @@ export const EstilosGlobales = createGlobalStyle`
     font-family: 'Presidencia Firme';
     src: url('/fonts/PresidenciaFirme.otf') format('truetype');
   }
+`;
+
+export const BloquearScroll = createGlobalStyle`
+  body {
+    ${({ $evitarScroll }) => $evitarScroll && ('overflow: hidden;overscroll-behavior: none;')}
+  };
 `;
 
 export const CentrarPrincipalContenedor = styled.section`

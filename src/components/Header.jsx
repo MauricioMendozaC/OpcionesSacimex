@@ -4,27 +4,24 @@ import { Link } from 'react-scroll';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import Imagen from './Imagen';
 import Boton from './Boton';
+import { BloquearScroll } from '../utils/estilosPages';
 import sacimexLogo from '../assets/img/SacimexLogo.png';
 import sacimexLogoBlanco from '../assets/img/SacimexLogoBlanco.png';
 
-const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
+const Header = ({ mostrarAnimaciones, barraVerde }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [linkDesplegado, setLinkDesplegado] = useState(null);
-
-  const usarMenu = checked => {
-    setIsChecked(checked);
-    evitarScroll(checked);
-  };
 
   const usarLinks = item => {
     item === linkDesplegado ? setLinkDesplegado(null) : setLinkDesplegado(item);
   };
 
-  return(
+  return(<>
+    <BloquearScroll $evitarScroll={isChecked}/>
     <PrincipalContenedor $barraVerde={barraVerde}>
         <BotonHamburguesa
           $mostrarAnimaciones={mostrarAnimaciones}
-          onClick={() => usarMenu(!isChecked)}>
+          onClick={() => setIsChecked(!isChecked)}>
             <Linea
               $linea1={true}
               $checked={isChecked} $barraVerde={barraVerde}/>
@@ -75,7 +72,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                       smooth={true}
                       duration={500}
                       offset={-100}
-                      onClick={() => usarMenu(false)}>
+                      onClick={() => setIsChecked(false)}>
                         Quiénes somos
                     </Link>
                     <Link
@@ -83,7 +80,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                       smooth={true}
                       duration={500}
                       offset={-100}
-                      onClick={() => usarMenu(false)}>
+                      onClick={() => setIsChecked(false)}>
                         Filosofía y valores
                     </Link>
                     <Link
@@ -91,7 +88,7 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
                       smooth={true}
                       duration={500}
                       offset={-100}
-                      onClick={() => usarMenu(false)}>
+                      onClick={() => setIsChecked(false)}>
                         Ubicación y contacto
                     </Link>
                   </>)}
@@ -131,14 +128,14 @@ const Header = ({ mostrarAnimaciones, evitarScroll, barraVerde }) => {
               <Boton
                 referencia='/SaciAlianza'
                 texto='Saci-Alianza'
-                sacialianza/>
+                amarillo/>
             </BotonContenedor>
         </BarraNavegacion>
         <Opacidad
           $checked={isChecked}
-          onClick={() => usarMenu(false)}/>
+          onClick={() => setIsChecked(false)}/>
     </PrincipalContenedor>
-  );
+  </>);
 };
 
 export default Header;

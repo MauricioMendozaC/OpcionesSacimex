@@ -6,11 +6,9 @@ import CreditoGrupal from './pages/CreditoGrupal';
 import CreditoIndividual from './pages/CreditoIndividual';
 import Comisiones from './pages/Comisiones';
 import EducacionFinanciera from './pages/EducacionFinanciera';
-/*import RastreaTusCentavos from './pages/RastreaTusCentavos';*/
 import Servicios from './pages/Servicios';
 import RedDeProfesionales from './pages/RedDeProfesionales';
 import HistoriasDeExito from './pages/HistoriasDeExito';
-import EnviaUnMensaje from './pages/EnviaUnMensaje';
 import BolsaDeTrabajo from './pages/BolsaDeTrabajo';
 
 const App = () => {
@@ -24,11 +22,9 @@ const App = () => {
         <Route path='/CreditoIndividual' element={<CreditoIndividual/>}/>
         <Route path='/Comisiones' element={<Comisiones/>}/>
         <Route path='/EducacionFinanciera' element={<EducacionFinanciera/>}/>
-        {/*<Route path='/EducacionFinanciera/RastreaTusCentavos' element={<RastreaTusCentavos/>}/>*/}
         <Route path='/Servicios' element={<Servicios/>}/>
         <Route path='/RedDeProfesionales' element={<RedDeProfesionales/>}/>
         <Route path='/HistoriasDeExito' element={<HistoriasDeExito/>}/>
-        <Route path='/EnviaUnMensaje' element={<EnviaUnMensaje/>}/>
         <Route path='/OportunidadesDeCarrera' element={<BolsaDeTrabajo/>}/>
       </Routes>
     </Router>

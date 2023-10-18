@@ -5,22 +5,16 @@ import Header from '../components/Header';
 import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
 import Vacantes from '../components/OportunidadesDeCarrera/Vacantes';
-import InfoVacante from '../components/OportunidadesDeCarrera/InfoVacante';
 import Footer from '../components/Footer';
-import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
+import Ventana from '../components/Ventana';
+import { EstilosGlobales, CentrarPrincipalContenedor, BloquearScroll } from '../utils/estilosPages';
 import OportunidadesDeCarrera from '../assets/img/OportunidadesDeCarrera.svg';
-import { AiFillCloseCircle } from 'react-icons/ai';
 
 const BolsaDeTrabajo = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
-  const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
-  const [estadoInfoVacantes, setInfoVacantes] = useState(false);
-  const [vacanteActiva, setVacanteActiva] = useState(0);
+  const [windowState, setWindowState] = useState(null);
   const [vacantes, setVacantes] = useState([]);
-  const [infoMostrada, setInfoMostrada] = useState(1);
+  const [vacanteSeleccionada, setVacanteSeleccionada] = useState(null);
 
   useEffect(() => {
     fetch('./json/datosVacantes.json')
@@ -32,12 +26,9 @@ const BolsaDeTrabajo = () => {
     setMostrarAnimaciones(true);
   },[]);
 
-  const manejarScroll = (estado) => {
-    setEvitarScroll(estado);
-  };
-
   return(<>
-    <EstilosGlobales $evitarScroll={evitarScroll}/>
+    <EstilosGlobales/>
+    <BloquearScroll $evitarScroll={windowState}/>
     <Helmet>
       <meta
         name='description'
@@ -46,7 +37,6 @@ const BolsaDeTrabajo = () => {
     </Helmet>
     <Header
       mostrarAnimaciones={mostrarAnimaciones}
-      evitarScroll={manejarScroll}
       barraVerde/>
     <CentrarPrincipalContenedor>
       <PrincipalContenedor $mostrarAnimaciones={mostrarAnimaciones}>
@@ -62,36 +52,17 @@ const BolsaDeTrabajo = () => {
         </ImagenTextoContenedor>
         <Vacantes
           vacantes={vacantes}
-          setInfoVacantes={setInfoVacantes}
-          setVacanteActiva={setVacanteActiva}/>
+          setWindowState={setWindowState}
+          setVacanteSeleccionada={setVacanteSeleccionada}/>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
-    <Hoja $mostrar={estadoInfoVacantes}>
-      <BotonCerrarPosicionador>
-        <BotonCerrarContenedor onClick={() => {setInfoVacantes(false); setInfoMostrada(1)}}>
-          <AiFillCloseCircle/>
-        </BotonCerrarContenedor>
-      </BotonCerrarPosicionador>
-      <DegradadoFinal/>
-      <ContenedorTexto>
-        <InfoVacante
-          info={vacantes[vacanteActiva]}
-          infoMostrada={infoMostrada}
-          setInfoMostrada={setInfoMostrada}/>
-      </ContenedorTexto>
-    </Hoja>
-    <Opacidad
-      $mostrar={estadoInfoVacantes}
-      onClick={() => {setInfoVacantes(false); setInfoMostrada(1)}}/>
     <Footer
-      estadoAviso={estadoAviso}
-      estadoDenuncia={estadoDenuncia}
-      estadoUNE={estadoUNE}
-      setEstadoUNE={setEstadoUNE}
-      setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}
-      setEstadoDenuncia={setEstadoDenuncia}
-      manejarScroll={manejarScroll}/>
+      setWindowState={setWindowState}/>
+    <Ventana
+      windowState={windowState}
+      setWindowState={setWindowState}
+      vacanteSeleccionada={vacanteSeleccionada}
+      vacantes={vacantes}/>
   </>);
 };
 

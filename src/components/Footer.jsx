@@ -2,9 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import 'intersection-observer';
 import styled, { css } from 'styled-components';
 import Imagen from './Imagen';
-import VentanaEmergente from '../components/VentanaEmergente';
-import DenunciaAnonima from '../components/DenunciaAnonima';
-import UnidadEspecializada from './UnidadEspecializada';
 import { CiInstagram, CiFacebook, CiTwitter } from 'react-icons/ci';
 import InformacionEntidades from './InformacionEntidades';
 import sacimexLogo from '../assets/img/SacimexLogoBlanco.png';
@@ -43,7 +40,7 @@ const AnimacionEntradaRedes = ({ children }) => {
   );
 };
 
-const Footer = (props) => {
+const Footer = ({ setWindowState }) => {
   const [entidadActivo, setEntidadActivo] = useState(0);
 
   useEffect(() => {
@@ -55,21 +52,6 @@ const Footer = (props) => {
     }, 20000);
     return () => clearInterval(interval);
   }, []);
-
-  const usarClickAviso = item => {
-    props.setEstadoAviso(item);
-    props.evitarScroll(true);
-  };
-
-  const usarClickDenuncia = () => {
-    props.setEstadoDenuncia(true);
-    props.evitarScroll(true);
-  };
-
-  const usarClickUNE = () => {
-    props.setEstadoUNE(true);
-    props.evitarScroll(true);
-  };
 
   return(<>
     <PrincipalContenedor>
@@ -104,7 +86,7 @@ const Footer = (props) => {
             <TitulosAcercaDe>Regulación</TitulosAcercaDe>
             <TextoAcercaDe
               href='#!'
-              onClick={() => usarClickAviso(1)}>
+              onClick={() => setWindowState(1)}>
                 Aviso de privacidad
             </TextoAcercaDe>
             <TextoAcercaDe
@@ -123,12 +105,12 @@ const Footer = (props) => {
             </TextoAcercaDe>
             <TextoAcercaDe
               href='#!'
-              onClick={usarClickUNE}>
+              onClick={() => setWindowState(2)}>
                 Unidad Especializada UNE
             </TextoAcercaDe>
             <TextoAcercaDe
               href='#!'
-              onClick={usarClickDenuncia}>
+              onClick={() => setWindowState(3)}>
                 Denuncia anónima
             </TextoAcercaDe>
           </TextosAcercaDeContenedor>
@@ -207,18 +189,6 @@ const Footer = (props) => {
       <InformacionEntidades
         entidadActivo={entidadActivo}/>
     </PrincipalContenedor>
-    <VentanaEmergente
-      estadoAviso={props.estadoAviso}
-      setEstadoAviso={props.setEstadoAviso}
-      evitarScroll={props.manejarScroll}/>
-    <DenunciaAnonima
-      estadoDenuncia={props.estadoDenuncia}
-      setEstadoDenuncia={props.setEstadoDenuncia}
-      evitarScroll={props.manejarScroll}/>
-    <UnidadEspecializada
-      estadoUNE={props.estadoUNE}
-      setEstadoUNE={props.setEstadoUNE}
-      evitarScroll={props.manejarScroll}/>
   </>);
 };
 

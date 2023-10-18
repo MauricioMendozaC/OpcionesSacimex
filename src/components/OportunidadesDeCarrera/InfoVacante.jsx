@@ -1,15 +1,14 @@
 import styled from 'styled-components';
+import Boton from '../Boton';
 
-const InfoVacante = ({ info, infoMostrada }) => {
-  
+const InfoVacante = ({ vacantes, vacanteSeleccionada }) => {
 
-  return(<>
-    {infoMostrada === 1 && (<>
-      <Titulo>{info && (info.vacante)}</Titulo>
+  return(<ContenedorTexto>
+      <Titulo>{vacantes[vacanteSeleccionada] && (vacantes[vacanteSeleccionada].vacante)}</Titulo>
       <Textos>
         <SubTitulo>Requisitos:</SubTitulo>
         <Lista>
-          {info && info.requisitos.map( (item, index) => (
+          {vacantes[vacanteSeleccionada] && vacantes[vacanteSeleccionada].requisitos.map( (item, index) => (
             <li key={index}>{item}</li>
           ))}
         </Lista>
@@ -17,7 +16,7 @@ const InfoVacante = ({ info, infoMostrada }) => {
       <Textos>
         <SubTitulo>Funciones:</SubTitulo>
         <Lista>
-          {info && info.funciones.map( (item, index) => (
+          {vacantes[vacanteSeleccionada] && vacantes[vacanteSeleccionada].funciones.map( (item, index) => (
             <li key={index}>{item}</li>
           ))}
         </Lista>
@@ -25,14 +24,17 @@ const InfoVacante = ({ info, infoMostrada }) => {
       <Textos>
         <SubTitulo>Ofrecemos:</SubTitulo>
         <Lista>
-          {info && info.ofrecemos.map( (item, index) => (
+          {vacantes[vacanteSeleccionada] && vacantes[vacanteSeleccionada].ofrecemos.map( (item, index) => (
             <li key={index}>{item}</li>
           ))}
         </Lista>
       </Textos>
-      <Boton href='https://docs.google.com/forms/d/e/1FAIpQLScr2MtG6KyV6mxhM105QeAHCQO5bhrNoi6uwT2pmTuiia_itw/viewform?usp=sf_link'>¡Postúlate!</Boton>
-    </>)}
-  </>);
+      <Boton
+        texto='¡Postúlate!'
+        referencia='https://forms.gle/CgsbcKBVwgvM79wh6'
+        amarillo
+        newBlank/>
+  </ContenedorTexto>);
 };
 
 export default InfoVacante;
@@ -66,14 +68,11 @@ const Lista = styled.ul`
   width: 100%;
 `;
 
-const Boton = styled.a`
-  background-color: #F5A200;
-  border: none;
-  border-radius: 5px;
-  color: #005520;
-  cursor: pointer;
-  font-family: 'Presidencia Firme',sans-serif;
-  font-size: 1em;
-  padding: 9px 18px;
-  text-decoration: none;
+const ContenedorTexto = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
+  width: 100%;
 `;
