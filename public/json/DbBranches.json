@@ -1,0 +1,93 @@
+[
+  {
+    "idSucursal" : 1,
+    "nombreSucursal" : "Oficinas Corporativas.",
+    "zonaSucursal" : "Centro, Oax.",
+    "direccionSucursal" : "Calle Valerio Trujano #713, Col. Centro, Oaxaca, Oax.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLSd7W-MU-GmzY54ttHAQq5wQMuReBUCbJufh7tLzk8q1lVSRww/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 2,
+    "nombreSucursal" : "Etla.",
+    "zonaSucursal" : "Villa de Etla, Oax.",
+    "direccionSucursal" : "Calle Zaragoza #8, Col. Centro, Villa de Etla, Oax.",
+    "formularioVacantes" : ""
+  },
+  {
+    "idSucursal" : 3,
+    "nombreSucursal" : "San Antonio.",
+    "zonaSucursal" : "San Antonio de la Cal, Oax.",
+    "direccionSucursal" : "Calle Morelos #3, Segunda Seccion Aldama, San Antonio de la Cal, Oax.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLScr2MtG6KyV6mxhM105QeAHCQO5bhrNoi6uwT2pmTuiia_itw/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 4,
+    "nombreSucursal" : "Centro.",
+    "zonaSucursal" : "Centro, Oax.",
+    "direccionSucursal" : "Calle Valerio Trujano #713, Col. Centro, Oaxaca, Oax.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLSfuLFQjxkoFs4uZ2B9cPNag8ogd37fhZToyImFH5BtLcyA24w/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 6,
+    "nombreSucursal" : "Huatulco.",
+    "zonaSucursal" : "Santa María Huatulco, Oax.",
+    "direccionSucursal" : "Av. Benito Juárez Esq. Guerrero, Santa María Huatulco, Oax.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLSftW1W0CgwuYnPNg6zfRl2OWQXBsAlgMs6giVRJfjGfUd5GUw/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 7,
+    "nombreSucursal" : "Cuicatlán.",
+    "zonaSucursal" : "San Juan Bautista Cuicatlán, Oax.",
+    "direccionSucursal" : "Calle Morelos #1, Col. Centro, San Juan Bautista Cuicatlán, Oax.",
+    "formularioVacantes" : ""
+  },
+  {
+    "idSucursal" : 10,
+    "nombreSucursal" : "Ajalpan.",
+    "zonaSucursal" : "Ajalpan, Pue.",
+    "direccionSucursal" : "Av. Rafael Ávila Camacho Ote. #303, Ajalpan, Pue.",
+    "formularioVacantes" : ""
+  },
+  {
+    "idSucursal" : 11,
+    "nombreSucursal" : "Tecamachalco.",
+    "zonaSucursal" : "Tecamachalco, Pue.",
+    "direccionSucursal" : "Calle 5 Oriente #208, Centro, Tecamachalco, Pue.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLSf9f2cVlg585bpypGnMw28tcd1-dpali-9J5EHsQnDJC_-pAg/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 12,
+    "nombreSucursal" : "Huauchinango.",
+    "zonaSucursal" : "Huauchinango, Pue.",
+    "direccionSucursal" : "Calle Leona Vicario #35, Local 2, Centro, Huauchinango, Pue.",
+    "formularioVacantes" : ""
+  },
+  {
+    "idSucursal" : 13,
+    "nombreSucursal" : "Salina Cruz.",
+    "zonaSucursal" : "Salina Cruz, Oax.",
+    "direccionSucursal" : "Calle Acapulco Esq. Héroes de la Marina, Salina Cruz, Oax.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLScG2WX4IDngJGRVA6xnDzKpFwoaIeY9i__fCIjoP8tCzZ0bng/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 14,
+    "nombreSucursal" : "Huajuapan.",
+    "zonaSucursal" : "Huajuapan de León, Oax.",
+    "direccionSucursal" : "Dentro del centro comercial Motolinía, Letra L y M, Planta Baja, Centro, Huajuapan de León, Oax.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLSeody-O5m-j04sAXu-g_y-BkegfVqL7JzZqA92mg4_2fy7rpw/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 16,
+    "nombreSucursal" : "Puerto Escondido.",
+    "zonaSucursal" : "Puerto Escondido, Oax.",
+    "direccionSucursal" : "Calle 3a. Poniente #501, Sector Juárez, Puerto Escondido, Oax.",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLSeMW8PNmVxlqVF7ZjC9nhQKZnyhKTP9bORq_Cj01A-bXszt-A/viewform?usp=sf_link"
+  },
+  {
+    "idSucursal" : 18,
+    "nombreSucursal" : "Ocotlán.",
+    "zonaSucursal" : "Ocotlán de Morelos, Oax.",
+    "direccionSucursal" : "Ponte en contacto con nosotros de manera directa a través del siguiente número de teléfono:",
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLSdkvlQks22T8BoXHpT4fgfAUpZ_RG4gKOt6pKxMJP238lnpkg/viewform?usp=sf_link"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "idPerfil" : 1,
+    "nombrePerfil" : "Asesor de Crédito.",
+    "requisitos" : [
+      "Edad: 19 a 40 años.",
+      "Sexo: Indistinto.",
+      "Estado civil: Indistinto.",
+      "Licencia de conducir vigente.",
+      "Disponibilidad de horario.",
+      "Bachillerato concluido o licenciatura en áreas económico-administrativas."
+    ],
+    "funciones" : [
+      "Cumplir con las políticas y procesos del manual de crédito en todos los subprocesos relacionados con los productos crediticios.",
+      "Superar las expectativas del cliente y generar propuestas de mejora en el servicio.",
+      "Promover una actitud de ayuda y ambiente de trabajo a favor del cliente.",
+      "Atender responsabilidades adicionales bajo el Código de Ética.",
+      "80% campo y 20% administrativo."
+    ],
+    "ofrecemos" : [
+      "Sueldo catorcenal base.",
+      "Prestaciones: IMSS, prima vacacional, vacaciones, aguinaldo, uniformes.",
+      "Vales de despensa.",
+      "Bonos por productividad.",
+      "Oportunidad de crecimiento laboral y estabilidad laboral."
+    ]
+  },
+  {
+    "idPerfil" : 2,
+    "nombrePerfil" : "Cajero Administrativo.",
+    "requisitos" : [
+      "Mayor de 25 años de edad.",
+      "Estado civil indistinto.",
+      "Preferiblemente sexo femenino.",
+      "Disponibilidad a tiempo completo.",
+      "Excelente presentación.",
+      "Licenciatura, carrera trunca o bachillerato en Administración, Contabilidad, Economía o afines.",
+      "Conocimientos de paquetería Office.",
+      "Habilidades en aritmética, sumadora, control de consecutivos y archivo.",
+      "Experiencia en cajas (no indispensable, pero se considerará)."
+    ],
+    "funciones" : [
+      "Recibir, registrar y controlar ingresos diarios de la empresa.",
+      "Realizar arqueos de seguridad, cierre y apertura de cajas.",
+      "Atender a clientes en ventanilla, resolviendo quejas e inquietudes.",
+      "Realizar llamadas preventivas de cobro."
+    ],
+    "ofrecemos" : [
+      "Sueldo catorcenal base.",
+      "Prestaciones: IMSS, prima vacacional, vacaciones, aguinaldo, uniformes.",
+      "Vales de despensa.",
+      "Oportunidades de crecimiento y estabilidad laboral."
+    ]
+  },
+  {
+    "idPerfil" : 3,
+    "nombrePerfil" : "Auxiliar Contable.",
+    "requisitos" : [
+      "Edad: 20 a 35 años.",
+      "Estado civil indistinto.",
+      "Disponibilidad de tiempo.",
+      "Excelente presentación.",
+      "Con o sin experiencia.",
+      "Carrera técnica (terminada o trunca) o Licenciado en Contaduría Pública.",
+      "Conocimientos básicos en contabilidad.",
+      "Habilidad para el análisis crítico de gastos.",
+      "Conocimientos de paquetería Office."
+    ],
+    "funciones" : [
+      "Registrar y controlar movimientos contables según normativas vigentes.",
+      "Capturar movimientos contables de sucursales y áreas corporativas.",
+      "Validar gastos de acuerdo a normativas.",
+      "Realizar conciliaciones bancarias.",
+      "Otras funciones asignadas por el Asistente de Contabilidad.",
+      "Habilidad en el manejo de Excel."
+    ],
+    "ofrecemos" : [
+      "Sueldo catorcenal.",
+      "Prestaciones: IMSS, prima vacacional, vacaciones, aguinaldo, uniformes.",
+      "Vales de despensa.",
+      "Oportunidades de crecimiento y estabilidad laboral."
+    ]
+  },
+  {
+    "idPerfil" : 4,
+    "nombrePerfil" : "Gerente de sucursal.",
+    "requisitos" : [
+      "Edad: 25 a 50 años.",
+      "Preferentemente casado.",
+      "Licenciatura en administración, contabilidad, economía o carrera afín.",
+      "Conocimientos medios de paquetería Office.",
+      "Licencia de manejo vigente.",
+      "Manejo de agenda de trabajo.",
+      "Disponibilidad de tiempo completo y constante disponibilidad para viajar.",
+      "Excelente presentación."
+    ],
+    "funciones" : [
+      "Administrar, supervisar y controlar operaciones de la sucursal.",
+      "Garantizar calidad en el servicio al cliente.",
+      "Responsable de apertura y cierre de la sucursal.",
+      "Supervisar proceso crediticio y garantías.",
+      "Cumplir normas y políticas de productos de crédito.",
+      "Realizar visitas y asesorar a clientes."
+    ],
+    "ofrecemos" : [
+      "Sueldo catorcenal.",
+      "Prestaciones: IMSS, prima vacacional, vacaciones, aguinaldo, uniformes.",
+      "Vales de despensa.",
+      "Oportunidades de crecimiento y estabilidad laboral."
+    ]
+  }
+]

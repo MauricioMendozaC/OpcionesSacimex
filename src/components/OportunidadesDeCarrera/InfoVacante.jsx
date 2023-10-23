@@ -1,40 +1,44 @@
 import styled from 'styled-components';
 import Boton from '../Boton';
 
-const InfoVacante = ({ vacantes, vacanteSeleccionada }) => {
+const InfoVacante = ({ vacanteSeleccionada, jobVacancies, profiles }) => {
+  const vacancie = jobVacancies.find(vacante => vacante.idVacante === vacanteSeleccionada);
+  const selectedProfile = profiles.find(profile => profile.idPerfil === vacancie.idPerfil);
 
-  return(<ContenedorTexto>
-      <Titulo>{vacantes[vacanteSeleccionada] && (vacantes[vacanteSeleccionada].vacante)}</Titulo>
+  return(
+    <ContenedorTexto>
+      <Titulo>{vacancie.nombreVacante}</Titulo>
       <Textos>
         <SubTitulo>Requisitos:</SubTitulo>
         <Lista>
-          {vacantes[vacanteSeleccionada] && vacantes[vacanteSeleccionada].requisitos.map( (item, index) => (
-            <li key={index}>{item}</li>
+          {selectedProfile.requisitos.map((ele, index) => (
+            <li key={index}>{ele}</li>
           ))}
         </Lista>
       </Textos>
       <Textos>
         <SubTitulo>Funciones:</SubTitulo>
         <Lista>
-          {vacantes[vacanteSeleccionada] && vacantes[vacanteSeleccionada].funciones.map( (item, index) => (
-            <li key={index}>{item}</li>
+          {selectedProfile.funciones.map((ele, index) => (
+            <li key={index}>{ele}</li>
           ))}
         </Lista>
       </Textos>
       <Textos>
         <SubTitulo>Ofrecemos:</SubTitulo>
         <Lista>
-          {vacantes[vacanteSeleccionada] && vacantes[vacanteSeleccionada].ofrecemos.map( (item, index) => (
-            <li key={index}>{item}</li>
+          {selectedProfile.ofrecemos.map((ele, index) => (
+            <li key={index}>{ele}</li>
           ))}
         </Lista>
       </Textos>
       <Boton
         texto='¡Postúlate!'
-        referencia='https://forms.gle/CgsbcKBVwgvM79wh6'
+        referencia={vacancie.formularioVacantes}
         amarillo
         newBlank/>
-  </ContenedorTexto>);
+    </ContenedorTexto>
+  );
 };
 
 export default InfoVacante;

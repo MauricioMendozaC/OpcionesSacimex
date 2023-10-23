@@ -4,7 +4,8 @@ import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
-import Vacantes from '../components/OportunidadesDeCarrera/Vacantes';
+import BranchesWithVacancies from '../components/OportunidadesDeCarrera/BranchesWithVacancies';
+import Vacancies from '../components/OportunidadesDeCarrera/Vacancies';
 import Footer from '../components/Footer';
 import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor, BloquearScroll } from '../utils/estilosPages';
@@ -13,18 +14,36 @@ import OportunidadesDeCarrera from '../assets/img/OportunidadesDeCarrera.svg';
 const BolsaDeTrabajo = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [windowState, setWindowState] = useState(null);
-  const [vacantes, setVacantes] = useState([]);
+  const [jobVacancies, setJobVacancies] = useState([]);
+  const [branches, setBranches] = useState(null);
+  const [profiles, setProfiles] = useState([]);
   const [vacanteSeleccionada, setVacanteSeleccionada] = useState(null);
+  const [activeBranch, setActiveBranch] = useState(null);
 
   useEffect(() => {
-    fetch('./json/datosVacantes.json')
-      .then( res => res.json() )
-        .then( res => setVacantes(res) )
+    fetchDbJobVacancies();
+    fetchDbBranches();
+    fetchDbProfiles();
+    setMostrarAnimaciones(true);
   }, []);
 
-  useEffect( () => {
-    setMostrarAnimaciones(true);
-  },[]);
+  const fetchDbJobVacancies = () => {
+    fetch('./json/DbJobVacancies.json')
+      .then( res => res.json() )
+        .then( res => setJobVacancies(res) );
+  };
+
+  const fetchDbBranches = () => {
+    fetch('./json/DbBranches.json')
+      .then( res => res.json() )
+        .then( res => setBranches(res) );
+  };
+
+  const fetchDbProfiles = () => {
+    fetch('./json/DbProfiles.json')
+      .then( res => res.json() )
+        .then( res => setProfiles(res) );
+  };
 
   return(<>
     <EstilosGlobales/>
@@ -50,10 +69,22 @@ const BolsaDeTrabajo = () => {
             tamano='300px'
             imagen={OportunidadesDeCarrera}/>
         </ImagenTextoContenedor>
-        <Vacantes
-          vacantes={vacantes}
-          setWindowState={setWindowState}
-          setVacanteSeleccionada={setVacanteSeleccionada}/>
+        
+        {branches !== null && (
+        <Tabla>
+          <BranchesWithVacancies
+            branches={branches}
+            jobVacancies={jobVacancies}
+            activeBranch={activeBranch}
+            setActiveBranch={setActiveBranch}/>
+          <Vacancies
+            activeBranch={activeBranch}
+            jobVacancies={jobVacancies}
+            branches={branches}
+            setWindowState={setWindowState}
+            setVacanteSeleccionada={setVacanteSeleccionada}/>
+        </Tabla>
+        )}
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
@@ -62,7 +93,8 @@ const BolsaDeTrabajo = () => {
       windowState={windowState}
       setWindowState={setWindowState}
       vacanteSeleccionada={vacanteSeleccionada}
-      vacantes={vacantes}/>
+      jobVacancies={jobVacancies}
+      profiles={profiles}/>
   </>);
 };
 
@@ -125,69 +157,14 @@ const Parrafo = styled.p`
   };
 `;
 
-const Hoja = styled.div`
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  height: 100vh;
-  left: ${({ $mostrar }) => $mostrar ? '0' : '-500px'};
-  max-width: 500px;
-  overflow: auto;
-  position: fixed;
-  top: 0;
-  transition: left .3s;
-  width: 100%;
-  z-index: 120;
-`;
-
-const BotonCerrarPosicionador = styled.div`
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%);
+const Tabla = styled.div`
+  border: 1px solid #DDDDDD;
   border-radius: 10px;
   display: grid;
-  height: 40px;
-  max-width: 500px;
-  padding-right: 15px;
-  place-items: center end;
-  position: fixed;
-  top: 0;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   width: 100%;
 `;
 
-const BotonCerrarContenedor = styled.button`
-  background-color: transparent;
-  border: none;
-  color: #888;
-  cursor: pointer;
-  font-size: 16px;
-`;
-
-const DegradadoFinal = styled.div`
-  background: linear-gradient(0, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%);
-  border-radius: 0 0 10px 10px;
-  bottom: 0;
-  height: 40px;
-  max-width: 500px;
-  position: fixed;
-  width: 100%;
-`;
-
-const Opacidad = styled.div`
-  background-color: rgba(52, 58, 64, 0.6);
-  height: 100vh;
-  left: 0;
-  opacity: ${({ $mostrar }) => $mostrar ? '1' : '0'};
-  position: fixed;
-  top: 0;
-  transform: scale(${({ $mostrar }) => $mostrar ? '100%' : '0'});
-  transition: opacity .3s;
-  width: 100%;
-  z-index: 110;
-`;
-
-const ContenedorTexto = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 50px;
-  width: 100%;
-`;

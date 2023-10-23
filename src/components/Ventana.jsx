@@ -5,7 +5,7 @@ import DenunciaAnonima from './Ventana/DenunciaAnonima';
 import InfoVacante from './OportunidadesDeCarrera/InfoVacante';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-const Ventana = ({ windowState, setWindowState, vacantes, vacanteSeleccionada }) => {
+const Ventana = ({ windowState, setWindowState, vacanteSeleccionada, jobVacancies, profiles }) => {
   return(
     <PrincipalContenedor
       $showWindow={windowState}>
@@ -19,7 +19,7 @@ const Ventana = ({ windowState, setWindowState, vacantes, vacanteSeleccionada })
           {windowState === 1 && (<AvisoPrivacidad/>)}
           {windowState === 2 && (<UnidadEspecializada/>)}
           {windowState === 3 && (<DenunciaAnonima/>)}
-          {windowState === 4 && (<InfoVacante vacanteSeleccionada={vacanteSeleccionada} vacantes={vacantes}/>)}
+          {windowState === 4 && (<InfoVacante vacanteSeleccionada={vacanteSeleccionada} jobVacancies={jobVacancies} profiles={profiles}/>)}
           <DegradadoFinal/>
         </Hoja>
         <Opacidad
