@@ -89,5 +89,12 @@
     "idPerfil" : 4,
     "idSucursal" : 13,
     "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLScG2WX4IDngJGRVA6xnDzKpFwoaIeY9i__fCIjoP8tCzZ0bng/viewform?usp=sf_link"
+  },
+  {
+    "idVacante" : 14,
+    "nombreVacante" : "Asesor de crédito individual.",
+    "idPerfil" : 1,
+    "idSucursal" : 13,
+    "formularioVacantes" : "https://docs.google.com/forms/d/e/1FAIpQLScG2WX4IDngJGRVA6xnDzKpFwoaIeY9i__fCIjoP8tCzZ0bng/viewform?usp=sf_link"
   }
 ]

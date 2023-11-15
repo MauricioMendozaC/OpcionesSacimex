@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
@@ -19,6 +19,8 @@ const BolsaDeTrabajo = () => {
   const [profiles, setProfiles] = useState([]);
   const [vacanteSeleccionada, setVacanteSeleccionada] = useState(null);
   const [activeBranch, setActiveBranch] = useState(null);
+
+  const elementToScroll = useRef(null);
 
   useEffect(() => {
     fetchDbJobVacancies();
@@ -43,6 +45,18 @@ const BolsaDeTrabajo = () => {
     fetch('./json/DbProfiles.json')
       .then( res => res.json() )
         .then( res => setProfiles(res) );
+  };
+
+  const scrollToElement = () => {
+    if (elementToScroll.current) {
+      const offset = 30;
+      const elementPosition = elementToScroll.current.offsetTop - offset;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return(<>
@@ -71,12 +85,13 @@ const BolsaDeTrabajo = () => {
         </ImagenTextoContenedor>
         
         {branches !== null && (
-        <Tabla>
+        <Tabla ref={elementToScroll}>
           <BranchesWithVacancies
             branches={branches}
             jobVacancies={jobVacancies}
             activeBranch={activeBranch}
-            setActiveBranch={setActiveBranch}/>
+            setActiveBranch={setActiveBranch}
+            scrollToElement={scrollToElement}/>
           <Vacancies
             activeBranch={activeBranch}
             jobVacancies={jobVacancies}

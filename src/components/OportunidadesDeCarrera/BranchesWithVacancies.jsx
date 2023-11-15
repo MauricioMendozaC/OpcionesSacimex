@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const BranchesWithVacancies = ({ branches, jobVacancies, activeBranch, setActiveBranch }) => {
+const BranchesWithVacancies = ({ branches, jobVacancies, activeBranch, setActiveBranch, scrollToElement }) => {
   const [selectedBranches, setSelectedBranches] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const BranchesWithVacancies = ({ branches, jobVacancies, activeBranch, setActive
       <BranchContainer
         key={ele.idSucursal}
         $activeBranch={activeBranch === ele.idSucursal}
-        onClick={() => setActiveBranch(ele.idSucursal)}>
+        onClick={() => {setActiveBranch(ele.idSucursal); scrollToElement()}}>
           <StyledP>{ele.nombreSucursal}</StyledP>
           <p>{ele.zonaSucursal}</p>
       </BranchContainer>
