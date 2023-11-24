@@ -34,20 +34,12 @@ const Vacante = styled.div`
 
   h5 {
     color: #005520;
-    font-family: 'Presidencia Firme', sans-serif;
     font-size: 1.25em;
-    letter-spacing: 1px;
     padding-bottom: 10px;
   };
 
   ul {
     margin-left: 10px;
-  };
-
-  li {
-    color: #000000;
-    font-family: 'Presidencia Fina', sans-serif;
-    font-size: 1em;
   };
 `;
 
@@ -65,9 +57,8 @@ const VerMas = styled.div`
     border: none;
     color: #005520;
     cursor: pointer;
-    font-family: 'Presidencia Firme', sans-serif;
     font-size: 1em;
-    letter-spacing: 1px;
+    font-weight: 700;
     transition: transform .3s;
 
     &:hover {

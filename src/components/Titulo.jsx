@@ -50,9 +50,7 @@ export default Titulo;
 
 const PrincipalContenedor = styled.h3`
   color: ${({ $color }) => $color ? ($color) : '#005520'};
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.625em;
-  letter-spacing: 1px;
   margin: auto;
   opacity: ${({ $visible }) => $visible ? '1' : '0'};
   padding-bottom: 13px;

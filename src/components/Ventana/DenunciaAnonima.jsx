@@ -69,14 +69,11 @@ const Texto = styled.div`
 
 const StyledH3 = styled.h3`
   color: #00632F;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.25em;
   text-align: center;
 `;
 
 const Parrafo = styled.p`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   text-align: justify;
   width: 100%;
@@ -98,8 +95,6 @@ const SpanInputContenedor = styled.div`
 const StyledInput = styled.input`
   border: 2px solid #AAA;
   border-radius: 25px;
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   outline: none;
   padding: 10px 20px;
@@ -113,7 +108,6 @@ const StyledInput = styled.input`
 
 const StyledSpan = styled.span`
   background-color: #FFF;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   left: 20px;
   padding: 0 5px;
@@ -151,8 +145,6 @@ const StyledSpan = styled.span`
 const StyledTextArea = styled.textarea`
   border: 2px solid #AAA;
   border-radius: 25px;
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   height: 150px;
   outline: none;
@@ -172,8 +164,8 @@ const StyledButton = styled.button`
   border-radius: 5px;
   color: #004410;
   cursor: pointer;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
+  font-weight: 700;
   padding: 9px 18px;
   transition: transform .3s;
 

@@ -89,9 +89,6 @@ const TextoImagenContenedor = styled.div`
 `;
 
 const StyledP = styled.p`
-  color: #000000;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 1em;
   min-width: 300px;
   text-align: justify;
   width: calc(100% - 310px);

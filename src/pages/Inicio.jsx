@@ -65,26 +65,8 @@ const Inicio = () => {
 export default Inicio;
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Presidencia Fina';
-    src: url('/fonts/PresidenciaFina.otf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Presidencia Firme';
-    src: url('/fonts/PresidenciaFirme.otf') format('truetype');
-  }
-
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    user-select: none;
-  }  
-  
   body {
     background: repeating-linear-gradient( -45deg, #257140, #257140 2px, #00632F 2px, #00632F 10px );
-    font-size: 20px;
   } 
 `;
 

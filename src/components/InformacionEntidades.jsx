@@ -67,7 +67,6 @@ const PrincipalContenedor = styled.div`
 
 const Parrafo = styled.p`
   color: #93BE97;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.75em;
   text-align: justify;
   width: 100%;
@@ -75,6 +74,5 @@ const Parrafo = styled.p`
 
 const SubTitulo = styled.h4`
   color: #93BE97;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.75em;
 `;

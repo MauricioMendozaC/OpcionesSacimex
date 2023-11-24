@@ -236,9 +236,8 @@ const PrincipalContenedor = styled.div`
 
 const StyledH4 = styled.h4`
   color: #00632F;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1.25em;
-  letter-spacing: 1px;
+  font-weight: 400;
   text-align: center;
   width: 90%;
 `;

@@ -253,8 +253,8 @@ const LinkPrincipal = styled.div`
   color: #00632F;
   cursor: pointer;
   display: flex;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.125em;
+  font-weight: 700;
   gap: 10px;
   letter-spacing: 1px;
   padding: 20px 0;
@@ -276,7 +276,6 @@ const SubLinksContenedor = styled.div`
     border-radius: 20px;
     color: #257140;
     cursor: pointer;
-    font-family: 'Presidencia Fina', sans-serif;
     font-size: 1em;
     padding: 7px 20px;
     text-decoration: none;

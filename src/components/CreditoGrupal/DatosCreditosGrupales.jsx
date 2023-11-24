@@ -97,8 +97,6 @@ const DatosCreditosGrupales = ({ creditoActivo }) => {
 export default DatosCreditosGrupales;
 
 const Parrafo = styled.p`
-  color: #000000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: justify;
   width: 100%;
@@ -107,29 +105,30 @@ const Parrafo = styled.p`
 const EllaSpan = styled.span`
   color: #F65E1D;
   font-family: 'Dancing Script', cursive;
-  font-size: 1.25em;
+  font-size: 1.428em;
 `;
 
 const DamasSpan = styled.span`
   color: #C90076;
   font-family: 'Caveat', cursive;
-  font-size: 1.25em;
+  font-size: 1.428em;
 `;
 
 const SomosSpan = styled.span`
   color: #00AB56;
   font-family: 'Shadows Into Light', cursive;
-  font-size: 1.25em;
+  font-size: 1.428em;
 `;
 
 const StyledUl = styled.ul`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 0.875em;
   list-style: none;
   padding: 0 15px;
   text-align: justify;
   width: 100%;
+
+  li {    
+    font-size: 0.875em;
+  };
 
   li::before {
     color: #F5A200;
@@ -141,8 +140,6 @@ const StyledUl = styled.ul`
 
 const StyledH3 = styled.h3`
   color: #257140;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
   text-align: center;
 `;

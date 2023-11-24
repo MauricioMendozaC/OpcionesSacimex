@@ -26,7 +26,6 @@ export default SliderTitulos;
 const PrincipalContenedor = styled.h1`
   color: #FFF;
   display: grid;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 2em;
   height: 200px;
   place-items: center;

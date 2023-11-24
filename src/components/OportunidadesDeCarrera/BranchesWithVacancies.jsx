@@ -55,6 +55,6 @@ const BranchContainer = styled.button`
 `;
 
 const StyledP = styled.p`
-  font-family: 'Presidencia Firme', sans-serif !important;
   color: #005520;
+  font-weight: 700;
 `;

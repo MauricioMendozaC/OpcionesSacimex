@@ -167,16 +167,14 @@ const PrincipalContenedor = styled.div`
 
 const OpcionesSaci = styled.h3`
   color: #257140;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
+  font-weight: 400;
   text-align: center;
 `;
 
 const Sacimex = styled.h2`
   color: #00632F;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.75em;
-  letter-spacing: 1px;
   text-align: center;
 `;
 
@@ -189,15 +187,11 @@ const CreditoContenedor = styled.div`
 
 const NombreCredito = styled.h4`
   color: #005520;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
   text-align: center;
 `;
 
 const DatosCredito = styled.p`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   text-align: center;
 `;
@@ -216,7 +210,6 @@ const TablaContenedor = styled.div`
 
 const Tabla = styled.table`
   border-collapse: collapse;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: center;
   width: 820px;
@@ -225,8 +218,7 @@ const Tabla = styled.table`
 const Celda = styled.td`
   border-bottom: 1px solid #ccc;
   ${({ $titulo }) => $titulo && ('border-right: 1px solid #00632F;')};
-  ${({ $titulo }) => $titulo && (`font-family: 'Presidencia Firme', sans-serif`)};
-  ${({ $titulo }) => $titulo && ('letter-spacing: 1px;')};
+  ${({ $titulo }) => $titulo && (`font-weight: 700`)};
   padding: 8px;
 `;
 

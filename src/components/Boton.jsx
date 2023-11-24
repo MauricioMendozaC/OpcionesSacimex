@@ -56,9 +56,8 @@ const PrincipalContenedor = styled.a`
   border-radius: 3px;
   color: ${({ $amarillo }) => $amarillo ? '#005217' : '#FFFFFF'};
   cursor: pointer;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;
-  letter-spacing: 1px;
+  font-weight: 700;
   opacity: ${({ $visible }) => $visible ? '1' : '0'};
   padding: 9px 18px;
   text-decoration: none;

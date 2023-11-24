@@ -29,16 +29,40 @@ const BolsaDeTrabajo = () => {
     setMostrarAnimaciones(true);
   }, []);
 
-  const fetchDbJobVacancies = () => {
-    fetch('./json/DbJobVacancies.json')
-      .then( res => res.json() )
-        .then( res => setJobVacancies(res) );
+  
+  const fetchDbJobVacancies = async () => {
+    const formData = new FormData();
+    formData.append('selection', 'all');
+
+    try {
+      const response = await fetch('https://web.opcionessacimex.com/php/DHO/Controller/VacantController.php', {
+        method: 'POST',
+        body: formData
+      });
+  
+      const result = await response.json();
+      setJobVacancies(result);
+    } catch (error) {
+      console.error(error)
+    };
   };
 
-  const fetchDbBranches = () => {
-    fetch('./json/DbBranches.json')
-      .then( res => res.json() )
-        .then( res => setBranches(res) );
+  const fetchDbBranches = async () => {
+    const formData = new FormData();
+    formData.append('selection', 'all');
+
+    try {
+      const response = await fetch('https://web.opcionessacimex.com/php/DHO/Controller/SucursalController.php', {
+        method: 'POST',
+        body: formData
+      });
+  
+      const result = await response.json();
+      console.log(result);
+      setBranches(result);
+    } catch (error) {
+      console.error(error)
+    };
   };
 
   const fetchDbProfiles = () => {
@@ -84,7 +108,7 @@ const BolsaDeTrabajo = () => {
             imagen={OportunidadesDeCarrera}/>
         </ImagenTextoContenedor>
         
-        {branches !== null && (
+        {jobVacancies.length !== 0 && (
         <Tabla ref={elementToScroll}>
           <BranchesWithVacancies
             branches={branches}
@@ -133,10 +157,6 @@ const PrincipalContenedor = styled.div`
     padding: 30px 0 60px;
   };
 
-  p {
-    font-family: 'Presidencia Fina', sans-serif;
-  };
-
   iframe {
     border: none;
     height: 500px;
@@ -162,14 +182,9 @@ const ContenedorTextos = styled.div`
 `;
 
 const Parrafo = styled.p`
-  color: #000000;
   font-size: 1.125em;
   text-align: justify;
   width: 100%;
-
-  b {
-    color: #005520;
-  };
 `;
 
 const Tabla = styled.div`

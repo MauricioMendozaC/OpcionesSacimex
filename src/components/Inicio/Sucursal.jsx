@@ -45,10 +45,7 @@ const PrincipalContenedor = styled.div`
 
 const NombreContenedor = styled.div`
 	align-items: center;
-	color: #005520;
 	display: flex;
-	font-family: 'Presidencia Fina', sans-serif;
-	font-size: 1em;
 	justify-content: space-between;
 	padding-right: 20px;
 	width: 100%;
@@ -56,8 +53,8 @@ const NombreContenedor = styled.div`
 
 const NombreSucursal = styled.h4`
 	color: #00632F;
-	font-family: 'Presidencia Fina', sans-serif;
 	font-size: 1em;
+	font-weight: 400;
 `;
 
 const Info = styled.div`
@@ -72,7 +69,6 @@ const Info = styled.div`
 
 const Direccion = styled.p`
 	color: #257140;
-	font-family: 'Presidencia Fina', sans-serif;
 	font-size: 1em;
   text-align: justify;
 
@@ -90,8 +86,8 @@ const TelefonosContenedor = styled.div`
 `;
 
 const Telefono = styled.a`
-	color: ${({ $mapa }) => $mapa ? '#F5A200' : '#257140'};	
-	font-family: ${({ $mapa }) => $mapa ? "'Presidencia Firme'" : "'Presidencia Fina'"}, sans-serif;
+	color: #257140;	
 	font-size: 1em;
+	font-weight: ${({ $mapa }) => $mapa ? '700' : '400'};
 	text-decoration: none;
 `;

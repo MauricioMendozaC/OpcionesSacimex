@@ -98,34 +98,41 @@ const Texto = styled.div`
 
 const Titulo = styled.h3`
   color: #000;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
 `;
 
 const SubTitulo = styled.h4`
   color: #000;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;
-  letter-spacing: 1px;
   text-align: justify;
   width: 100%;
 `;
 
 const Parrafo = styled.p`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: justify;
   width: 100%;
+
+  a {    
+    font-size: 1em;
+  };
+
+  em {
+    font-size: 1em;
+  };
 `;
 
 const Lista = styled.ul`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 0.875em;
   list-style-type: disc;
   padding-left: 20px;
   text-align: justify;
   width: 100%;
+
+  li {
+    font-size: 0.875em;
+  };
+
+  b {
+    font-size: 1em;
+  }
 `;

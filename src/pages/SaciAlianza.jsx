@@ -118,9 +118,7 @@ const PrincipalContenedor = styled.div`
 
 const SubTitulo = styled.h3`
   color: #257140;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.25em;
-  letter-spacing: 1px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
   text-align: center;
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
@@ -157,29 +155,21 @@ const Paso = styled.div`
 
 const PasoTitulo = styled.h4`
   color: #257140;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;
-  letter-spacing: 1px;
   ${({ $padding }) => $padding && ('padding: 0 30px;')}
   text-align: center;
 `;
 
 const PasoTexto = styled.p`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: center;
 `;
 
 const LinkSaci = styled.a`
-  color: #F5A200;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 0.875em;
+  color: #005520;
 `;
 
 const Parrafo = styled.p`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   max-width: 800px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};

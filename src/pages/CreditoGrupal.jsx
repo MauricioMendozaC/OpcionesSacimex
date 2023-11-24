@@ -155,9 +155,8 @@ const BotonCredito = styled.button`
   border-radius: 3px 3px 0 0;
   color: #005520;
   cursor: pointer;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;
-  letter-spacing: 1px;
+  font-weight: 700;
   padding: 5px 10px;
   transition: background .3s;
 `;

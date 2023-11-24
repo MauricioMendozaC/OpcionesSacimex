@@ -31,14 +31,11 @@ const Texto = styled.div`
 
 const StyledH3 = styled.h3`
   color: #00632F;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.25em;
   text-align: center;
 `;
 
 const Parrafo = styled.p`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   text-align: justify;
   width: 100%;
@@ -46,15 +43,14 @@ const Parrafo = styled.p`
 
 const StyledH4 = styled.h4`
   color: #00632F;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1.25em;
+  font-weight: 400;
   text-align: center;
 `;
 
 const Links = styled.a`
   color: #000;
   cursor: pointer;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   text-align: center;
   text-decoration: none;

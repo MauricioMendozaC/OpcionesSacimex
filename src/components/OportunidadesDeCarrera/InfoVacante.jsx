@@ -45,9 +45,7 @@ export default InfoVacante;
 
 const Titulo = styled.h5`
   color: #005520;
-  font-family: 'Presidencia Firme',sans-serif;
   font-size: 1.25em;
-  letter-spacing: 1px;
   padding-bottom: 10px;
   text-align: center;
 `;
@@ -59,14 +57,12 @@ const Textos = styled.div`
 
 const SubTitulo = styled.h6`
   color: #005520;
-  font-family: 'Presidencia Fina',sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
+  font-weight: 400;
   padding-bottom: 10px;
 `;
 
 const Lista = styled.ul`
-  font-family: 'Presidencia Fina',sans-serif;
   font-size: 1em;
   text-align: justify;
   width: 100%;

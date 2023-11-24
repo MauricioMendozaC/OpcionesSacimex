@@ -137,8 +137,6 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
 export default DatosCreditosIndividuales;
 
 const Parrafo = styled.p`
-  color: #000000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: justify;
   width: 100%;
@@ -147,29 +145,30 @@ const Parrafo = styled.p`
 const MotorSpan = styled.span`
   color: #EE0000;
   font-family: 'Pacifico', cursive;
-  font-size: 0.875em;
+  font-size: 1em;
 `;
 
 const LineaSpan = styled.span`
   color: #3975b7;
   font-family: 'Marck Script', cursive;
-  font-size: 1.25em;
+  font-size: 1.428em;
 `;
 
 const CreceSpan = styled.span`
   color: #24840C;
   font-family: 'Kalam', cursive;
-  font-size: 1em;
+  font-size: 1.142em;
 `;
 
 const StyledUl = styled.ul`
-  color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 0.875em;
   list-style: none;
   padding: 0 15px;
   text-align: justify;
   width: 100%;
+
+  li {
+    font-size: 0.875em;
+  };
 
   li::before {
     color: #F5A200;
@@ -185,15 +184,13 @@ const StyledDiv = styled.div`
 
 const StyledH3 = styled.h3`
   color: #257140;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
   text-align: center;
 `;
 
 const StyledH4 = styled.h4`
   color: #257140;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
+  font-weight: 400;
   text-align: center;
 `;

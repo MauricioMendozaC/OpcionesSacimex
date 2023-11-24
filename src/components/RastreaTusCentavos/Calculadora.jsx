@@ -126,16 +126,14 @@ const IndicadorDePasos = styled.div`
 
   span {
     color: #005217;
-    font-family: 'Presidencia Firme', sans-serif;
-    font-size: 1em;
+    font-weight: 700;
   };
 `;
 
 const TextoPasos = styled.p`
   color: #005520;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.125em;
-  letter-spacing: 1px;
+  font-weight: 700;
   text-align: center;
 `;
 
@@ -144,7 +142,6 @@ const StyledInput = styled.input`
   border: 1px solid #005520;
   border-radius: 25px;
   ${({ $mostrar }) => !$mostrar && ('display: none;')}
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   outline: #00632F;
   padding: 10px 25px;
@@ -158,7 +155,6 @@ const StyledInput = styled.input`
 
 const Alerta = styled.p`
   color: red;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
 `;
 
@@ -169,9 +165,7 @@ const StyledButton = styled.button`
   color: ${({ $reiniciar }) => $reiniciar ? '#005217' : '#FFFFFF'};
   cursor: pointer;
   ${({ $mostrar }) => !$mostrar && ('display: none;')}
-  font-family: 'Presidencia Firme', sans-serif;
-  font-size: 1em;
-  letter-spacing: 1px;
+  font-weight: 700;
   padding: 9px 18px;
   transition: transform .3s;
   
@@ -188,8 +182,8 @@ const BotonAgregar = styled.button`
   color: #257140;
   cursor: pointer;
   display: ${({ $mostrar }) => $mostrar ? 'flex' : 'none'};
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
+  font-weight: 700;
   gap: 10px;
   padding: 9px 18px;
   transition: transform .3s;
@@ -205,8 +199,7 @@ const GastosTotales = styled.div`
   width: 100%;
 
   span {
-    font-family: 'Presidencia Firme', sans-serif;
-    font-size: 1em;
+    font-weight: 700;
   };
 `;
 

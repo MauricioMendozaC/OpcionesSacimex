@@ -110,16 +110,12 @@ const InfoExtraContenedor = styled.div`
   transform: translateY(${({ $visible }) => $visible ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
-
-  p {
-    font-family: 'Presidencia Fina', sans-serif;
-  };
 `;
 
 const SubTitulo = styled.h3`
   color: #00632F;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1.25em;
+  font-weight: 400;
 `;
 
 const Texto = styled.p`

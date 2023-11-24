@@ -243,13 +243,15 @@ const RedesContenedor = styled.div`
 
 const Redes = styled.a`
   color: #FFFFFF;
-  font-size: 32px;
-  font-family: 'Presidencia Fina', sans-serif;
   text-decoration: none;
   transition: transform .3s;
 
   &:hover {
     transform: scale(105%);
+  };
+
+  svg {
+    font-size: 30px;
   };
 `;
 
@@ -280,16 +282,13 @@ const TextosAcercaDeContenedor = styled.div`
 
 const TitulosAcercaDe = styled.h5`
   color: #FFFFFF;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.875em;
-  letter-spacing: 1px;
   text-align: center;
 `;
 
 const TextoAcercaDe = styled.a`
   color: #FFFFFF;
   cursor: pointer;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.75em;
   text-align: center;
   text-decoration: none;

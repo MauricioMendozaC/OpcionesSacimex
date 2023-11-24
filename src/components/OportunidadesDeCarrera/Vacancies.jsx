@@ -32,9 +32,7 @@ const VacanciesContainer = styled.div`
 
 const StyledH5 = styled.h5`
   color: #005520;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
   text-align: center;
 `;
 
@@ -54,8 +52,8 @@ const StyledButton = styled.button`
 
   span {
     color: #00632F;
-    font-family: 'Presidencia Firme', sans-serif;
     font-size: 1.5em;
+    font-weight: 700;
     text-align: center;
   };
 `;

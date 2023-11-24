@@ -104,14 +104,11 @@ const Valor = styled.div`
 
 const ValorTitulo = styled.h3`
   color: #000;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
 `;
 
 const TextoValor = styled.p`
   color: #000;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: center;
 `;

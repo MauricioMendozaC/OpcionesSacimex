@@ -127,15 +127,12 @@ const ProductoContenedor = styled.div`
 
 const TituloCredito = styled.h3`
   color: #00632F;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
   text-align: center;
 `;
 
 const Texto = styled.p`
   color: #257140;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 0.875em;
   text-align: center;
 `;

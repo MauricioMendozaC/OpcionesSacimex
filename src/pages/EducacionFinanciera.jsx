@@ -149,7 +149,6 @@ const FiltroTitulo = styled.div`
 `;
 
 const Parrafo = styled.p`
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1em;
   text-align: justify;
   width: 90%;
@@ -161,16 +160,12 @@ const Parrafo = styled.p`
 
 const OpcionesSacimex = styled.span`
   color: #00632F;
-  font-family: 'Presidencia Firme', sans-serif;
-  font-size: 1em;
-  letter-spacing: 1px;
+  font-weight: 700;
 `;
 
 const StyledH4 = styled.h4`
   color: #00632F;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1.125em;
-  letter-spacing: 1px;
   text-align: center;
   width: 90%;
 
@@ -199,9 +194,8 @@ const StyledA = styled.a`
 
 const StyledSpan = styled.div`
   color: #000;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 0.75em;
-  letter-spacing: 1px;
+  font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -220,11 +214,10 @@ const Opacidad = styled.div`
   border-radius: 5px;
   color: #FFF;
   display: flex;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
+  font-weight: 700;
   height: 100%;
   left: 0;
-  letter-spacing: 1px;
   opacity: 0;
   padding: 10px;
   position: absolute;
@@ -240,9 +233,8 @@ const Opacidad = styled.div`
 /*const BotonCalculadora = styled.a`
   background-color: #00632F;
   color: #FFF;
-  font-family: 'Presidencia Firme', sans-serif;
   font-size: 1em;
-  letter-spacing: 1px;
+  font-weight: 700;
   padding: 9px 18px;
   text-decoration: none;
 `;*/

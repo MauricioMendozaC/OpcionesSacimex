@@ -96,9 +96,6 @@ const ImagenTextoContenedor = styled.div`
 `;
 
 const Parrafo = styled.p`
-  color: #000000;
-  font-family: 'Presidencia Fina', sans-serif;
-  font-size: 1em;
   min-width: 300px;
   text-align: justify;
   width: calc(100% - 310px);
@@ -110,9 +107,8 @@ const Parrafo = styled.p`
 
 const StyledH4 = styled.h4`
   color: #00632F;
-  font-family: 'Presidencia Fina', sans-serif;
   font-size: 1.25em;
-  letter-spacing: 1px;
+  font-weight: 400;
   text-align: center;
   width: 90%;
 `;
