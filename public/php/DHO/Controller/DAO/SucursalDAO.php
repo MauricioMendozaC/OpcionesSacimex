@@ -19,31 +19,43 @@ class SucursalDAO
     public function getSucursals()
     {
         $sucursals = array();
-        $query = "select * from sucursales";
+        $query = "select * from Sucursales";
         $result = $this->conexion->execute($query);
 
         while($reg = mysqli_fetch_array($result))
         {
-            $sucursal = new SucursalModel($reg[0],$reg[1],$reg[2],$reg[3]);
+            $sucursal = new SucursalModel(
+                $reg[0],
+                $reg[1],
+                $reg[2],
+                $reg[3],
+                $reg[4]
+            );
             array_push($sucursals,$sucursal);
         }
         $this->conexion->closeConection();
-        return json_encode($sucursals);
+        //var_dump($sucursals);
+        return json_encode($sucursals, JSON_UNESCAPED_UNICODE);
     }
 
     public function sucursal($sucursal)
     {
         $sucursalFind = null;
         $idSucursal = $sucursal->getIdSucursal();
-        $query = "select * from sucursales where idSucursal = $idSucursal";
+        $query = "select * from Sucursales where idSucursal = $idSucursal";
         $result = $this->conexion->execute($query);
 
         while($reg = mysqli_fetch_array($result))
         {
-            $sucursalFind = new SucursalModel($reg[0],$reg[1],$reg[2],$reg[3]);
+            $sucursalFind = new SucursalModel(
+                $reg[0],
+                $reg[1],
+                $reg[2],
+                $reg[3],
+                $reg[4]);
         }
         $this->conexion->closeConection();
-        return json_encode($sucursalFind);
+        return json_encode($sucursalFind, JSON_UNESCAPED_UNICODE);
     }
 
     public function storeSucursal($sucursal)
@@ -52,7 +64,7 @@ class SucursalDAO
         $sucursalZone = $sucursal->getSucursalZone();
         $sucursalAddress = $sucursal->getSucursalAddress();
         $errMsj=array();
-        $query = "insert into sucursales (`nombreSucursal`, `zonaSucursal`, `direccionSucursal`) values 
+        $query = "insert into Sucursales (`nombreSucursal`, `zonaSucursal`, `direccionSucursal`) values 
                  ('$sucursalName',
                  '$sucursalZone',
                  '$sucursalAddress')";
@@ -130,6 +142,22 @@ class SucursalDAO
         $this->conexion->closeConection();
         return json_encode($errMsj);
     }
+
+    public static function convert_from_latin1_to_utf8_recursively($dat)
+   {
+      if (is_string($dat)) {
+         return mb_convert_encoding($dat, 'ISO-8859-1', 'UTF-8');
+      } elseif (is_array($dat)) {
+         $ret = [];
+         foreach ($dat as $i => $d) $ret[ $i ] = self::convert_from_latin1_to_utf8_recursively($d);
+         return $ret;
+      } elseif (is_object($dat)) {
+         foreach ($dat as $i => $d) $dat->$i = self::convert_from_latin1_to_utf8_recursively($d);
+         return $dat;
+      } else {
+         return $dat;
+      }
+   }
 }
 
 ?>

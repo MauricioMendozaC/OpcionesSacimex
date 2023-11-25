@@ -2,16 +2,18 @@
     require_once "DAO/VacantDAO.php";
     require_once "../Model/VacantModel.php";
 
+    header('Content-Type: application/json');
+    $datajson = json_decode( file_get_contents('php://input') );
+    $selection = $datajson->selection;
 
-    $selection  =   $_POST['selection'];
     if($selection=="insert"||$selection=="edit")
     {
-        $name         =   $_POST['name'];
-        $profile      =   $_POST['profile'];
-        $sucursal     =   $_POST['sucursal'];
+        $name         =   $datajson->name;
+        $profile      =   $datajson->profile;
+        $sucursal     =   $datajson->sucursal;
     }
     if($selection=="persucursal") $sucursal = $_POST['sucursal'];
-    if($selection=="edit"||$selection=="find"||$selection=="delete") $idVacant = $_POST['id'];
+    if($selection=="edit"||$selection=="find"||$selection=="delete") $idVacant = $datajson->id;
     
     switch($selection)
     {
@@ -22,7 +24,8 @@
                         $output = $vacantDAO->storeVacant($vacant);
                         echo($output);
                         break;
-        case "all" :    $vacantDAO = new VacantDAO();
+        case "all" :    $output = null;
+                        $vacantDAO = new VacantDAO();
                         $output = $vacantDAO->getVacants();
                         echo($output);
                         break;

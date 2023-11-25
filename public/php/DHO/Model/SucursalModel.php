@@ -6,13 +6,15 @@ class SucursalModel implements JsonSerializable
     private $sucursalName;
     private $sucursalZone;
     private $sucursalAddress;
+    private $sucursalForm;
 
-    public function __construct($idSucursal,$sucursalName, $sucursalZone, $sucursalAddress)
+    public function __construct($idSucursal,$sucursalName, $sucursalZone, $sucursalAddress, $sucursalForm)
     {
         $this->idSucursal = $idSucursal;
         $this->sucursalName = $sucursalName;
         $this->sucursalZone = $sucursalZone;
         $this->sucursalAddress = $sucursalAddress;
+        $this->sucursalForm = $sucursalForm;
     }
 
     public function setIdSucursal($idSucursal)
@@ -53,6 +55,16 @@ class SucursalModel implements JsonSerializable
     public function getSucursalAddress()
     {
         return $this->sucursalAddress;
+    }
+
+    public function setSucursalForm($sucursalForm)
+    {
+        $this->sucursalForm = $sucursalForm;
+    }
+
+    public function getSucursalForm()
+    {
+        return $this->sucursalForm;
     }
 
     public function jsonSerialize()

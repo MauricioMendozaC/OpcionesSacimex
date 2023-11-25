@@ -4,7 +4,7 @@
 		private $conexion;
 		public function __construct($servidor, $bd, $usuario, $password){
 			$this->conexion=mysqli_connect($servidor,$usuario,$password,$bd);
-			
+			mysqli_set_charset($this->conexion, "utf8mb4");
 			if(!$this->conexion){
 				echo "Connection error";
 				die("Conection error: ".mysqli_connect_error());

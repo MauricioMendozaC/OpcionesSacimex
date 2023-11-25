@@ -3,19 +3,27 @@
     require_once "../Model/SucursalModel.php";
 
 
-    $selection  =   $_POST['selection'];
+    header('Content-Type: application/json');
+    //$selection  =   $_POST['selection'];
+    //$data = $_POST[''];
+    $datajson = json_decode( file_get_contents('php://input') );
+    //var_dump($datajson);
+    $selection = $datajson->selection;
+
+
     if($selection=="insert"||$selection=="edit")
     {
-        $name       =   $_POST['name'];
-        $zone       =   $_POST['zone'];
-        $address    =   $_POST['address'];
+        $name       =   $datajson->name;
+        $zone       =   $datajson->zone;
+        $address    =   $datajson->address;
+        $form       =   $datajson->form;
     }
-    if($selection=="edit"||$selection=="find"||$selection=="delete") $idSucursal = $_POST['id'];
+    if($selection=="edit"||$selection=="find"||$selection=="delete") $idSucursal = $datajson->id;
     
     switch($selection)
     {
         case "insert" : $sucursalDAO = new SucursalDAO();
-                        $sucursal = new SucursalModel(0,$name,$zone,$address);
+                        $sucursal = new SucursalModel(0,$name,$zone,$address, $form);
                         //the connection is closed in the store method
                         $output = $sucursalDAO->storeSucursal($sucursal);
                         echo($output);
@@ -26,17 +34,17 @@
                         break;
 
         case "find":    $sucursalDAO = new SucursalDAO();
-                        $sucursal = new SucursalModel($idSucursal,"","","");
+                        $sucursal = new SucursalModel($idSucursal,"","","","");
                         $sucursalFind = $sucursalDAO->sucursal($sucursal); 
                         echo($sucursalFind);
                         break;
         case "edit":    $sucursalDAO = new SucursalDAO();
-                        $sucursal = new SucursalModel($idSucursal,$name,$zone,$address);
+                        $sucursal = new SucursalModel($idSucursal,$name,$zone,$address,$form);
                         $output = $sucursalDAO->updateSucursal($sucursal);
                         echo ($output);
                         break;
         case "delete":  $sucursalDAO = new SucursalDAO();
-                        $sucursal = new SucursalModel($idSucursal,"","","");
+                        $sucursal = new SucursalModel($idSucursal,"","","","");
                         $output = $sucursalDAO->deleteSucursal($sucursal);
                         echo($output);
                         break;

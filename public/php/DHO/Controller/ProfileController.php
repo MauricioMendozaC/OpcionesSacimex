@@ -2,16 +2,18 @@
     require_once "DAO/ProfileDAO.php";
     require_once "../Model/ProfileModel.php";
 
+    header('Content-Type: application/json');
+    $datajson = json_decode( file_get_contents('php://input') );
+    $selection = $datajson->selection;
 
-    $selection  =   $_POST['selection'];
     if($selection=="insert"||$selection=="edit")
     {
-        $name          =   $_POST['name'];
-        $requirements  =   $_POST['requirements'];
-        $functions     =   $_POST['functions'];
-        $advantages    =   $_POST['advantages'];
+        $name          =   $datajson->name;
+        $requirements  =   $datajson->requirements;
+        $functions     =   $datajson->functions;
+        $advantages    =   $datajson->advantages;
     }
-    if($selection=="edit"||$selection=="find"||$selection=="delete") $idProfile = $_POST['id'];
+    if($selection=="edit"||$selection=="find"||$selection=="delete") $idProfile = $datajson->id;
     
     switch($selection)
     {
@@ -33,7 +35,8 @@
                         $profileFind = $profileDAO->Profile($profile); 
                         echo($profileFind);
                         break;
-        case "edit":    $profileDAO = new ProfileDAO();
+        case "edit":    $profileDAO = new ProfileDAO
+        ();
                         $profile = new ProfileModel();
                         $profile->createWithAll($idProfile,$name,$requirements,$functions,$advantages);
                         $output = $profileDAO->updateProfile($profile);
