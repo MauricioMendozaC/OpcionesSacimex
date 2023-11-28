@@ -6,6 +6,7 @@ import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
 import DatosCreditosGrupales from '../components/CreditoGrupal/DatosCreditosGrupales';
 import Footer from '../components/Footer';
+import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import somosCredito from '../assets/img/SomosCredito.png';
 import DamasCredito from '../assets/img/Damas.png';
@@ -16,9 +17,7 @@ const CreditoGrupal = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [creditoActivo, setCreditoActivo] = useState(1);
   const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
+  const [windowState, setWindowState] = useState(null);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -98,14 +97,10 @@ const CreditoGrupal = () => {
           </InformacionYBotones>
     </CentrarPrincipalContenedor>
     <Footer
-      estadoAviso={estadoAviso}
-      estadoDenuncia={estadoDenuncia}
-      estadoUNE={estadoUNE}
-      setEstadoUNE={setEstadoUNE}
-      setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}
-      setEstadoDenuncia={setEstadoDenuncia}
-      manejarScroll={manejarScroll}/>
+      setWindowState={setWindowState}/>
+    <Ventana
+      windowState={windowState}
+      setWindowState={setWindowState}/>
   </>)
 };
 
