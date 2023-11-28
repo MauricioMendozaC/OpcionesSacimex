@@ -56,24 +56,30 @@ const Footer = ({ setWindowState }) => {
   return(<>
     <PrincipalContenedor>
       <AnimacionEntradaRedes>
-        <Redes
-          href='https://www.facebook.com/sacimex'
-          rel='noopener noreferrer'
-          target='_blank'>
-            <CiFacebook/>
-        </Redes>
-        <Redes
-          href='https://instagram.com/opciones__sacimex?igshid=Y2IzZGU1MTFhOQ=='
-          rel='noopener noreferrer'
-          target='_blank'>
-            <CiInstagram/>
-        </Redes>
-        <Redes
-          href='https://twitter.com/sacimex?t=ZfV1WcsXKRxeFz2L39hbFA&s=09'
-          rel='noopener noreferrer'
-          target='_blank'>
-            <CiTwitter/>
-        </Redes>
+        <li>
+          <Redes
+            href='https://www.facebook.com/sacimex'
+            rel='noopener noreferrer'
+            target='_blank'>
+              <CiFacebook/>
+          </Redes>
+        </li>
+        <li>
+          <Redes
+            href='https://instagram.com/opciones__sacimex?igshid=Y2IzZGU1MTFhOQ=='
+            rel='noopener noreferrer'
+            target='_blank'>
+              <CiInstagram/>
+          </Redes>
+        </li>    
+        <li>
+          <Redes
+            href='https://twitter.com/sacimex?t=ZfV1WcsXKRxeFz2L39hbFA&s=09'
+            rel='noopener noreferrer'
+            target='_blank'>
+              <CiTwitter/>
+          </Redes>
+        </li>        
       </AnimacionEntradaRedes>
       <Imagen
         tamano='150px'
@@ -83,36 +89,41 @@ const Footer = ({ setWindowState }) => {
       <AcercaDeContenedor
         $textos>
           <TextosAcercaDeContenedor>
-            <TitulosAcercaDe>Regulación</TitulosAcercaDe>
-            <TextoAcercaDe
-              href='#!'
-              onClick={() => setWindowState(1)}>
-                Aviso de privacidad
-            </TextoAcercaDe>
-            <TextoAcercaDe
-              href='/Comisiones'>
-                Comisiones y beneficios
-            </TextoAcercaDe>
-            <TextoAcercaDe>Dictamen técnico</TextoAcercaDe>
+            <li><TitulosAcercaDe>Regulación</TitulosAcercaDe></li>
+            <li>
+              <TextoAcercaDe
+                href='#!'
+                onClick={() => setWindowState(1)}>
+                  Aviso de privacidad
+              </TextoAcercaDe>
+            </li>            
+            <li><TextoAcercaDe href='/Comisiones'>Comisiones y beneficios</TextoAcercaDe></li>
+            <li><TextoAcercaDe>Dictamen técnico</TextoAcercaDe></li>
           </TextosAcercaDeContenedor>
           <TextosAcercaDeContenedor>
-            <TitulosAcercaDe>Aclaraciones</TitulosAcercaDe>
-            <TextoAcercaDe
-              href={SolicitudAclaracionOpcionesSacimex}
-              rel='noopener noreferrer'
-              target='_blank'>
-                Formato de aclaración
-            </TextoAcercaDe>
-            <TextoAcercaDe
-              href='#!'
-              onClick={() => setWindowState(2)}>
-                Unidad Especializada UNE
-            </TextoAcercaDe>
-            <TextoAcercaDe
-              href='#!'
-              onClick={() => setWindowState(3)}>
-                Denuncia anónima
-            </TextoAcercaDe>
+            <li><TitulosAcercaDe>Aclaraciones</TitulosAcercaDe></li>
+            <li>
+              <TextoAcercaDe
+                href={SolicitudAclaracionOpcionesSacimex}
+                rel='noopener noreferrer'
+                target='_blank'>
+                  Formato de aclaración
+              </TextoAcercaDe>
+            </li>
+            <li>
+              <TextoAcercaDe
+                href='#!'
+                onClick={() => setWindowState(2)}>
+                  Unidad Especializada UNE
+              </TextoAcercaDe>
+            </li>
+            <li>
+              <TextoAcercaDe
+                href='#!'
+                onClick={() => setWindowState(3)}>
+                  Denuncia anónima
+              </TextoAcercaDe>
+            </li>            
           </TextosAcercaDeContenedor>
       </AcercaDeContenedor>
       <StyledDiv>
@@ -216,9 +227,10 @@ const PrincipalContenedor = styled.footer`
   z-index: 100;
 `;
 
-const RedesContenedor = styled.div`
+const RedesContenedor = styled.ul`
   display: flex;
   gap: 35px;
+  list-style: none;
   margin-bottom: 30px;
 
   @media (min-width: 850px) {
@@ -239,16 +251,19 @@ const RedesContenedor = styled.div`
     width: 60px;
     z-index: 20;
   };
+
+  li {
+    transition: transform .3s;
+
+    &:hover {
+      transform: scale(105%);
+    };
+  };
 `;
 
 const Redes = styled.a`
   color: #FFFFFF;
   text-decoration: none;
-  transition: transform .3s;
-
-  &:hover {
-    transform: scale(105%);
-  };
 
   svg {
     font-size: 30px;
@@ -271,18 +286,20 @@ const AcercaDeContenedor = styled.div`
   `};
 `;
 
-const TextosAcercaDeContenedor = styled.div`
+const TextosAcercaDeContenedor = styled.ul`
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  list-style: none;
   max-width: 155px;
   width: 45%;
 `;
 
-const TitulosAcercaDe = styled.h5`
+const TitulosAcercaDe = styled.p`
   color: #FFFFFF;
   font-size: 0.875em;
+  font-weight: 800;
   text-align: center;
 `;
 

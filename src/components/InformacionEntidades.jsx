@@ -72,7 +72,8 @@ const Parrafo = styled.p`
   width: 100%;
 `;
 
-const SubTitulo = styled.h4`
+const SubTitulo = styled.p`
   color: #93BE97;
   font-size: 0.75em;
+  font-weight: 800;
 `;

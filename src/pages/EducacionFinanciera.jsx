@@ -56,7 +56,7 @@ const EducacionFinanciera = () => {
         <Parrafo>Descubre el camino hacia un futuro financiero sólido y próspero con nuestra sección de Educación Financiera.
           En <OpcionesSacimex>Opciones Sacimex</OpcionesSacimex>, creemos en empoderar a nuestros clientes con conocimientos clave para 
           tomar decisiones financieras informadas y alcanzar sus metas económicas con confianza.</Parrafo>
-        <StyledH4>Te presentamos algunas páginas para consultar sobre educación financiera:</StyledH4>
+        <StyledP>Te presentamos algunas páginas para consultar sobre educación financiera:</StyledP>
         <PreviewsContenedor>
         <StyledA
           href='https://revista.condusef.gob.mx/2023/08/inclusion-financiera-de-las-mujeres/'
@@ -104,7 +104,7 @@ const EducacionFinanciera = () => {
             <StyledSpan>https://webappsos.condusef.gob.mx/EducaTuCartera/cuadernos.html</StyledSpan>
         </StyledA>
         </PreviewsContenedor>
-        {/*<StyledH4>También puedes hacer uso de nuestras calculadoras interactivas:</StyledH4>
+        {/*<StyledP>También puedes hacer uso de nuestras calculadoras interactivas:</StyledP>
         <BotonCalculadora
           href='/EducacionFinanciera/RastreaTusCentavos'>
             Rastrea tus Centavos
@@ -163,9 +163,10 @@ const OpcionesSacimex = styled.span`
   font-weight: 700;
 `;
 
-const StyledH4 = styled.h4`
+const StyledP = styled.p`
   color: #00632F;
   font-size: 1.125em;
+  font-weight: 800;
   text-align: center;
   width: 90%;
 

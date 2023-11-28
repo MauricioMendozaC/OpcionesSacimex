@@ -86,8 +86,8 @@ const SolicitaCredito  = () => {
       <Boton
         texto='Inicia aquí'
         referencia='http://convenio.opcionessacimex.com/'/>
-      <PasoTitulo $padding>Si tu empresa tiene antigüedad mayor a tres años, con más de 10 empleados y te gustaría que ofreciera este 
-      beneficio a los trabajadores ¡Comunícate con nosotros!</PasoTitulo>
+      <TextoFinal $padding>Si tu empresa tiene antigüedad mayor a tres años, con más de 10 empleados y te gustaría que ofreciera este 
+      beneficio a los trabajadores ¡Comunícate con nosotros!</TextoFinal>
     </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
@@ -126,11 +126,12 @@ const SubTitulo = styled.h3`
   width: 100%;
 `;
 
-const PasosContenedor = styled.div`
+const PasosContenedor = styled.ul`
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 50px;
+  list-style: none;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
   padding: 0 30px;
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
@@ -145,7 +146,7 @@ const PasosContenedor = styled.div`
   };
 `;
 
-const Paso = styled.div`
+const Paso = styled.li`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -156,7 +157,6 @@ const Paso = styled.div`
 const PasoTitulo = styled.h4`
   color: #257140;
   font-size: 0.875em;
-  ${({ $padding }) => $padding && ('padding: 0 30px;')}
   text-align: center;
 `;
 
@@ -177,4 +177,12 @@ const Parrafo = styled.p`
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 90%;
+`;
+
+const TextoFinal = styled.p`
+  color: #257140;
+  font-size: 0.875em;
+  font-weight: 800;
+  padding: 0 30px;
+  text-align: center;
 `;

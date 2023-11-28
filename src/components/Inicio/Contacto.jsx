@@ -51,8 +51,7 @@ const Sucursales = () => {
     <Section
       id='contacto'
       background='#EFEFEF'>
-        <Titulo
-          texto='Contacto'/>
+        <Titulo texto='Contacto'/>
         <AnimacionEntradaSucursales>
             {datosSucursales.map( (item, index) => (item.tipo === 2 || item.tipo === 3) && (
               <Sucursal
@@ -91,7 +90,7 @@ const Sucursales = () => {
 
 export default Sucursales;
 
-const SeccionSucursal = styled.div`
+const SeccionSucursal = styled.ul`
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -112,12 +111,12 @@ const SeccionSucursal = styled.div`
   };
 `;
 
-const Flecha = styled.div`
+const Flecha = styled.button`
   background-color: #F5A200;
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   display: grid;
-  font-size: 16px;
   height: 25px;
   place-items: center;
   transition: transform .3s;

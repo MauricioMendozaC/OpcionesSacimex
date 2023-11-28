@@ -21,12 +21,13 @@ const Inicio = () => {
     const elemento = document.getElementById(id.id);
 
     if(elemento) {
-
       elemento.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest'
       });
+    } else if (id.id !== 'Inicio'){
+      window.location.replace('/404');
     };
   };
 
@@ -70,6 +71,6 @@ const GlobalStyle = createGlobalStyle`
   } 
 `;
 
-const PrincipalContenedor = styled.div`
+const PrincipalContenedor = styled.main`
   width: 100%;
 `;

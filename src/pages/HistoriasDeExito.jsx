@@ -47,7 +47,7 @@ const HistoriasDeExito = () => {
           logros alcanzados por nuestros clientes a través del tiempo. Únete a nosotros para celebrar estos 
           triunfos y descubrir la inspiración que yace en cada camino recorrido.</Parrafo>
         </ImagenTextoContenedor>
-        <StyledH4>Pronto podrás encontrar tu historia aquí.</StyledH4>
+        <StyledP>Pronto podrás encontrar tu historia aquí.</StyledP>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
@@ -101,7 +101,7 @@ const Parrafo = styled.p`
   };
 `;
 
-const StyledH4 = styled.h4`
+const StyledP = styled.p`
   color: #00632F;
   font-size: 1.25em;
   font-weight: 400;

@@ -52,10 +52,9 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                     {linkDesplegado === 1 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 1}>
-                  <a href='/CreditoGrupal'>Crédito grupal</a>
-                  <a href='/CreditoIndividual'>Crédito individual</a>
-                  <a href='/Servicios'>Servicios</a>
-                  <a>Promociones</a>
+                  <li><a href='/CreditoGrupal'>Crédito grupal</a></li>
+                  <li><a href='/CreditoIndividual'>Crédito individual</a></li>
+                  <li><a href='/Servicios'>Servicios</a></li>
                 </SubLinksContenedor>
               </LinkDesplegable>
               <LinkDesplegable>
@@ -67,35 +66,41 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 2}>
                   {!barraVerde && (<>
-                    <Link
-                      to='conocenos'
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      onClick={() => setIsChecked(false)}>
-                        Quiénes somos
-                    </Link>
-                    <Link
-                      to='valores'
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      onClick={() => setIsChecked(false)}>
-                        Filosofía y valores
-                    </Link>
-                    <Link
-                      to='contacto'
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      onClick={() => setIsChecked(false)}>
-                        Ubicación y contacto
-                    </Link>
+                    <li>
+                      <Link
+                        to='conocenos'
+                        smooth={true}
+                        duration={500}
+                        offset={-100}
+                        onClick={() => setIsChecked(false)}>
+                          Quiénes somos
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='valores'
+                        smooth={true}
+                        duration={500}
+                        offset={-100}
+                        onClick={() => setIsChecked(false)}>
+                          Filosofía y valores
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='contacto'
+                        smooth={true}
+                        duration={500}
+                        offset={-100}
+                        onClick={() => setIsChecked(false)}>
+                          Ubicación y contacto
+                      </Link>
+                    </li>
                   </>)}
                   {barraVerde && (<>
-                    <a href='/conocenos'>Quiénes somos</a>
-                    <a href='/valores'>Filosofía y valores</a>
-                    <a href='/contacto'>Ubicación y contacto</a>
+                    <li><a href='/conocenos'>Quiénes somos</a></li>
+                    <li><a href='/valores'>Filosofía y valores</a></li>
+                    <li><a href='/contacto'>Ubicación y contacto</a></li>
                   </>)}
                 </SubLinksContenedor>
               </LinkDesplegable>
@@ -107,9 +112,9 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                     {linkDesplegado === 3 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 3}>
-                  <a href='/EducacionFinanciera'>Educación financiera</a>
-                  <a href='/RedDeProfesionales'>Red de oficios y profesiones</a>
-                  <a href='/HistoriasDeExito'>Historias de éxito</a>
+                  <li><a href='/EducacionFinanciera'>Educación financiera</a></li>
+                  <li><a href='/RedDeProfesionales'>Red de oficios y profesiones</a></li>
+                  <li><a href='/HistoriasDeExito'>Historias de éxito</a></li>
                 </SubLinksContenedor>
               </LinkDesplegable>
               <LinkDesplegable>
@@ -120,7 +125,7 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                    {linkDesplegado === 4 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 4}>
-                  <a href='/OportunidadesDeCarrera'>Oportunidades de carrera</a>
+                  <li><a href='/OportunidadesDeCarrera'>Oportunidades de carrera</a></li>                  
                 </SubLinksContenedor>
               </LinkDesplegable>
             </LinksContenedor>
@@ -173,7 +178,9 @@ const LogoContenedor = styled.a`
   transition: opacity 2s, transform 2s;
 `;
 
-const BotonHamburguesa = styled.div`
+const BotonHamburguesa = styled.button`
+  background-color: inherit;
+  border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -230,8 +237,9 @@ const BarraNavegacion = styled.nav`
   z-index: 100;
 `;
 
-const LinksContenedor = styled.div`
+const LinksContenedor = styled.ul`
   height: auto;
+  list-style: none;
   width: 100%; 
   z-index: 101;
 
@@ -240,7 +248,7 @@ const LinksContenedor = styled.div`
   };
 `;
 
-const LinkDesplegable = styled.div`
+const LinkDesplegable = styled.li`
   border-bottom: 1px solid #CCC;
   display: grid;
   gap: 0;
@@ -265,10 +273,13 @@ const LinkPrincipal = styled.div`
   };
 `;
 
-const SubLinksContenedor = styled.div`
+const SubLinksContenedor = styled.ul`
   display: flex;
   flex-direction: column;
-  height: ${({ $desplegar }) => $desplegar ? '170px' : '0'};
+  gap: 5px;
+  justify-content: flex-start;
+  height: ${({ $desplegar }) => $desplegar ? '120px' : '0'};
+  list-style: none;
   overflow: hidden;
   transition: height .3s;
 
@@ -276,11 +287,11 @@ const SubLinksContenedor = styled.div`
     border-radius: 20px;
     color: #257140;
     cursor: pointer;
+    display: block;
     font-size: 1em;
     padding: 7px 20px;
     text-decoration: none;
     transition: background .1s, color .1s;
-    width: auto;
 
     &:hover {
       background-color: #257140;

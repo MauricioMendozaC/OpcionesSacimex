@@ -156,12 +156,6 @@ const PrincipalContenedor = styled.div`
   @media (min-width: 880px) {
     padding: 30px 0 60px;
   };
-
-  iframe {
-    border: none;
-    height: 500px;
-    width: 100%;
-  };
 `;
 
 const ImagenTextoContenedor = styled.div`

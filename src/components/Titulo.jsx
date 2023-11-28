@@ -48,7 +48,7 @@ const Titulo = ({texto, padding, color, mostrarAnimaciones}) => {
 
 export default Titulo;
 
-const PrincipalContenedor = styled.h3`
+const PrincipalContenedor = styled.h2`
   color: ${({ $color }) => $color ? ($color) : '#005520'};
   font-size: 1.625em;
   margin: auto;

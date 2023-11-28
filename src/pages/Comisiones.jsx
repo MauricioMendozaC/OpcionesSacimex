@@ -165,16 +165,17 @@ const PrincipalContenedor = styled.div`
   width: 100%;
 `;
 
-const OpcionesSaci = styled.h3`
+const OpcionesSaci = styled.p`
   color: #257140;
   font-size: 1em;
   font-weight: 400;
   text-align: center;
 `;
 
-const Sacimex = styled.h2`
+const Sacimex = styled.p`
   color: #00632F;
   font-size: 1.75em;
+  font-weight: 800;
   text-align: center;
 `;
 
@@ -185,7 +186,7 @@ const CreditoContenedor = styled.div`
   gap: 10px;
 `;
 
-const NombreCredito = styled.h4`
+const NombreCredito = styled.h3`
   color: #005520;
   font-size: 1em;
   text-align: center;

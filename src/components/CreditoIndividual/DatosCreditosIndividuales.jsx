@@ -63,7 +63,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
     {creditoActivo === 2 && (<>
       <Parrafo><CreceSpan>Saci-Crece</CreceSpan> es para ti si exiges un crédito que se adapte a tu proyecto y personalidad única, ya que es un crédito 
       flexible para cualquier destino sea comercial, personal o vivienda.</Parrafo>
-      <StyledH4>Características básicas:</StyledH4>
+      <StyledH3>Características básicas:</StyledH3>
       <StyledUl>
         <li>Sin comisiones.</li>
         <li>Hasta 1,000,000.</li>
@@ -73,7 +73,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Tasa mensual del 2% al 3.5% según riesgo, monto y garantía.</li>
           <li>(Aplican restricciones o condiciones por historial de crédito).</li>
       </StyledUl>
-      <StyledH4>Requisitos:</StyledH4>
+      <StyledH3>Requisitos:</StyledH3>
         <StyledUl>
           <li>Edad de 21 a 65 años.</li>
           <li>Garantía líquida, mueble y/o inmueble.</li>
@@ -87,7 +87,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
     </>)}
     {creditoActivo === 3 && (<>
       <Parrafo><LineaSpan>Línea Sacimex</LineaSpan> es el crédito revolvente que desbloquea nuevas oportunidades para tu empresa o negocio, destina estos recursos a capital de trabajo o capital de inversión según necesidades o proyectos, con este contrato adicionalmente tendrás opciones a créditos simples.</Parrafo>
-      <StyledH4>Características básicas:</StyledH4>
+      <StyledH3>Características básicas:</StyledH3>
       <StyledUl>
         <li>Monto hasta 3.5 millones.</li>
         <li>Contrato de 24 a 60 meses.</li>
@@ -97,7 +97,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Aplican restricciones o condiciones por historial de crédito.</li>
         <li>Tasa mensual del 2.25% al 2.75% según riesgo, monto y garantía.</li>
       </StyledUl>
-      <StyledH4>Requisitos generales:</StyledH4>
+      <StyledH3>Requisitos generales:</StyledH3>
       <StyledUl>
         <li>Edad de 21 a 65 años.</li>
         <li>Antigüedad comercial 1 año.</li>
@@ -109,7 +109,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Comprobante de domicilio menor a 3 meses.</li>
         <li>Seguro, coberturas y accesorios a cuenta del cliente.</li>
       </StyledUl>
-      <StyledH4>Requisitos Persona Física:</StyledH4>
+      <StyledH3>Requisitos Persona Física:</StyledH3>
       <StyledUl>
         <li>Acta de nacimiento.</li>
         <li>Acta de matrimonio.</li>
@@ -118,7 +118,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Últimos 3 estados de cuenta bancarios.</li>
         <li>Balance y estado de resultados del último año y mes.</li>
       </StyledUl>
-      <StyledH4>Requisitos Persona Moral:</StyledH4>
+      <StyledH3>Requisitos Persona Moral:</StyledH3>
       <StyledUl>
         <li>Acta constitutiva con inscripción al registro público.</li>
         <li>Poderes de los representantes.</li>

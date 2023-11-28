@@ -74,12 +74,13 @@ const Valores = () => {
 
 export default Valores;
 
-const PrincipalContenedor = styled.div`
+const PrincipalContenedor = styled.ul`
   align-items: start;
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
+  list-style: none;
   max-width: 1000px;
   width: 90%;
 
@@ -90,7 +91,7 @@ const PrincipalContenedor = styled.div`
   };
 `;
 
-const Valor = styled.div`
+const Valor = styled.li`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -102,7 +103,7 @@ const Valor = styled.div`
   width: 40%;
 `;
 
-const ValorTitulo = styled.h3`
+const ValorTitulo = styled.h4`
   color: #000;
   font-size: 1em;
 `;

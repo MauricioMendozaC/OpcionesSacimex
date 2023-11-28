@@ -55,7 +55,7 @@ const Textos = styled.div`
   flex-direction: column;
 `;
 
-const SubTitulo = styled.h6`
+const SubTitulo = styled.h3`
   color: #005520;
   font-size: 1em;
   font-weight: 400;

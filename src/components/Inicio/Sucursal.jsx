@@ -27,7 +27,7 @@ const Sucursal = ({ nombre, direccion, ubicacion, telefono1, telefono2, email, c
 
 export default Sucursal;
 
-const PrincipalContenedor = styled.div`
+const PrincipalContenedor = styled.li`
   border-bottom: 1px solid #005520;
 	display: grid;
 	grid-column-gap: 0px;
@@ -51,10 +51,9 @@ const NombreContenedor = styled.div`
 	width: 100%;
 `;
 
-const NombreSucursal = styled.h4`
+const NombreSucursal = styled.p`
 	color: #00632F;
 	font-size: 1em;
-	font-weight: 400;
 `;
 
 const Info = styled.div`
