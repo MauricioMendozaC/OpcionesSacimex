@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import { datosCreditos } from '../utils/datos';
+import { greenSacimex, text, label, disabled, smaLength1, medLength1, medLength2, medLength3, smaFont, medFont } from '../utils/stylesRules';
 
 const Comisiones = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
@@ -150,26 +151,26 @@ const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  margin-top: 60px;
+  gap: ${medLength2};
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding: 30px 0 60px;
+  padding: ${medLength1} 0 ${medLength3};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
 `;
 
 const OpcionesSaci = styled.p`
-  color: #257140;
-  font-size: 1em;
+  color: ${greenSacimex};
+  font-size: ${smaFont};
   font-weight: 400;
   text-align: center;
 `;
 
 const Sacimex = styled.p`
-  color: #00632F;
-  font-size: 1.75em;
+  color: ${greenSacimex};
+  font-size: ${medFont};
   font-weight: 800;
   text-align: center;
 `;
@@ -178,17 +179,17 @@ const CreditoContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: ${smaLength1};
 `;
 
 const NombreCredito = styled.h3`
-  color: #005520;
-  font-size: 1em;
+  color: ${greenSacimex};
+  font-size: ${smaFont};
   text-align: center;
 `;
 
 const DatosCredito = styled.p`
-  font-size: 1em;
+  font-size: ${smaFont};
   text-align: center;
 `;
 
@@ -206,20 +207,21 @@ const TablaContenedor = styled.div`
 
 const Tabla = styled.table`
   border-collapse: collapse;
-  font-size: 0.875em;
+  font-size: ${smaFont};
   text-align: center;
   width: 820px;
 `;
 
 const Celda = styled.td`
-  border-bottom: 1px solid #ccc;
-  ${({ $titulo }) => $titulo && ('border-right: 1px solid #00632F;')};
-  ${({ $titulo }) => $titulo && (`font-weight: 700`)};
-  padding: 8px;
+  border-bottom: 1px solid ${disabled};
+  ${({ $titulo }) => $titulo && (`border-right: 1px solid ${label};`)};
+  ${({ $titulo }) => $titulo ? `color: ${text};` : `color: ${label};`};
+  ${({ $titulo }) => $titulo && (`font-weight: 800`)};
+  padding: ${smaLength1};
 `;
 
 const Encabezado = styled.th`
-  border-bottom: 1px solid #00632F;
-  ${({ $titulo }) => $titulo && ('border-right: 1px solid #00632F;')};
-  padding: 8px;
+  border-bottom: 1px solid ${label};
+  ${({ $titulo }) => $titulo && (`border-right: 1px solid ${label};`)};
+  padding: ${smaLength1};
 `;

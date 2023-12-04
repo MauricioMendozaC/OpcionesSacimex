@@ -67,7 +67,8 @@ export default Inicio;
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: repeating-linear-gradient( -45deg, #257140, #257140 2px, #00632F 2px, #00632F 10px );
+    background: #FFFFFF;
+    padding-top: 64px;
   } 
 `;
 

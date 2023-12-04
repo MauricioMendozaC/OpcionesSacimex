@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { label, smaLength2, smaLength3, medLength3, smaFont, medFont } from '../../utils/stylesRules';
 
 const AvisoPrivacidad = () => {
   return(
@@ -91,48 +92,48 @@ const Texto = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 60px 20px;
+  gap: ${smaLength2};
+  padding: ${medLength3} ${smaLength3};
   width: 100%;
 `;
 
 const Titulo = styled.h3`
-  color: #000;
-  font-size: 1em;
+  font-size: ${medFont};
 `;
 
 const SubTitulo = styled.h4`
-  color: #000;
-  font-size: 0.875em;
+  font-size: ${smaFont};
   text-align: justify;
   width: 100%;
 `;
 
 const Parrafo = styled.p`
-  font-size: 0.875em;
+  color: ${label};
+  font-size: ${smaFont};
   text-align: justify;
   width: 100%;
 
   a {    
-    font-size: 1em;
+    font-size: ${smaFont};
   };
 
   em {
-    font-size: 1em;
+    font-size: ${smaFont};
   };
 `;
 
 const Lista = styled.ul`
+  color: ${label};
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: ${smaLength2};
   text-align: justify;
   width: 100%;
 
   li {
-    font-size: 0.875em;
+    font-size: ${smaFont};
   };
 
   b {
-    font-size: 1em;
+    font-size: ${smaFont};
   }
 `;

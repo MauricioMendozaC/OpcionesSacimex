@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { larLength2 } from '../../utils/stylesRules';
 
 const Logo = ({ href, enlaceImagen, nombre }) => {
   return(
@@ -16,7 +17,7 @@ export default Logo;
 const StyledA = styled.a`
   cursor: pointer;
   transition: transform .3s;
-  width: 150px;
+  width: ${larLength2};
 
   img {
     object-fit: cover;

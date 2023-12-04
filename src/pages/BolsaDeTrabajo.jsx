@@ -9,6 +9,7 @@ import Vacancies from '../components/OportunidadesDeCarrera/Vacancies';
 import Footer from '../components/Footer';
 import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor, BloquearScroll } from '../utils/estilosPages';
+import { disabled, smaLength1, medLength1, medLength3, medFont } from '../utils/stylesRules';
 import OportunidadesDeCarrera from '../assets/img/OportunidadesDeCarrera.svg';
 
 const BolsaDeTrabajo = () => {
@@ -143,18 +144,18 @@ const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: ${medLength1};
   justify-content: flex-start;
-  margin-top: 60px;
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding: 30px 30px 60px;
+  padding: ${medLength1} ${medLength1} ${medLength3} ${medLength1};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
 
   @media (min-width: 880px) {
-    padding: 30px 0 60px;
+    padding: ${medLength1} 0 ${medLength3} 0;
   };
 `;
 
@@ -162,7 +163,7 @@ const ImagenTextoContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: ${smaLength1};
   justify-content: center;
 `;
 
@@ -170,19 +171,18 @@ const ContenedorTextos = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   min-width: 300px;
-  width: calc(100% - 310px);
+  width: calc(100% - 300px - ${smaLength1});
 `;
 
 const Parrafo = styled.p`
-  font-size: 1.125em;
+  font-size: ${medFont};
   text-align: justify;
   width: 100%;
 `;
 
 const Tabla = styled.div`
-  border: 1px solid #DDDDDD;
+  border: 1px solid ${disabled};
   border-radius: 10px;
   display: grid;
   grid-template-columns: 0.5fr 1fr;

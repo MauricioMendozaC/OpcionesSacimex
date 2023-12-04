@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import 'intersection-observer';
-import styled from "styled-components";
+import styled from 'styled-components';
+import {greenSacimex, yellowSacimex, whiteSacimex,
+        text, label, disabled,
+        smaLength1, smaLength2, smaLength3,
+        medLength1, medLength2, medLength3,
+        larLength1, larLength2, larLength3,
+        smaFont, medFont, larFont} from '../utils/stylesRules';
 
 const AnimacionEntradaBoton = ({ children, referencia, amarillo, newBlank }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -52,19 +58,19 @@ const Boton = ({ texto, referencia, amarillo, newBlank }) => {
 export default Boton;
 
 const PrincipalContenedor = styled.a`
-  background-color: ${({ $amarillo }) => $amarillo ? '#F5A200' : '#257140'};
+  background-color: ${({ $amarillo }) => $amarillo ? yellowSacimex : greenSacimex};
   border-radius: 3px;
-  color: ${({ $amarillo }) => $amarillo ? '#005217' : '#FFFFFF'};
+  color: ${({ $amarillo }) => $amarillo ? text : '#FFFFFF'};
   cursor: pointer;
-  font-size: 0.875em;
-  font-weight: 700;
+  font-size: ${smaFont};
+  font-weight: 800;
   opacity: ${({ $visible }) => $visible ? '1' : '0'};
-  padding: 9px 18px;
+  padding: ${smaLength1} ${smaLength2};
   text-decoration: none;
   transform: translateY(${({ $visible }) => $visible ? '0' : '-10px'});
-  transition: background .2s, opacity 2s, transform 2s;
+  transition: background .3s, opacity 2s, transform 2s;
 
   &:hover {
-    background-color: ${({ $amarillo }) => $amarillo ? '#D38000' : '#005520;'}
+    background-color: ${({ $amarillo }) => $amarillo ? '#F7B432' : '#328258;'}
   };
 `;

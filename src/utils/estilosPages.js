@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const EstilosGlobales = createGlobalStyle`
   body {
-    background-color: ${({ $fondoGris }) => $fondoGris ? '#DDDDDD' : '#FFFFFF'};
+    background-color: #FFFFFF;
   };
 `;
 

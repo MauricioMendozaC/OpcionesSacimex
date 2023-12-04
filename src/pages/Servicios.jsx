@@ -7,6 +7,12 @@ import Logo from '../components/Servicios/Logo';
 import Footer from '../components/Footer';
 import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
+import {greenSacimex, yellowSacimex, whiteSacimex,
+  text, label, disabled,
+  smaLength1, smaLength2, smaLength3,
+  medLength1, medLength2, medLength3,
+  larLength1, larLength2, larLength3,
+  smaFont, medFont, larFont} from '../utils/stylesRules';
 
 const Servicios = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
@@ -205,8 +211,7 @@ const Servicios = () => {
         </ImagenesContenedor>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
-    <Footer
-      setWindowState={setWindowState}/>
+    <Footer setWindowState={setWindowState}/>
     <Ventana
       windowState={windowState}
       setWindowState={setWindowState}/>
@@ -219,19 +224,19 @@ const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: ${medLength1};
   justify-content: flex-start;
-  margin-top: 60px;
+  margin-top: ${medLength3};
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding: 30px 0 60px;
+  padding: ${medLength1} 0 ${medLength3};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
 `;
 
 const StyledP = styled.p`
-  color: #00632F;
-  font-size: 1.25em;
+  color: ${text};
+  font-size: ${medFont};
   text-align: center;
   width: 90%;
 `;
@@ -240,7 +245,7 @@ const ImagenesContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: ${medLength2};
   justify-content: center;
   width: 90%;
 `;

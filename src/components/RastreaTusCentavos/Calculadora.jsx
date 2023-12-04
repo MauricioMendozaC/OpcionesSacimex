@@ -2,6 +2,12 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlinePlus } from 'react-icons/ai';
 import CafeImagen from '../../assets/img/Cafe.jpg';
+import {greenSacimex, yellowSacimex, whiteSacimex,
+  text, label, disabled,
+  smaLength1, smaLength2, smaLength3,
+  medLength1, medLength2, medLength3,
+  larLength1, larLength2, larLength3,
+  smaFont, medFont, larFont} from '../../utils/stylesRules';
 
 const Calculadora = () => {
   const [pasoActivo, setPasoActivo] = useState(1);
@@ -111,40 +117,41 @@ export default Calculadora;
 
 const IndicadorDePasosContenedor = styled.div`
   display: flex;
-  gap: 10px;
+  gap: ${smaLength1};
 `;
 
 const IndicadorDePasos = styled.div`
-  background-color: ${({ $activo }) => $activo ? '#F5A200' : '#FFFFFF'};
-  ${({ $activo }) => !$activo && ('border: 2px solid #F5A200;')}
+  background-color: ${({ $activo }) => $activo ? yellowSacimex : whiteSacimex};
+  ${({ $activo }) => !$activo && (`border: 2px solid ${yellowSacimex};`)}
   border-radius: 50%;
   display: grid;
-  height: 50px;
+  height: ${medLength2};
   place-items: center;
   transition: background .3s, border .3s;
-  width: 50px;
+  width: ${medLength2};
 
   span {
-    color: #005217;
-    font-weight: 700;
+    color: ${greenSacimex};
+    font-size: ${smaFont};
+    font-weight: 800;
   };
 `;
 
 const TextoPasos = styled.p`
-  color: #005520;
-  font-size: 1.125em;
-  font-weight: 700;
+  color: ${text};
+  font-size: ${smaFont};
+  font-weight: 800;
   text-align: center;
 `;
 
 const StyledInput = styled.input`
   appearance: textfield;
-  border: 1px solid #005520;
+  border: 1px solid ${greenSacimex};
   border-radius: 25px;
   ${({ $mostrar }) => !$mostrar && ('display: none;')}
-  font-size: 1em;
-  outline: #00632F;
-  padding: 10px 25px;
+  font-size: ${smaFont};
+  outline: ${greenSacimex};
+  padding: ${smaLength1} ${smaLength3};
   text-align: right;
 
   &::-webkit-inner-spin-button,
@@ -155,7 +162,7 @@ const StyledInput = styled.input`
 
 const Alerta = styled.p`
   color: red;
-  font-size: 1em;
+  font-size: ${smaFont};
 `;
 
 const StyledButton = styled.button`

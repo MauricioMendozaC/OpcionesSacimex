@@ -12,6 +12,8 @@ import somosCredito from '../assets/img/SomosCredito.png';
 import DamasCredito from '../assets/img/Damas.png';
 import EllaSabiduria from '../assets/img/ELLA.png'
 import FotoGrupal from '../assets/img/FotoGrupal.jpg';
+import { greenSacimex, yellowSacimex, whiteSacimex, text, disabled, smaLength1, smaLength2, smaLength3, medLength1,
+        medLength2, medLength3, larLength3, smaFont } from '../utils/stylesRules';
 
 const CreditoGrupal = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
@@ -28,7 +30,7 @@ const CreditoGrupal = () => {
   };
 
   return(<>
-    <EstilosGlobales $evitarScroll={evitarScroll} $fondoGris/>
+    <EstilosGlobales $evitarScroll={evitarScroll}/>
     <Helmet>
       <meta
         name='description'
@@ -43,58 +45,58 @@ const CreditoGrupal = () => {
     <CentrarPrincipalContenedor>
       <PrincipalContenedor
         $mostrarAnimaciones={mostrarAnimaciones}>
-            <Imagen
-              tamano='100%'
-              imagen={FotoGrupal}
-              alt='Crédito grupal Sacimex'
-              extras='max-width: 820px;'
-              mostrarAnimaciones={mostrarAnimaciones}/>
-          <FiltroTitulo>
-            <Titulo
-              color='#FFF'
-              texto='Crédito grupal'/>
-          </FiltroTitulo>
+          <TextsContainer>            
+            <Titulo texto='Crédito grupal'/>
+            <StyledP>Descubre en <b>Opciones Sacimex</b> los mejores créditos grupales para comunidades unidas. ¡Transforma
+            tus metas en realidad con nuestros créditos compartidos y apoyo financiero comunitario!</StyledP>
+          </TextsContainer>
+          <Imagen
+            tamano='100%'
+            imagen={FotoGrupal}
+            alt='Crédito grupal Sacimex'
+            extras={imgExtras}
+            mostrarAnimaciones={mostrarAnimaciones}/>
       </PrincipalContenedor>
       <InformacionYBotones>
-            <Botones>
-              <BotonCredito
-                $activo={creditoActivo === 1}
-                onClick={() => setCreditoActivo(1)}>
-                  Ella-Sabiduría
-              </BotonCredito>
-              <BotonCredito
-                $activo={creditoActivo === 2}
-                onClick={() => setCreditoActivo(2)}>
-                  Da-más crédito
-              </BotonCredito>
-              <BotonCredito
-                $activo={creditoActivo === 3}
-                onClick={() => setCreditoActivo(3)}>
-                  Somos crédito
-              </BotonCredito>
-            </Botones>
-            <Informacion>
-              {creditoActivo === 3 && (<>
-                <Imagen
-                  tamano='200px'
-                  imagen={somosCredito}
-                  alt='Somos crédito'/>
-              </>)}
-              {creditoActivo === 2 && (<>
-                <Imagen
-                  tamano='200px'
-                  imagen={DamasCredito}
-                  alt='Da-Más crédito'/>
-              </>)}
-              {creditoActivo === 1 && (<>
-                <Imagen
-                  tamano='200px'
-                  imagen={EllaSabiduria}
-                  alt='Ella-Sabiduría'/>
-              </>)}
-              <DatosCreditosGrupales creditoActivo={creditoActivo}/>
-            </Informacion>
-          </InformacionYBotones>
+        <Botones>
+          <BotonCredito
+            $activo={creditoActivo === 1}
+            onClick={() => setCreditoActivo(1)}>
+              Ella-Sabiduría
+          </BotonCredito>
+          <BotonCredito
+            $activo={creditoActivo === 2}
+            onClick={() => setCreditoActivo(2)}>
+              Da-más crédito
+          </BotonCredito>
+          <BotonCredito
+            $activo={creditoActivo === 3}
+            onClick={() => setCreditoActivo(3)}>
+              Somos crédito
+          </BotonCredito>
+        </Botones>
+        <Informacion>
+          {creditoActivo === 3 && (<>
+            <Imagen
+              tamano={larLength3}
+              imagen={somosCredito}
+              alt='Somos crédito'/>
+          </>)}
+          {creditoActivo === 2 && (<>
+            <Imagen
+              tamano={larLength3}
+              imagen={DamasCredito}
+              alt='Da-Más crédito'/>
+          </>)}
+          {creditoActivo === 1 && (<>
+            <Imagen
+              tamano={larLength3}
+              imagen={EllaSabiduria}
+              alt='Ella-Sabiduría'/>
+          </>)}
+          <DatosCreditosGrupales creditoActivo={creditoActivo}/>
+        </Informacion>
+      </InformacionYBotones>
     </CentrarPrincipalContenedor>
     <Footer
       setWindowState={setWindowState}/>
@@ -106,63 +108,95 @@ const CreditoGrupal = () => {
 
 export default CreditoGrupal;
 
+const imgExtras = `
+  clip-path: circle(95% at 88% 4%);
+
+  @media (min-width: 550px) {
+    width: 80%;
+  };
+
+  @media (min-width: 850px) {
+    width: 50%;
+  };
+`;
+
 const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 60px;
+  flex-wrap: wrap-reverse;
+  gap: ${smaLength3};
+  justify-content: center;
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding-bottom: 30px;
-  position: relative;
+  padding-bottom: ${medLength1};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
+
+  @media (min-width: 850px) {
+    gap: 0;
+  };
 `;
 
-const FiltroTitulo = styled.div`
-  background: linear-gradient(0deg, rgba(0,99,47,1) 0%, rgba(0,99,47,1) 18%, rgba(0,99,47,0.25262605042016806) 100%);
-  bottom: 35px;
-  height: 80px;
-  padding-top: 10px;
-  position: absolute;
+const TextsContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: ${smaLength3};
   width: 100%;
+
+  @media (min-width: 850px) {
+    width: 50%;
+  };
+`;
+
+const StyledP = styled.p`
+  color: ${text};
+  font-size: ${smaFont};
+  padding: 0 ${smaLength3};
+  text-align: center;
+
+  @media (min-width: 850px) {
+    padding: 0;
+  };
+
+  b {
+    color: ${greenSacimex};
+  };
 `;
 
 const InformacionYBotones = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: ${medLength1};
   max-width: 820px;
   width: 100%;
 `;
 
 const Botones = styled.div`
   display: flex;
-  gap: 10px;
+  gap: ${smaLength1};
 `;
 
 const BotonCredito = styled.button`
-  background-color: ${({ $activo }) => $activo ? '#FFFFFF' : '#F5A200'};
-  border: none;
-  border-radius: 3px 3px 0 0;
-  color: #005520;
-  cursor: pointer;
-  font-size: 0.875em;
-  font-weight: 700;
-  padding: 5px 10px;
+  background-color: ${({ $activo }) => $activo ? whiteSacimex : yellowSacimex};
+  border: ${({ $activo }) => $activo ? `1px solid ${disabled}` : 'none'};
+  border-radius: 3px;
+  color: ${text};
+  ${({ $activo }) => !$activo && 'cursor: pointer;'};  
+  font-size: ${smaFont};
+  font-weight: 800;
+  padding: ${smaLength1} ${smaLength2};
   transition: background .3s;
 `;
 
 const Informacion = styled.div`
   align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  padding: 20px;
+  gap: ${medLength2};
+  padding: ${smaLength3};
   width: 100%;
 `;
