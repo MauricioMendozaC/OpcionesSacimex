@@ -32,13 +32,13 @@ const BolsaDeTrabajo = () => {
 
   
   const fetchDbJobVacancies = async () => {
-    const formData = new FormData();
-    formData.append('selection', 'all');
-
     try {
-      const response = await fetch('https://web.opcionessacimex.com/php/DHO/Controller/VacantController.php', {
+      const response = await fetch('https://opcionessacimex.com/php/DHO/Controller/VacantController.php', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({'selection' : 'all'})
       });
   
       const result = await response.json();
@@ -49,27 +49,37 @@ const BolsaDeTrabajo = () => {
   };
 
   const fetchDbBranches = async () => {
-    const formData = new FormData();
-    formData.append('selection', 'all');
-
     try {
-      const response = await fetch('https://web.opcionessacimex.com/php/DHO/Controller/SucursalController.php', {
+      const response = await fetch('https://opcionessacimex.com/php/DHO/Controller/SucursalController.php', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({'selection' : 'all'})
       });
   
       const result = await response.json();
-      console.log(result);
       setBranches(result);
     } catch (error) {
       console.error(error)
     };
   };
 
-  const fetchDbProfiles = () => {
-    fetch('./json/DbProfiles.json')
-      .then( res => res.json() )
-        .then( res => setProfiles(res) );
+  const fetchDbProfiles = async () => {
+    try {
+      const response = await fetch('https://opcionessacimex.com/php/DHO/Controller/ProfileController.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({'selection' : 'all'})
+      });
+  
+      const result = await response.json();
+      setProfiles(result);
+    } catch (error) {
+      console.error(error)
+    };
   };
 
   const scrollToElement = () => {

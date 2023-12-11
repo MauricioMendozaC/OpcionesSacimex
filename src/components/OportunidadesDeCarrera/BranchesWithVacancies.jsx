@@ -9,6 +9,7 @@ const BranchesWithVacancies = ({ branches, jobVacancies, activeBranch, setActive
   }, []);
 
   const pickBranches = () => {
+    console.log(jobVacancies);
     let tempArray = branches.filter(branch =>
       jobVacancies.some(vacante => vacante.idSucursal === branch.idSucursal)
     );
