@@ -3,7 +3,6 @@
 class VacantModel implements JsonSerializable
 {
     private $idVacant;
-    private $vacantName;
     private $idProfile;
     private $idSucursal;
 
@@ -12,10 +11,9 @@ class VacantModel implements JsonSerializable
 
     }
 
-    public function createWithAll($idVacant, $vacantName, $idProfile, $idSucursal)
+    public function createWithAll($idVacant, $idProfile, $idSucursal)
     {
         $this->idVacant = $idVacant;
-        $this->vacantName = $vacantName;
         $this->idProfile = $idProfile;
         $this->idSucursal = $idSucursal;
     }
@@ -28,16 +26,6 @@ class VacantModel implements JsonSerializable
     public function getIdVacant()
     {
         return $this->idVacant;
-    }
-
-    public function setVacantName($vacantName)
-    {
-        $this->vacantName = $vacantName;
-    }
-
-    public function getVacantName()
-    {
-        return $this->vacantName;
     }
 
     public function setIdProfile($idProfile)
