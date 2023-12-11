@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { text, label, smaLength2, smaLength3, medLength3, smaFont, medFont } from '../../utils/stylesRules';
 
 const UnidadEspecializada = () => {
   return(
@@ -24,34 +25,34 @@ const Texto = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 60px 20px;
+  gap: ${smaLength2};
+  padding: ${medLength3} ${smaLength3};
   width: 100%;
 `;
 
 const StyledH3 = styled.h3`
-  color: #00632F;
-  font-size: 1.25em;
+  color: ${text};
+  font-size: ${medFont};
   text-align: center;
 `;
 
 const Parrafo = styled.p`
-  font-size: 1em;
+  color: ${label};
+  font-size: ${smaFont};
   text-align: justify;
   width: 100%;
 `;
 
 const StyledH4 = styled.h4`
-  color: #00632F;
-  font-size: 1.25em;
-  font-weight: 400;
+  color: ${text};
+  font-size: ${smaFont};
   text-align: center;
 `;
 
 const Links = styled.a`
-  color: #000;
+  color: ${label};
   cursor: pointer;
-  font-size: 1em;
+  font-size: ${smaFont};
   text-align: center;
   text-decoration: none;
 `;

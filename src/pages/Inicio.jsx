@@ -21,12 +21,13 @@ const Inicio = () => {
     const elemento = document.getElementById(id.id);
 
     if(elemento) {
-
       elemento.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest'
       });
+    } else if (id.id !== 'Inicio'){
+      window.location.replace('/404');
     };
   };
 
@@ -66,10 +67,11 @@ export default Inicio;
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: repeating-linear-gradient( -45deg, #257140, #257140 2px, #00632F 2px, #00632F 10px );
+    background: #FFFFFF;
+    padding-top: 64px;
   } 
 `;
 
-const PrincipalContenedor = styled.div`
+const PrincipalContenedor = styled.main`
   width: 100%;
 `;

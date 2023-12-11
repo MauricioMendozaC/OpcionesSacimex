@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
 import Footer from '../components/Footer';
+import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import ImagenEducacion from '../assets/img/EducacionFinanciera.jpg';
 import PreviewInclusionFinancieraDeLasMujeres from '../assets/img/PreviewInclusionFinancieraDeLasMujeres.jpg';
@@ -12,14 +13,13 @@ import PreviewConsejosParaElRegresoAClases from '../assets/img/PreviewConsejosPa
 import PreviewFinanzasJovenes from '../assets/img/PreviewFinanzasJovenes.jpg';
 import PreviewConduguiasYFolletos from '../assets/img/PreviewConduguiasYFolletos.jpg';
 import PreviewCuadernos from '../assets/img/PreviewCuadernos.jpg';
+import { greenSacimex, whiteSacimex, text, disabled, smaLength1, smaLength3, medLength2, medLength3, larLength3, smaFont, medFont } from '../utils/stylesRules';
 
 
 const EducacionFinanciera = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
+  const [windowState, setWindowState] = useState(null);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -42,21 +42,21 @@ const EducacionFinanciera = () => {
       evitarScroll={manejarScroll}
       barraVerde/>
     <CentrarPrincipalContenedor>
-      <PrincipalContenedor
-        $mostrarAnimaciones={mostrarAnimaciones}>
-        <Imagen
-          tamano='100%'
-          imagen={ImagenEducacion}
-          alt='Educación financiera'/>
-        <FiltroTitulo>
-          <Titulo
-            color='#FFF'
-            texto='Educación financiera'/>
-        </FiltroTitulo>
-        <Parrafo>Descubre el camino hacia un futuro financiero sólido y próspero con nuestra sección de Educación Financiera.
-          En <OpcionesSacimex>Opciones Sacimex</OpcionesSacimex>, creemos en empoderar a nuestros clientes con conocimientos clave para 
-          tomar decisiones financieras informadas y alcanzar sus metas económicas con confianza.</Parrafo>
-        <StyledH4>Te presentamos algunas páginas para consultar sobre educación financiera:</StyledH4>
+      <PrincipalContenedor $mostrarAnimaciones={mostrarAnimaciones}>
+        <Presentation>
+          <Imagen
+            tamano='100%'
+            imagen={ImagenEducacion}
+            alt='Educación financiera'
+            extras={imgExtras}/>
+          <TextsContainer>
+            <Titulo texto='Educación financiera'/>
+            <Parrafo>Descubre el camino hacia un futuro financiero sólido y próspero con nuestra sección de Educación Financiera.
+              En <OpcionesSacimex>Opciones Sacimex</OpcionesSacimex>, creemos en empoderar a nuestros clientes con conocimientos
+              clave para tomar decisiones financieras informadas y alcanzar sus metas económicas con confianza.</Parrafo>
+          </TextsContainer>
+        </Presentation>        
+        <StyledP>Te presentamos algunas páginas para consultar sobre educación financiera:</StyledP>
         <PreviewsContenedor>
         <StyledA
           href='https://revista.condusef.gob.mx/2023/08/inclusion-financiera-de-las-mujeres/'
@@ -104,7 +104,7 @@ const EducacionFinanciera = () => {
             <StyledSpan>https://webappsos.condusef.gob.mx/EducaTuCartera/cuadernos.html</StyledSpan>
         </StyledA>
         </PreviewsContenedor>
-        {/*<StyledH4>También puedes hacer uso de nuestras calculadoras interactivas:</StyledH4>
+        {/*<StyledP>También puedes hacer uso de nuestras calculadoras interactivas:</StyledP>
         <BotonCalculadora
           href='/EducacionFinanciera/RastreaTusCentavos'>
             Rastrea tus Centavos
@@ -112,45 +112,69 @@ const EducacionFinanciera = () => {
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
-      estadoAviso={estadoAviso}
-      estadoDenuncia={estadoDenuncia}
-      estadoUNE={estadoUNE}
-      setEstadoUNE={setEstadoUNE}
-      setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}
-      setEstadoDenuncia={setEstadoDenuncia}
-      manejarScroll={manejarScroll}/>
+      setWindowState={setWindowState}/>
+    <Ventana
+      windowState={windowState}
+      setWindowState={setWindowState}/>
   </>);
 };
 
 export default EducacionFinanciera;
 
+const imgExtras = `
+  @media (min-width: 550px) {
+    width: 80%;
+  };
+
+  @media (min-width: 850px) {
+    width: 50%;
+  };
+`;
+
 const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  margin-top: 60px;
+  gap: ${medLength2};
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding: 0 0 60px;
+  padding: 0 0 ${medLength3};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
 `;
 
-const FiltroTitulo = styled.div`
-  background: linear-gradient(180deg, rgba(0,99,47,1) 0%, rgba(0,99,47,1) 18%, rgba(0,99,47,0.25262605042016806) 100%);
-  height: 80px;
-  padding-top: 10px;
-  position: absolute;
-  top: 0;
+const Presentation = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${smaLength3};
+  justify-content: center;
+  max-width: 820px;
   width: 100%;
+
+  @media (min-width: 850px) {
+    gap: 0;
+  };
+`;
+
+const TextsContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: ${smaLength3};
+  width: 100%;
+
+  @media (min-width: 850px) {
+    width: 50%;
+  };
 `;
 
 const Parrafo = styled.p`
-  font-size: 1em;
-  text-align: justify;
+  color: ${text};
+  font-size: ${smaFont};
+  text-align: center;
   width: 90%;
 
   @media (min-width: 880px) {
@@ -159,13 +183,13 @@ const Parrafo = styled.p`
 `;
 
 const OpcionesSacimex = styled.span`
-  color: #00632F;
-  font-weight: 700;
+  color: ${greenSacimex};
+  font-weight: 800;
 `;
 
-const StyledH4 = styled.h4`
-  color: #00632F;
-  font-size: 1.125em;
+const StyledP = styled.p`
+  color: ${text};
+  font-size: ${medFont};
   text-align: center;
   width: 90%;
 
@@ -177,7 +201,7 @@ const StyledH4 = styled.h4`
 const PreviewsContenedor = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: ${medLength2};
   justify-content: center;
   width: 90%;
 
@@ -189,21 +213,21 @@ const PreviewsContenedor = styled.div`
 const StyledA = styled.a`
   position: relative;
   text-decoration: none;
-  width: 300px;
+  width: ${larLength3};
 `;
 
 const StyledSpan = styled.div`
-  color: #000;
-  font-size: 0.75em;
-  font-weight: 700;
+  color: ${text};
+  font-size: ${smaFont};
+  font-weight: 800;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 300px;
+  max-width: ${larLength3};
 `;
 
 const StyledImg = styled.img`
-  border: 1px solid #CCC;
+  border: 1px solid ${disabled};
   object-fit: cover;
   width: 100%;
 `;
@@ -212,14 +236,14 @@ const Opacidad = styled.div`
   align-items: end;
   background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
   border-radius: 5px;
-  color: #FFF;
+  color: ${whiteSacimex};
   display: flex;
-  font-size: 1em;
-  font-weight: 700;
+  font-size: ${smaFont};
+  font-weight: 800;
   height: 100%;
   left: 0;
   opacity: 0;
-  padding: 10px;
+  padding: ${smaLength1};
   position: absolute;
   top: 0;
   transition: opacity .3s;
@@ -231,10 +255,10 @@ const Opacidad = styled.div`
 `;
 
 /*const BotonCalculadora = styled.a`
-  background-color: #00632F;
-  color: #FFF;
-  font-size: 1em;
-  font-weight: 700;
-  padding: 9px 18px;
+  background-color: ${greenSacimex};
+  color: ${whiteSacimex};
+  font-size: ${smaFont};
+  font-weight: 800;
+  padding: ${smaLength1} ${smaLength2};
   text-decoration: none;
 `;*/

@@ -5,7 +5,8 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import Imagen from './Imagen';
 import Boton from './Boton';
 import { BloquearScroll } from '../utils/estilosPages';
-import sacimexLogo from '../assets/img/SacimexLogo.png';
+import { greenSacimex, whiteSacimex, text, disabled, smaLength1, smaLength2, smaLength3, medLength2, medLength3,
+         larLength2, larLength3, smaFont, medFont} from '../utils/stylesRules';
 import sacimexLogoBlanco from '../assets/img/SacimexLogoBlanco.png';
 
 const Header = ({ mostrarAnimaciones, barraVerde }) => {
@@ -18,28 +19,27 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
 
   return(<>
     <BloquearScroll $evitarScroll={isChecked}/>
-    <PrincipalContenedor $barraVerde={barraVerde}>
+    <PrincipalContenedor>
         <BotonHamburguesa
           $mostrarAnimaciones={mostrarAnimaciones}
           onClick={() => setIsChecked(!isChecked)}>
             <Linea
               $linea1={true}
-              $checked={isChecked} $barraVerde={barraVerde}/>
+              $checked={isChecked}/>
             <Linea
               $linea2
-              $checked={isChecked} $barraVerde={barraVerde}/>
+              $checked={isChecked}/>
             <Linea
               $linea3
-              $checked={isChecked} $barraVerde={barraVerde}/>
+              $checked={isChecked}/>
         </BotonHamburguesa>
       <LogoContenedor
         href='/Inicio'
         $mostrarAnimaciones={mostrarAnimaciones}>
           <Imagen
-            tamano='210px'
-            imagen={barraVerde ? (sacimexLogoBlanco) : (sacimexLogo)}
-            alt='Sacimex Logo'
-            extras={imagenMediaQuery}/>
+            tamano={larLength3}
+            imagen={sacimexLogoBlanco}
+            alt='Sacimex Logo'/>
       </LogoContenedor>
         <BarraNavegacion
           $checked={isChecked}>
@@ -52,10 +52,9 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                     {linkDesplegado === 1 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 1}>
-                  <a href='/CreditoGrupal'>Crédito grupal</a>
-                  <a href='/CreditoIndividual'>Crédito individual</a>
-                  <a href='/Servicios'>Servicios</a>
-                  <a>Promociones</a>
+                  <li><a href='/CreditoGrupal'>Crédito grupal</a></li>
+                  <li><a href='/CreditoIndividual'>Crédito individual</a></li>
+                  <li><a href='/Servicios'>Servicios</a></li>
                 </SubLinksContenedor>
               </LinkDesplegable>
               <LinkDesplegable>
@@ -67,35 +66,41 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 2}>
                   {!barraVerde && (<>
-                    <Link
-                      to='conocenos'
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      onClick={() => setIsChecked(false)}>
-                        Quiénes somos
-                    </Link>
-                    <Link
-                      to='valores'
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      onClick={() => setIsChecked(false)}>
-                        Filosofía y valores
-                    </Link>
-                    <Link
-                      to='contacto'
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      onClick={() => setIsChecked(false)}>
-                        Ubicación y contacto
-                    </Link>
+                    <li>
+                      <Link
+                        to='conocenos'
+                        smooth={true}
+                        duration={500}
+                        offset={-100}
+                        onClick={() => setIsChecked(false)}>
+                          Quiénes somos
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='valores'
+                        smooth={true}
+                        duration={500}
+                        offset={-100}
+                        onClick={() => setIsChecked(false)}>
+                          Filosofía y valores
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='contacto'
+                        smooth={true}
+                        duration={500}
+                        offset={-100}
+                        onClick={() => setIsChecked(false)}>
+                          Ubicación y contacto
+                      </Link>
+                    </li>
                   </>)}
                   {barraVerde && (<>
-                    <a href='/conocenos'>Quiénes somos</a>
-                    <a href='/valores'>Filosofía y valores</a>
-                    <a href='/contacto'>Ubicación y contacto</a>
+                    <li><a href='/conocenos'>Quiénes somos</a></li>
+                    <li><a href='/valores'>Filosofía y valores</a></li>
+                    <li><a href='/contacto'>Ubicación y contacto</a></li>
                   </>)}
                 </SubLinksContenedor>
               </LinkDesplegable>
@@ -107,9 +112,9 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                     {linkDesplegado === 3 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 3}>
-                  <a href='/EducacionFinanciera'>Educación financiera</a>
-                  <a href='/RedDeProfesionales'>Red de oficios y profesiones</a>
-                  <a href='/HistoriasDeExito'>Historias de éxito</a>
+                  <li><a href='/EducacionFinanciera'>Educación financiera</a></li>
+                  <li><a href='/RedDeProfesionales'>Red de oficios y profesiones</a></li>
+                  <li><a href='/HistoriasDeExito'>Historias de éxito</a></li>
                 </SubLinksContenedor>
               </LinkDesplegable>
               <LinkDesplegable>
@@ -120,7 +125,7 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
                    {linkDesplegado === 4 && (<AiOutlineMinus/>)}
                 </LinkPrincipal>
                 <SubLinksContenedor $desplegar={linkDesplegado === 4}>
-                  <a href='/OportunidadesDeCarrera'>Oportunidades de carrera</a>
+                  <li><a href='/OportunidadesDeCarrera'>Oportunidades de carrera</a></li>                  
                 </SubLinksContenedor>
               </LinkDesplegable>
             </LinksContenedor>
@@ -140,29 +145,19 @@ const Header = ({ mostrarAnimaciones, barraVerde }) => {
 
 export default Header;
 
-const imagenMediaQuery = `
-  @media (min-width: 768px) {
-    width: 210px;
-  };
-`;
-
 const PrincipalContenedor = styled.header`
   align-items: center;
-  background: ${({ $barraVerde }) => $barraVerde ? '#257140' : '#FFFFFF'};
-  border-bottom: 1px solid ${({ $barraVerde }) => $barraVerde ? '#005520' : '#CCCCCC'};
+  background: ${greenSacimex};
+  border-bottom: 1px solid #004f25;
   display: flex;
-  height: 70px;
+  height: ${medLength3};
   justify-content: space-between;
   left: 0;
-  padding: 0 20px;
+  padding: 0 ${smaLength3};
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 101;
-
-  @media (min-width: 768px) {
-    padding: 0 30px;
-  };
 `;
 
 const LogoContenedor = styled.a`
@@ -173,29 +168,31 @@ const LogoContenedor = styled.a`
   transition: opacity 2s, transform 2s;
 `;
 
-const BotonHamburguesa = styled.div`
+const BotonHamburguesa = styled.button`
+  background-color: inherit;
+  border: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 18px;
+  height: ${smaLength2};
   justify-content: space-between;
   justify-self: start;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
-  width: 25px;
+  width: ${smaLength3};
   z-index: 101;
 `;
 
 const Linea = styled.span`
-  background-color: ${({ $barraVerde }) => $barraVerde ? '#FFFFFF' : '#005520'};
+  background-color: ${whiteSacimex};
   border-radius: 10px;
   display: block;
   height: 2px;
   width: 100%;
 
   ${({ $linea1 }) => $linea1 && css`
-    transform: rotate(${({ $checked }) => $checked ? '45deg' : '0'});
+    transform: rotate(${({ $checked }) => $checked ? '38deg' : '0'});
     transform-origin: 0% 0%;
     transition: transform .4s ease-in-out;
   `};
@@ -206,7 +203,7 @@ const Linea = styled.span`
   `};
 
   ${({ $linea3 }) => $linea3 && css`
-    transform: rotate(${({ $checked }) => $checked ? '-45deg' : '0'});
+    transform: rotate(${({ $checked }) => $checked ? '-38deg' : '0'});
     transform-origin: 0% 100%;
     transition: transform .4s ease-in-out;
   `};
@@ -214,24 +211,25 @@ const Linea = styled.span`
 
 const BarraNavegacion = styled.nav`
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: ${whiteSacimex};
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  height: calc(100vh - 70px);
+  gap: ${smaLength3};
+  height: calc(100vh - ${medLength3});
   justify-content: flex-start;
   left: ${({ $checked }) => $checked ? '0' : '-100%'};
-  max-width: 500px;
-  padding: 30px;
+  max-width: 350px;
+  padding: ${smaLength3};
   position: fixed;
-  top: 70px;
+  top: ${medLength3};
   transition:  left 0.3s ease-out;
   width: 100vw;
   z-index: 100;
 `;
 
-const LinksContenedor = styled.div`
+const LinksContenedor = styled.ul`
   height: auto;
+  list-style: none;
   width: 100%; 
   z-index: 101;
 
@@ -240,8 +238,8 @@ const LinksContenedor = styled.div`
   };
 `;
 
-const LinkDesplegable = styled.div`
-  border-bottom: 1px solid #CCC;
+const LinkDesplegable = styled.li`
+  border-bottom: 1px solid ${disabled};
   display: grid;
   gap: 0;
   grid-template-columns: 1fr;
@@ -250,14 +248,13 @@ const LinkDesplegable = styled.div`
 
 const LinkPrincipal = styled.div`
   align-items: center;
-  color: #00632F;
+  color: ${greenSacimex};
   cursor: pointer;
   display: flex;
-  font-size: 1.125em;
-  font-weight: 700;
-  gap: 10px;
-  letter-spacing: 1px;
-  padding: 20px 0;
+  font-size: ${medFont};
+  font-weight: 800;
+  gap: ${smaLength1};
+  padding: ${smaLength2} 0;
   transition: transform .3s;
 
   &:hover {
@@ -265,37 +262,40 @@ const LinkPrincipal = styled.div`
   };
 `;
 
-const SubLinksContenedor = styled.div`
+const SubLinksContenedor = styled.ul`
   display: flex;
   flex-direction: column;
-  height: ${({ $desplegar }) => $desplegar ? '170px' : '0'};
+  gap: ${smaLength1};
+  justify-content: flex-start;
+  height: ${({ $desplegar }) => $desplegar ? larLength2 : '0'};
+  list-style: none;
   overflow: hidden;
   transition: height .3s;
 
   a {
     border-radius: 20px;
-    color: #257140;
+    color: ${text};
     cursor: pointer;
-    font-size: 1em;
-    padding: 7px 20px;
+    display: block;
+    font-size: ${smaFont};
+    padding: ${smaLength1} ${smaLength2};
     text-decoration: none;
     transition: background .1s, color .1s;
-    width: auto;
 
     &:hover {
-      background-color: #257140;
+      background-color: ${greenSacimex};
       color: #FFFFFF;
     };
   };
 `;
 
 const BotonContenedor = styled.div`
-  background-color: #FFFFFF;
-  border-top: 1px solid #CCC;
+  background-color: ${whiteSacimex};
+  border-top: 1px solid ${disabled};
   bottom: 0;
   display: grid;
-  height: 60px;
-  max-width: 500px;
+  height: ${medLength2};
+  max-width: 350px;
   place-items: center;
   position: fixed;
   width: 100%;
@@ -305,11 +305,11 @@ const BotonContenedor = styled.div`
 const Opacidad = styled.div`
   backdrop-filter: blur(3px);
   background-color: rgba(32, 32, 32, 0.5);
-  height: calc(100vh - 70px);
+  height: calc(100vh - ${medLength3});
   opacity: ${({ $checked }) => $checked ? '1' : '0'};
   position: fixed;
   right: ${({ $checked }) => $checked ? '0' : 'calc(0px - 100vw)'};
-  top: 70px;
+  top: ${medLength3};
   transition: right .3s, opacity .3s;
-  width: calc(100vw - 500px);
+  width: calc(100vw - 350px);
 `;

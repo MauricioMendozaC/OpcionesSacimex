@@ -50,9 +50,9 @@ export const datosSucursales = [
     ubicacion: 'https://goo.gl/maps/sg56Bte6kkDCceTu8', tipo: 3
   },
   {
-    nombre: 'Puerto Escondido, Oax.', direccion: 'Calle 3a. Poniente #501, Sector Juárez, Puerto Escondido, Oax.',
+    nombre: 'Puerto Escondido, Oax.', direccion: 'Ponte en contacto con nosotros de manera directa a través del siguiente número de teléfono:',
     telefono1: '(954) 688 06 94', telefono2: null, email: null,
-    ubicacion: 'https://goo.gl/maps/Eg4zNpUhrhjJo1qx6', tipo: 3
+    ubicacion: null, tipo: 3
   },
   {
     nombre: 'Huajuapan, Oax.', direccion: ' Dentro del centro comercial Motolinía, Letra L y M, Planta Baja, Centro, Huajuapan de León, Oax.',

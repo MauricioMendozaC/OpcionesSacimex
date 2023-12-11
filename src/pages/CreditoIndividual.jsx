@@ -6,18 +6,19 @@ import Imagen from '../components/Imagen';
 import Titulo from '../components/Titulo';
 import DatosCreditosIndividuales from '../components/CreditoIndividual/DatosCreditosIndividuales';
 import Footer from '../components/Footer';
+import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import Foto3 from '../assets/img/Foto3.jpg';
 import SaciMotor from '../assets/img/SaciMotor.png';
 import SaciCrece from '../assets/img/SaciCrece.png';
+import { greenSacimex, yellowSacimex, whiteSacimex, text, disabled, smaLength1, smaLength2, smaLength3, medLength1,
+  medLength2, medLength3, larLength3, smaFont } from '../utils/stylesRules';
 
 const CreditoIndividual = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [creditoActivo, setCreditoActivo] = useState(1);
   const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
+  const [windowState, setWindowState] = useState(null);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -47,12 +48,13 @@ const CreditoIndividual = () => {
             tamano='100%'
             imagen={Foto3}
             alt='Frutería Sacimex'
-            mostrarAnimaciones={mostrarAnimaciones}/>
-          <FiltroTitulo>
-            <Titulo
-              color='#FFF'
-              texto='Crédito individual'/>
-          </FiltroTitulo>
+            mostrarAnimaciones={mostrarAnimaciones}
+            extras={imgExtras}/>
+          <TextsContainer>
+            <Titulo texto='Crédito individual'/>
+            <StyledP>En <b>Opciones Sacimex</b>, obtén los mejores créditos individuales para alcanzar tus objetivos 
+              financieros. ¡Logra tus metas personales con nuestro respaldo financiero a tu medida!</StyledP>
+          </TextsContainer>
       </PrincipalContenedor>
       <InformacionYBotones>
             <Botones>
@@ -78,13 +80,13 @@ const CreditoIndividual = () => {
             <Informacion>
               {creditoActivo === 1 && (<>
                 <Imagen
-                  tamano='200px'
+                  tamano={larLength3}
                   imagen={SaciMotor}
                   alt='Saci-Motor'/>
               </>)}
               {creditoActivo === 2 && (<>
                 <Imagen
-                  tamano='200px'
+                  tamano={larLength3}
                   imagen={SaciCrece}
                   alt='Saci-Crece'/>
               </>)}
@@ -93,89 +95,116 @@ const CreditoIndividual = () => {
           </InformacionYBotones>
     </CentrarPrincipalContenedor>
     <Footer
-      estadoAviso={estadoAviso}
-      estadoDenuncia={estadoDenuncia}
-      estadoUNE={estadoUNE}
-      setEstadoUNE={setEstadoUNE}
-      setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}
-      setEstadoDenuncia={setEstadoDenuncia}
-      manejarScroll={manejarScroll}/>
+      setWindowState={setWindowState}/>
+    <Ventana
+      windowState={windowState}
+      setWindowState={setWindowState}/>
   </>);
 };
 
 export default CreditoIndividual;
 
+const imgExtras = `
+  clip-path: circle(95% at 12% 4%);
+
+  @media (min-width: 550px) {
+    width: 80%;
+  };
+
+  @media (min-width: 850px) {
+    width: 50%;
+  };
+`;
+
 const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 60px;
+  flex-wrap: wrap;
+  gap: ${smaLength3};
+  justify-content: center;
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding-bottom: 30px;
-  position: relative;
+  padding-bottom: ${medLength1};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
+
+  @media (min-width: 850px) {
+    gap: 0;
+  };
 `;
 
-const FiltroTitulo = styled.div`
-  background: linear-gradient(0deg, rgba(0,99,47,1) 0%, rgba(0,99,47,1) 18%, rgba(0,99,47,0.25262605042016806) 100%);
-  bottom: 35px;
-  height: 80px;
-  padding-top: 10px;
-  position: absolute;
+const TextsContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: ${smaLength3};
   width: 100%;
+
+  @media (min-width: 850px) {
+    width: 50%;
+  };
+`;
+
+const StyledP = styled.p`
+  color: ${text};
+  font-size: ${smaFont};
+  padding: 0 ${smaLength3};
+  text-align: center;
+
+  @media (min-width: 850px) {
+    padding: 0;
+  };
+
+  b {
+    color: ${greenSacimex};
+  };
 `;
 
 const InformacionYBotones = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: ${medLength1};
   max-width: 820px;
   width: 100%;
 `;
 
 const Botones = styled.div`
   display: flex;
-  gap: 10px;
+  gap: ${smaLength1};
 `;
 
 const BotonCredito = styled.button`
-  background-color: ${({ $activo }) => $activo ? '#FFFFFF' : '#F5A200'};
-  border: none;
-  border-radius: 3px 3px 0 0;
-  color: #005520;
-  cursor: pointer;
-  font-size: 0.875em;
-  font-weight: 700;
-  padding: 5px 10px;
+  background-color: ${({ $activo }) => $activo ? whiteSacimex : yellowSacimex};
+  border: ${({ $activo }) => $activo ? `1px solid ${disabled}` : 'none'};
+  border-radius: 3px;
+  color: ${text};
+  ${({ $activo }) => !$activo && 'cursor: pointer;'};  
+  font-size: ${smaFont};
+  font-weight: 800;
+  padding: ${smaLength1} ${smaLength2};
   transition: background .3s;
 `;
 
 const BotonSaci = styled.a`
-  background-color: ${({ $activo }) => $activo ? '#FFFFFF' : '#F5A200'};
-  border: none;
-  border-radius: 3px 3px 0 0;
-  color: #005520;
-  cursor: pointer;
-  font-size: 0.875em;
-  font-weight: 700;
-  padding: 5px 10px;
+  background-color: ${yellowSacimex};
+  border-radius: 3px;
+  color: ${text};
+  ${({ $activo }) => !$activo && 'cursor: pointer;'};  
+  font-size: ${smaFont};
+  font-weight: 800;
+  padding: ${smaLength1} ${smaLength2};
   text-decoration: none;
   transition: background .3s;
 `;
 
 const Informacion = styled.div`
   align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  padding: 20px;
+  gap: ${medLength2};
+  padding: ${smaLength3};
   width: 100%;
 `;

@@ -7,6 +7,7 @@ import Valores from './Valores';
 import Imagen from '../Imagen';
 import misionLogo from '../../assets/img/MisionLogo.png';
 import visionLogo from '../../assets/img/VisionLogo.png';
+import { greenSacimex, text, smaLength3, larLength1, smaFont, medFont } from '../../utils/stylesRules';
 
 const AnimacionEntradaSucursales = ({ children, id }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,12 +45,8 @@ const AnimacionEntradaSucursales = ({ children, id }) => {
 const Conocenos = () => {
 
   return(
-    <Section
-      id='conocenos'
-      background='#FFFFFF'>
-        <Titulo
-          color='#00632F'
-          texto='Conócenos'/>
+    <Section id='conocenos'>
+        <Titulo texto='Conócenos'/>
         <AnimacionEntradaSucursales>
           <SubTitulo>Sobre Opciones Sacimex.</SubTitulo>
           <Texto>Somos una Sociedad Financiera de Objeto Múltiple (SOFOM) con un enfoque especial en brindar apoyo financiero 
@@ -68,7 +65,7 @@ const Conocenos = () => {
           <MisionVision>
             <ImagenContenedor>
               <Imagen
-                tamano='90px'
+                tamano={larLength1}
                 imagen={misionLogo}
                 alt='Misión de Sacimex'/>
             </ImagenContenedor>
@@ -80,14 +77,13 @@ const Conocenos = () => {
         <AnimacionEntradaSucursales>
           <SubTitulo>Nuestra visión.</SubTitulo>
           <MisionVision>
-            <MisionVisionTexto
-              $alinearDerecha>
-                En comunión con nuestros colaboradores, ser una financiera importante en el mercado, líder en procesos de 
-                calidad, responsabilidad social, ambiente laboral sano y crecimiento financiero de nuestros clientes.
+            <MisionVisionTexto $alinearDerecha>
+              En comunión con nuestros colaboradores, ser una financiera importante en el mercado, líder en procesos de 
+              calidad, responsabilidad social, ambiente laboral sano y crecimiento financiero de nuestros clientes.
             </MisionVisionTexto>
             <ImagenContenedor>
               <Imagen
-                tamano='90px'
+                tamano={larLength1}
                 imagen={visionLogo}
                 alt='Visión de Sacimex'/>
             </ImagenContenedor>
@@ -103,7 +99,7 @@ const InfoExtraContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: ${smaLength3};
   height: auto;
   max-width: 820px;
   opacity: ${({ $visible }) => $visible ? '1' : '0'};
@@ -113,13 +109,14 @@ const InfoExtraContenedor = styled.div`
 `;
 
 const SubTitulo = styled.h3`
-  color: #00632F;
-  font-size: 1.25em;
+  color: ${greenSacimex};
+  font-size: ${medFont};
   font-weight: 400;
 `;
 
 const Texto = styled.p`
-  font-size: 0.875em;
+  color: ${text};
+  font-size: ${smaFont};
   text-align: justify;
   width: 90%;
 `;
@@ -137,7 +134,8 @@ const ImagenContenedor = styled.div`
 `;
 
 const MisionVisionTexto = styled.p`
-  font-size: 0.875em;
+  color: ${text};
+  font-size: ${smaFont};
   text-align: justify;
   width: 70%;
 

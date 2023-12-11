@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { yellowSacimex, text, label, smaLength1, smaLength2, smaFont, medFont } from '../../utils/stylesRules';
 
 const DatosCreditosIndividuales = ({ creditoActivo }) => {
   return(<>
@@ -63,7 +64,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
     {creditoActivo === 2 && (<>
       <Parrafo><CreceSpan>Saci-Crece</CreceSpan> es para ti si exiges un crédito que se adapte a tu proyecto y personalidad única, ya que es un crédito 
       flexible para cualquier destino sea comercial, personal o vivienda.</Parrafo>
-      <StyledH4>Características básicas:</StyledH4>
+      <StyledH3>Características básicas:</StyledH3>
       <StyledUl>
         <li>Sin comisiones.</li>
         <li>Hasta 1,000,000.</li>
@@ -73,7 +74,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Tasa mensual del 2% al 3.5% según riesgo, monto y garantía.</li>
           <li>(Aplican restricciones o condiciones por historial de crédito).</li>
       </StyledUl>
-      <StyledH4>Requisitos:</StyledH4>
+      <StyledH3>Requisitos:</StyledH3>
         <StyledUl>
           <li>Edad de 21 a 65 años.</li>
           <li>Garantía líquida, mueble y/o inmueble.</li>
@@ -87,7 +88,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
     </>)}
     {creditoActivo === 3 && (<>
       <Parrafo><LineaSpan>Línea Sacimex</LineaSpan> es el crédito revolvente que desbloquea nuevas oportunidades para tu empresa o negocio, destina estos recursos a capital de trabajo o capital de inversión según necesidades o proyectos, con este contrato adicionalmente tendrás opciones a créditos simples.</Parrafo>
-      <StyledH4>Características básicas:</StyledH4>
+      <StyledH3>Características básicas:</StyledH3>
       <StyledUl>
         <li>Monto hasta 3.5 millones.</li>
         <li>Contrato de 24 a 60 meses.</li>
@@ -97,7 +98,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Aplican restricciones o condiciones por historial de crédito.</li>
         <li>Tasa mensual del 2.25% al 2.75% según riesgo, monto y garantía.</li>
       </StyledUl>
-      <StyledH4>Requisitos generales:</StyledH4>
+      <StyledH3>Requisitos generales:</StyledH3>
       <StyledUl>
         <li>Edad de 21 a 65 años.</li>
         <li>Antigüedad comercial 1 año.</li>
@@ -109,7 +110,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Comprobante de domicilio menor a 3 meses.</li>
         <li>Seguro, coberturas y accesorios a cuenta del cliente.</li>
       </StyledUl>
-      <StyledH4>Requisitos Persona Física:</StyledH4>
+      <StyledH3>Requisitos Persona Física:</StyledH3>
       <StyledUl>
         <li>Acta de nacimiento.</li>
         <li>Acta de matrimonio.</li>
@@ -118,7 +119,7 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
         <li>Últimos 3 estados de cuenta bancarios.</li>
         <li>Balance y estado de resultados del último año y mes.</li>
       </StyledUl>
-      <StyledH4>Requisitos Persona Moral:</StyledH4>
+      <StyledH3>Requisitos Persona Moral:</StyledH3>
       <StyledUl>
         <li>Acta constitutiva con inscripción al registro público.</li>
         <li>Poderes de los representantes.</li>
@@ -137,7 +138,8 @@ const DatosCreditosIndividuales = ({ creditoActivo }) => {
 export default DatosCreditosIndividuales;
 
 const Parrafo = styled.p`
-  font-size: 0.875em;
+  color: ${label};
+  font-size: ${smaFont};
   text-align: justify;
   width: 100%;
 `;
@@ -162,19 +164,21 @@ const CreceSpan = styled.span`
 
 const StyledUl = styled.ul`
   list-style: none;
-  padding: 0 15px;
+  padding: 0 ${smaLength2};
   text-align: justify;
   width: 100%;
 
   li {
-    font-size: 0.875em;
+    color: ${label};
+    font-size: ${smaFont};
+    padding-bottom: ${smaLength1};
   };
 
   li::before {
-    color: #F5A200;
+    color: ${yellowSacimex};
     content: "»";
-    font-size: 1.75em;
-    margin-right: 3px;
+    font-size: ${medFont};
+    margin-right: ${smaLength1};
   };
 `;
 
@@ -183,14 +187,14 @@ const StyledDiv = styled.div`
 `;
 
 const StyledH3 = styled.h3`
-  color: #257140;
-  font-size: 1em;
+  color: ${text};
+  font-size: ${smaFont};
   text-align: center;
 `;
 
 const StyledH4 = styled.h4`
-  color: #257140;
-  font-size: 1em;
-  font-weight: 400;
+  color: ${label};
+  font-size: ${smaFont};
+  font-weight: 800;
   text-align: center;
 `;

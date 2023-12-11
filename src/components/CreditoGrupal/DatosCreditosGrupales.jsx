@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { yellowSacimex, text, label, smaLength1, smaLength2, smaFont, medFont } from '../../utils/stylesRules';
 
 const DatosCreditosGrupales = ({ creditoActivo }) => {
   return(<>
@@ -97,7 +98,8 @@ const DatosCreditosGrupales = ({ creditoActivo }) => {
 export default DatosCreditosGrupales;
 
 const Parrafo = styled.p`
-  font-size: 0.875em;
+  color: ${label};
+  font-size: ${smaFont};
   text-align: justify;
   width: 100%;
 `;
@@ -122,24 +124,26 @@ const SomosSpan = styled.span`
 
 const StyledUl = styled.ul`
   list-style: none;
-  padding: 0 15px;
+  padding: 0 ${smaLength2};
   text-align: justify;
   width: 100%;
 
-  li {    
-    font-size: 0.875em;
+  li {
+    color: ${label};
+    font-size: ${smaFont};
+    padding-bottom: ${smaLength1};
   };
 
   li::before {
-    color: #F5A200;
+    color: ${yellowSacimex};
     content: "»";
-    font-size: 1.75em;
-    margin-right: 3px;
+    font-size: ${medFont};
+    margin-right: ${smaLength1};
   };
 `;
 
 const StyledH3 = styled.h3`
-  color: #257140;
-  font-size: 1em;
+  color: ${text};
+  font-size: ${smaFont};
   text-align: center;
 `;

@@ -1,11 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { medLength1, medLength3, larLength1, } from '../utils/stylesRules';
 
-const Section = ({id, children, background, presentacion}) => {
+const Section = ({id, children, background, presentation}) => {
   return(
     <PrincipalContenedor
       id={id}
       $background={background}
-      $presentacion={presentacion}>
+      $presentation={presentation}>
         {children}
     </PrincipalContenedor>
   );
@@ -14,33 +15,19 @@ const Section = ({id, children, background, presentacion}) => {
 export default Section;
 
 const PrincipalContenedor = styled.section`
+  align-items: center;
+  ${({ $background }) => $background && (`background-color: ${$background};`)};
+  display: flex;
+  flex-direction: column;
+  gap: ${medLength3};
+  justify-content: center;
+  ${({ $presentation }) => !$presentation && 'min-height: calc(100vh - ${medLength3});'}
+  padding-bottom: ${larLength1};
+  position: relative;
+  width: 100%;
+  z-index: 20;
 
-  ${({ $presentacion }) => !$presentacion && css`
-    align-items: center;
-    ${({ $background }) => $background && (`background-color: ${$background};`)};
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    justify-content: center;
-    min-height: calc(100vh - 60px);
-    padding: 30px 0 100px;
-    position: relative;
-    width: 100%;
-    z-index: 20;
-
-    @media (min-width: 768px) {
-      min-height: 0;
-    };
-  `};
-
-  ${({ $presentacion }) => $presentacion && css`
-    height: calc(100vh - 60px);
-    margin-top: 60px;
-    position: relative;
-    width: 100%;
-
-    @media (min-width: 768px) {
-      height: 576px;
-    };
-  `};
+  @media (min-width: 768px) {
+    min-height: 0;
+  };
 `;

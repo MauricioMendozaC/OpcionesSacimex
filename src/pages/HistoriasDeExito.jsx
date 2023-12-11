@@ -5,15 +5,15 @@ import Header from '../components/Header';
 import Titulo from '../components/Titulo'
 import Imagen from '../components/Imagen';
 import Footer from '../components/Footer';
+import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import Constructor from '../assets/img/Constructor.svg';
+import {greenSacimex, text, smaLength1, medLength1, medLength3, smaFont, medFont } from '../utils/stylesRules';
 
 const HistoriasDeExito = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
+  const [windowState, setWindowState] = useState(null);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -47,18 +47,14 @@ const HistoriasDeExito = () => {
           logros alcanzados por nuestros clientes a través del tiempo. Únete a nosotros para celebrar estos 
           triunfos y descubrir la inspiración que yace en cada camino recorrido.</Parrafo>
         </ImagenTextoContenedor>
-        <StyledH4>Pronto podrás encontrar tu historia aquí.</StyledH4>
+        <StyledP>Pronto podrás encontrar tu historia aquí.</StyledP>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
     <Footer
-      estadoAviso={estadoAviso}
-      estadoDenuncia={estadoDenuncia}
-      estadoUNE={estadoUNE}
-      setEstadoUNE={setEstadoUNE}
-      setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}
-      setEstadoDenuncia={setEstadoDenuncia}
-      manejarScroll={manejarScroll}/>
+      setWindowState={setWindowState}/>
+    <Ventana
+      windowState={windowState}
+      setWindowState={setWindowState}/>
   </>);
 };
 
@@ -68,18 +64,18 @@ const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: ${medLength1};
   justify-content: flex-start;
-  margin-top: 60px;
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding: 30px 30px 60px;
+  padding: ${medLength1} ${medLength1} ${medLength3};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
 
   @media (min-width: 880px) {
-    padding: 30px 0 60px;
+    padding: ${medLength1} 0 ${medLength3};
   };
 `;
 
@@ -87,24 +83,25 @@ const ImagenTextoContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: ${smaLength1};
   justify-content: center;
 `;
 
 const Parrafo = styled.p`
+  color: ${text};
+  font-size: ${smaFont};
   min-width: 300px;
-  text-align: justify;
-  width: calc(100% - 310px);
+  text-align: center;
+  width: calc(100% - 300px - ${smaLength1});
 
   b {
-    color: #005520;
+    color: ${greenSacimex};
   };
 `;
 
-const StyledH4 = styled.h4`
-  color: #00632F;
-  font-size: 1.25em;
-  font-weight: 400;
+const StyledP = styled.p`
+  color: ${text};
+  font-size: ${medFont};
   text-align: center;
   width: 90%;
 `;

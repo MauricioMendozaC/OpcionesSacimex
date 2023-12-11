@@ -8,6 +8,7 @@ import Boton from '../Boton';
 import saciAlianza from '../../assets/img/SaciAlianza.png';
 import creditoGrupalLogo from '../../assets/img/CreditoGrupalT.png';
 import creditoIndividualLogo from '../../assets/img/CreditoIndividualT.png';
+import { text, label, smaLength1, medLength3, larLength1, larLength3, smaFont } from '../../utils/stylesRules';
 
 const AnimacionEntradaProductos = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,19 +43,14 @@ const AnimacionEntradaProductos = ({ children }) => {
 const Productos = () => {
 
   return(
-    <Section
-      id='productos'
-      background='#FFFFFF'>
-        <Titulo
-          color='#00632f'
-          texto='Productos'/>
+    <Section id='productos'>
+        <Titulo texto='Productos'/>
         <Contenido>
-          <Contenido
-            $centrarSaciAlianza>
+          <Contenido $centrarSaciAlianza>
               <AnimacionEntradaProductos>              
                 <TituloCredito>Saci-Alianza</TituloCredito>                
                 <Imagen
-                  tamano='100px'
+                  tamano={larLength1}
                   imagen={saciAlianza}
                   alt='Saci-Alianza'/>                         
                 <Texto>¡Inicia tu trámite de crédito hoy mismo y accede a las oportunidades financieras que necesitas!</Texto>                
@@ -65,27 +61,25 @@ const Productos = () => {
               <AnimacionEntradaProductos>
                 <TituloCredito>Crédito grupal.</TituloCredito>
                 <Imagen
-                  tamano='100px'
+                  tamano={larLength1}
                   imagen={creditoGrupalLogo}
                   alt='Crédito grupal'/>
                 <Texto>Brindamos soluciones financieras a grupos de personas comprometidas con actividades productivas.</Texto>
                 <Boton
                   texto='Conoce más'
-                  referencia='/CreditoGrupal'
-                  verde/>
+                  referencia='/CreditoGrupal'/>
               </AnimacionEntradaProductos>
           </Contenido>
           <AnimacionEntradaProductos>
             <TituloCredito>Crédito individual.</TituloCredito>
             <Imagen
-              tamano='100px'
+              tamano={larLength1}
               imagen={creditoIndividualLogo}
               alt='Crédito individual'/>
             <Texto>Disfruta de tasas fijas durante todo el plazo de tu crédito. Además, te ofrecemos plazos flexibles de hasta 24 meses.</Texto>
             <Boton
               texto='Conoce más'
-              referencia='/CreditoIndividual'
-              verde/>
+              referencia='/CreditoIndividual'/>
           </AnimacionEntradaProductos>
         </Contenido>
     </Section>
@@ -97,7 +91,7 @@ export default Productos;
 const Contenido = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: ${medLength3};
   max-width: 820px;
 
   @media (min-width: 768px) {
@@ -113,26 +107,25 @@ const Contenido = styled.div`
 
 const ProductoContenedor = styled.div`
   align-items: center;
-  border-radius: 3px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: ${smaLength1};
   justify-content: center;
   opacity: ${({ $visible }) => $visible ? '1' : '0'};
-  padding: 0 10px;
+  padding: 0 ${smaLength1};
   transform: translateY(${({ $visible }) => $visible ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
-  width: 200px;
+  width: ${larLength3};
 `;
 
 const TituloCredito = styled.h3`
-  color: #00632F;
-  font-size: 1em;
+  color: ${text};
+  font-size: ${smaFont};
   text-align: center;
 `;
 
 const Texto = styled.p`
-  color: #257140;
-  font-size: 0.875em;
+  color: ${label};
+  font-size: ${smaFont};
   text-align: center;
 `;

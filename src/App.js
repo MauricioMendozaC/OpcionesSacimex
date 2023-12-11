@@ -10,6 +10,7 @@ import Servicios from './pages/Servicios';
 import RedDeProfesionales from './pages/RedDeProfesionales';
 import HistoriasDeExito from './pages/HistoriasDeExito';
 import BolsaDeTrabajo from './pages/BolsaDeTrabajo';
+import ErrorPage from './pages/404';
 
 const App = () => {
   return (
@@ -26,16 +27,18 @@ const App = () => {
         <Route path='/RedDeProfesionales' element={<RedDeProfesionales/>}/>
         <Route path='/HistoriasDeExito' element={<HistoriasDeExito/>}/>
         <Route path='/OportunidadesDeCarrera' element={<BolsaDeTrabajo/>}/>
+        <Route path='/404' element={<ErrorPage/>}/>
       </Routes>
     </Router>
   );
 };
 
 const RedireccionarAInicio = () => {
-  var URLactual = window.location;
+  var URLactual = window.location.href;
+  var lastChar = URLactual.charAt(URLactual.length - 1);
 
-  if(URLactual.href === 'https://opcionessacimex.com/'){
-    window.location.replace('https://opcionessacimex.com/Inicio');
+  if(lastChar === '/'){
+    window.location.replace('/Inicio');
   };
 };
 

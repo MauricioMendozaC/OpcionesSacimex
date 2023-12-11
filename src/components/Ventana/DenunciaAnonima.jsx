@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { greenSacimex, yellowSacimex, whiteSacimex, text, label, smaLength1, smaLength2, smaLength3, medLength1,
+        medLength3, smaFont, medFont } from '../../utils/stylesRules';
 
 const DenunciaAnonima = () => {
   const [stateInp1, setStateInp1] = useState('vacio');
@@ -62,20 +64,20 @@ const Texto = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 60px 20px;
+  gap: ${smaLength2};
+  padding: ${medLength3} ${smaLength3};
   width: 100%;
 `;
 
 const StyledH3 = styled.h3`
-  color: #00632F;
-  font-size: 1.25em;
+  color: ${text};
+  font-size: ${medFont};
   text-align: center;
 `;
 
 const Parrafo = styled.p`
-  font-size: 1em;
-  text-align: justify;
+  font-size: ${smaFont};
+  text-align: center;
   width: 100%;
 `;
 
@@ -83,7 +85,7 @@ const ContenedorInputs = styled.form`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: ${medLength1};
   width: 100%;
 `;
 
@@ -93,43 +95,43 @@ const SpanInputContenedor = styled.div`
 `;
 
 const StyledInput = styled.input`
-  border: 2px solid #AAA;
+  border: 2px solid ${label};
   border-radius: 25px;
-  font-size: 1em;
+  font-size: ${smaFont};
   outline: none;
-  padding: 10px 20px;
+  padding: ${smaLength1} ${smaLength2};
   transition: border .3s;
   width: 100%;
 
   &:focus {
-    border: 2px solid #DC9100;
+    border: 2px solid ${yellowSacimex};
   };
 `;
 
 const StyledSpan = styled.span`
-  background-color: #FFF;
-  font-size: 1em;
-  left: 20px;
-  padding: 0 5px;
+  background-color: ${whiteSacimex};
+  font-size: ${smaFont};
+  left: ${smaLength2};
+  padding: 0 ${smaLength1};
   pointer-events: none;
   position: absolute;
   transition: color .3s, transform .3s, border .3s, top .3s;
 
   ${({ $isVacio }) => $isVacio && (`
-    border-left: 2px solid #FFF;
-    border-right: 2px solid #FFF;
+    border-left: 2px solid ${whiteSacimex};
+    border-right: 2px solid ${whiteSacimex};
     top: 10px;
   `)}
 
   ${({ $isFocus }) => $isFocus && (`
-    border-left: 2px solid #DC9100;
-    border-right: 2px solid #DC9100;
-    color: #DC9100;
+    border-left: 2px solid ${yellowSacimex};
+    border-right: 2px solid ${yellowSacimex};
+    color: ${greenSacimex};
   `)}
 
   ${({ $isCompleto }) => $isCompleto && (`
-    border-left: 2px solid #AAA;
-    border-right: 2px solid #AAA;
+    border-left: 2px solid ${label};
+    border-right: 2px solid ${label};
   `)}
 
   ${({ $isFocus, $isCompleto }) => ($isFocus || $isCompleto) && (`
@@ -138,12 +140,12 @@ const StyledSpan = styled.span`
   `)}
 
   ${({ $isVacio, $isCompleto }) => ($isVacio || $isCompleto) && (`
-    color: #AAA;
+    color: ${label};
   `)}
 `;
 
 const StyledTextArea = styled.textarea`
-  border: 2px solid #AAA;
+  border: 2px solid ${label};
   border-radius: 25px;
   font-size: 1em;
   height: 150px;
@@ -154,19 +156,19 @@ const StyledTextArea = styled.textarea`
   width: 100%;
 
   &:focus {
-    border: 2px solid #DC9100;
+    border: 2px solid ${yellowSacimex};
   };
 `;
 
 const StyledButton = styled.button`
-  background-color: #F5A200;
+  background-color: ${yellowSacimex};
   border: none;
   border-radius: 5px;
-  color: #004410;
+  color: ${text};
   cursor: pointer;
-  font-size: 1em;
-  font-weight: 700;
-  padding: 9px 18px;
+  font-size: ${smaFont};
+  font-weight: 800;
+  padding: ${smaLength1} ${smaLength2};
   transition: transform .3s;
 
   &:hover {

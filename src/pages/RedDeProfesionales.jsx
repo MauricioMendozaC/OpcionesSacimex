@@ -5,15 +5,15 @@ import Header from '../components/Header';
 import Titulo from '../components/Titulo'
 import Imagen from '../components/Imagen';
 import Footer from '../components/Footer';
+import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import Constructor from '../assets/img/Constructor.svg';
+import { greenSacimex, text, label, smaLength1, medLength1, medLength3, smaFont, medFont } from '../utils/stylesRules';
 
 const RedDeProfesionales = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
+  const [windowState, setWindowState] = useState(null);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -48,21 +48,14 @@ const RedDeProfesionales = () => {
             profesiones y oficios de nuestros clientes y no clientes para impulsar su trayectoria y bienestar al siguiente 
             nivel.</Parrafo>
         </ImagenTextoContenedor>
-        <StyledH4>¿Listo para destacar tu profesión u oficio en tu localidad? ¡Completa el formulario y forma parte de nuestra comunidad!</StyledH4>
-        
-          <StyledIframe src="https://docs.google.com/forms/d/e/1FAIpQLSeThs1njygICIaPId2eol2Pnx9L_0MHspCcXGoMb7wOhbhNjQ/viewform?embedded=true" width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Cargando…</StyledIframe>
-        
+        <StyledP>¿Listo para destacar tu profesión u oficio en tu localidad? ¡Completa el formulario y forma parte de nuestra comunidad!</StyledP>
+        <StyledIframe src="https://docs.google.com/forms/d/e/1FAIpQLSeThs1njygICIaPId2eol2Pnx9L_0MHspCcXGoMb7wOhbhNjQ/viewform?embedded=true" width="640" height="873" frameborder="0" marginheight="0" marginwidth="0">Cargando…</StyledIframe>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
-    <Footer
-      estadoAviso={estadoAviso}
-      estadoDenuncia={estadoDenuncia}
-      estadoUNE={estadoUNE}
-      setEstadoUNE={setEstadoUNE}
-      setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}
-      setEstadoDenuncia={setEstadoDenuncia}
-      manejarScroll={manejarScroll}/>
+    <Footer setWindowState={setWindowState}/>
+    <Ventana
+      windowState={windowState}
+      setWindowState={setWindowState}/>
   </>);
 };
 
@@ -72,18 +65,18 @@ const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: ${medLength1};
   justify-content: flex-start;
-  margin-top: 60px;
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding: 30px 30px 60px;
+  padding: ${medLength1} ${medLength1} ${medLength3};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
 
   @media (min-width: 880px) {
-    padding: 30px 0 60px;
+    padding: ${medLength1} 0 ${medLength3};
   };
 `;
 
@@ -91,24 +84,25 @@ const ImagenTextoContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: ${smaLength1};
   justify-content: center;
 `;
 
 const Parrafo = styled.p`
+  color: ${text};
+  font-size: ${smaFont};
   min-width: 300px;
   text-align: justify;
-  width: calc(100% - 310px);
+  width: calc(100% - 300px - ${smaLength1});
 
   b {
-    color: #005520;
+    color: ${greenSacimex};
   };
 `;
 
-const StyledH4 = styled.h4`
-  color: #00632F;
-  font-size: 1.25em;
-  font-weight: 400;
+const StyledP = styled.p`
+  color: ${label};
+  font-size: ${medFont};
   text-align: center;
   width: 90%;
 `;

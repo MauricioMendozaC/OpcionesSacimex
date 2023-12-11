@@ -4,6 +4,7 @@ import UnidadEspecializada from './Ventana/UnidadEspecializada';
 import DenunciaAnonima from './Ventana/DenunciaAnonima';
 import InfoVacante from './OportunidadesDeCarrera/InfoVacante';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { whiteSacimex, label, smaLength2, medLength2, medFont } from '../utils/stylesRules';
 
 const Ventana = ({ windowState, setWindowState, vacanteSeleccionada, jobVacancies, profiles }) => {
   return(
@@ -41,11 +42,11 @@ const PrincipalContenedor = styled.div`
 `;
 
 const Hoja = styled.div`
-  background-color: #FFF;
+  background-color: ${whiteSacimex};
   border-radius: 10px;
   height: 100vh;
-  left: ${({ $showWindow }) => $showWindow ? '0' : '-500px'};
-  max-width: 500px;
+  left: ${({ $showWindow }) => $showWindow ? '0' : '-350px'};
+  max-width: 350px;
   overflow: auto;
   position: absolute;
   top: 0;
@@ -68,9 +69,9 @@ const BotonCerrarPosicionador = styled.div`
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%);
   border-radius: 10px;
   display: grid;
-  height: 40px;
-  max-width: 500px;
-  padding-right: 15px;
+  height: ${medLength2};
+  max-width: 350px;
+  padding-right: ${smaLength2};
   place-items: center end;
   position: fixed;
   top: 0;
@@ -79,17 +80,17 @@ const BotonCerrarPosicionador = styled.div`
 const BotonCerrarContenedor = styled.button`
   background-color: transparent;
   border: none;
-  color: #888;
+  color: ${label};
   cursor: pointer;
-  font-size: 16px;
+  font-size: ${medFont};
 `;
 
 const DegradadoFinal = styled.div`
   background: linear-gradient(0, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 100%);
   border-radius: 0 0 10px 10px;
   bottom: 0;
-  height: 40px;
-  max-width: 500px;
+  height: ${medLength2};
+  max-width: 350px;
   position: fixed;
   width: 100%;
 `;

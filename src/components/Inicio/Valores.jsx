@@ -5,6 +5,7 @@ import Imagen from '../Imagen';
 import honestidadImagen from '../../assets/img/Honestidad.png';
 import respetoImagen from '../../assets/img/Respeto.png';
 import compromisoImagen from '../../assets/img/Compromiso.png';
+import { text, label, smaLength1, medLength2, larLength1, larLength3, smaFont } from '../../utils/stylesRules';
 
 const AnimacionEntradaValor = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,28 +45,25 @@ const Valores = () => {
       <AnimacionEntradaValor>
         <ValorTitulo>Honestidad</ValorTitulo>
         <Imagen
-          tamano='100px'
+          tamano={larLength1}
           imagen={honestidadImagen}
-          alt='Honestidad'
-          visible/>
+          alt='Honestidad'/>
         <TextoValor>Te ofrecemos transparencia financiera en cada paso. Tu confianza es nuestra prioridad.</TextoValor>
       </AnimacionEntradaValor>
       <AnimacionEntradaValor>
         <ValorTitulo>Compromiso</ValorTitulo>
         <Imagen
-          tamano='100px'
+          tamano={larLength1}
           imagen={compromisoImagen}
-          alt='Compromiso'
-          visible/>
+          alt='Compromiso'/>
         <TextoValor>Trabajamos incansablemente para lograr tus metas financieras, porque tu éxito es nuestro objetivo.</TextoValor>
       </AnimacionEntradaValor>
       <AnimacionEntradaValor>
         <ValorTitulo>Respeto</ValorTitulo>
         <Imagen
-          tamano='100px'
+          tamano={larLength1}
           imagen={respetoImagen}
-          alt='Respeto'
-          visible/>
+          alt='Respeto'/>
         <TextoValor>Valoramos tus necesidades y te brindamos soluciones adaptadas a ti, con el respeto que mereces.</TextoValor>
       </AnimacionEntradaValor>
     </PrincipalContenedor>
@@ -74,12 +72,13 @@ const Valores = () => {
 
 export default Valores;
 
-const PrincipalContenedor = styled.div`
+const PrincipalContenedor = styled.ul`
   align-items: start;
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: ${medLength2};
   justify-content: center;
+  list-style: none;
   max-width: 1000px;
   width: 90%;
 
@@ -90,25 +89,25 @@ const PrincipalContenedor = styled.div`
   };
 `;
 
-const Valor = styled.div`
+const Valor = styled.li`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 200px;
+  gap: ${smaLength1};
+  max-width: ${larLength3};
   opacity: ${({ $visible }) => $visible ? '1' : '0'};
   transform: translateY(${({ $visible }) => $visible ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 40%;
 `;
 
-const ValorTitulo = styled.h3`
-  color: #000;
-  font-size: 1em;
+const ValorTitulo = styled.h4`
+  color: ${text};
+  font-size: ${smaFont};
 `;
 
 const TextoValor = styled.p`
-  color: #000;
-  font-size: 0.875em;
+  color: ${label};
+  font-size: ${smaFont};
   text-align: center;
 `;

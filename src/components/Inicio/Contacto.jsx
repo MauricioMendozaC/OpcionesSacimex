@@ -6,6 +6,7 @@ import Titulo from '../Titulo';
 import Sucursal from './Sucursal';
 import { datosSucursales } from '../../utils/datos';
 import { BsChevronDoubleDown, BsChevronDoubleUp } from 'react-icons/bs';
+import { yellowSacimex, smaLength1, smaLength3, smaFont } from '../../utils/stylesRules';
 
 const AnimacionEntradaSucursales = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,11 +49,8 @@ const Sucursales = () => {
   };
 
   return(
-    <Section
-      id='contacto'
-      background='#EFEFEF'>
-        <Titulo
-          texto='Contacto'/>
+    <Section id='contacto'>
+        <Titulo texto='Contacto'/>
         <AnimacionEntradaSucursales>
             {datosSucursales.map( (item, index) => (item.tipo === 2 || item.tipo === 3) && (
               <Sucursal
@@ -91,14 +89,14 @@ const Sucursales = () => {
 
 export default Sucursales;
 
-const SeccionSucursal = styled.div`
+const SeccionSucursal = styled.ul`
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: ${smaLength3};
   max-width: 820px;
   opacity: ${({ $visible }) => $visible ? '1' : '0'};
-  padding: 10px;
+  padding: ${smaLength1};
   transform: translateY(${({ $visible }) => $visible ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 80%;  
@@ -112,16 +110,17 @@ const SeccionSucursal = styled.div`
   };
 `;
 
-const Flecha = styled.div`
-  background-color: #F5A200;
+const Flecha = styled.button`
+  background-color: ${yellowSacimex};
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   display: grid;
-  font-size: 16px;
-  height: 25px;
+  font-size: ${smaFont};
+  height: ${smaLength3};
   place-items: center;
   transition: transform .3s;
-  width: 25px;
+  width: ${smaLength3};
 
   &:hover {
     transform: scale(105%);

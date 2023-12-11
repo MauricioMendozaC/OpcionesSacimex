@@ -6,6 +6,7 @@ import { CiInstagram, CiFacebook, CiTwitter } from 'react-icons/ci';
 import InformacionEntidades from './InformacionEntidades';
 import sacimexLogo from '../assets/img/SacimexLogoBlanco.png';
 import SolicitudAclaracionOpcionesSacimex from '../assets/documents/Solicitud-aclaracion-Opciones-Sacimex.pdf';
+import { greenSacimex, whiteSacimex, smaLength1, smaLength3, medLength1, medLength2, medLength3, larLength2, larLength3, smaFont } from '../utils/stylesRules';
 
 const AnimacionEntradaRedes = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,63 +57,74 @@ const Footer = ({ setWindowState }) => {
   return(<>
     <PrincipalContenedor>
       <AnimacionEntradaRedes>
-        <Redes
-          href='https://www.facebook.com/sacimex'
-          rel='noopener noreferrer'
-          target='_blank'>
-            <CiFacebook/>
-        </Redes>
-        <Redes
-          href='https://instagram.com/opciones__sacimex?igshid=Y2IzZGU1MTFhOQ=='
-          rel='noopener noreferrer'
-          target='_blank'>
-            <CiInstagram/>
-        </Redes>
-        <Redes
-          href='https://twitter.com/sacimex?t=ZfV1WcsXKRxeFz2L39hbFA&s=09'
-          rel='noopener noreferrer'
-          target='_blank'>
-            <CiTwitter/>
-        </Redes>
+        <li>
+          <Redes
+            href='https://www.facebook.com/sacimex'
+            rel='noopener noreferrer'
+            target='_blank'>
+              <CiFacebook/>
+          </Redes>
+        </li>
+        <li>
+          <Redes
+            href='https://instagram.com/opciones__sacimex?igshid=Y2IzZGU1MTFhOQ=='
+            rel='noopener noreferrer'
+            target='_blank'>
+              <CiInstagram/>
+          </Redes>
+        </li>    
+        <li>
+          <Redes
+            href='https://twitter.com/sacimex?t=ZfV1WcsXKRxeFz2L39hbFA&s=09'
+            rel='noopener noreferrer'
+            target='_blank'>
+              <CiTwitter/>
+          </Redes>
+        </li>        
       </AnimacionEntradaRedes>
       <Imagen
-        tamano='150px'
+        tamano={larLength2}
         imagen={sacimexLogo}
-        extras='margin-bottom: 30px;'
+        extras={`margin-bottom: ${medLength1};`}
         alt='Sacimex Logo'/>
       <AcercaDeContenedor
         $textos>
           <TextosAcercaDeContenedor>
-            <TitulosAcercaDe>Regulación</TitulosAcercaDe>
-            <TextoAcercaDe
-              href='#!'
-              onClick={() => setWindowState(1)}>
-                Aviso de privacidad
-            </TextoAcercaDe>
-            <TextoAcercaDe
-              href='/Comisiones'>
-                Comisiones y beneficios
-            </TextoAcercaDe>
-            <TextoAcercaDe>Dictamen técnico</TextoAcercaDe>
+            <li><TitulosAcercaDe>Regulación</TitulosAcercaDe></li>
+            <li>
+              <TextoAcercaDe
+                href='#!'
+                onClick={() => setWindowState(1)}>
+                  Aviso de privacidad
+              </TextoAcercaDe>
+            </li>            
+            <li><TextoAcercaDe href='/Comisiones'>Comisiones y beneficios</TextoAcercaDe></li>
+            <li><TextoAcercaDe>Dictamen técnico</TextoAcercaDe></li>
           </TextosAcercaDeContenedor>
           <TextosAcercaDeContenedor>
-            <TitulosAcercaDe>Aclaraciones</TitulosAcercaDe>
-            <TextoAcercaDe
-              href={SolicitudAclaracionOpcionesSacimex}
-              rel='noopener noreferrer'
-              target='_blank'>
-                Formato de aclaración
-            </TextoAcercaDe>
-            <TextoAcercaDe
-              href='#!'
-              onClick={() => setWindowState(2)}>
-                Unidad Especializada UNE
-            </TextoAcercaDe>
-            <TextoAcercaDe
-              href='#!'
-              onClick={() => setWindowState(3)}>
-                Denuncia anónima
-            </TextoAcercaDe>
+            <li><TitulosAcercaDe>Aclaraciones</TitulosAcercaDe></li>
+            <li>
+              <TextoAcercaDe
+                href={SolicitudAclaracionOpcionesSacimex}
+                rel='noopener noreferrer'
+                target='_blank'>
+                  Formato de aclaración
+              </TextoAcercaDe>
+            </li>
+            <li>
+              <TextoAcercaDe
+                href='#!'
+                onClick={() => setWindowState(2)}>
+                  Unidad Especializada UNE
+              </TextoAcercaDe>
+            </li>
+            <li>
+              <TextoAcercaDe
+                href='#!'
+                onClick={() => setWindowState(3)}>
+                  Denuncia anónima
+              </TextoAcercaDe>
+            </li>            
           </TextosAcercaDeContenedor>
       </AcercaDeContenedor>
       <StyledDiv>
@@ -195,7 +207,7 @@ const Footer = ({ setWindowState }) => {
 export default Footer;
 
 const extras = `
-  background-color: #FFFFFF;
+  background-color: ${whiteSacimex};
   border-radius: 5px;
 `;
 
@@ -206,52 +218,55 @@ const StyledDiv = styled.div`
 
 const PrincipalContenedor = styled.footer`
   align-items: center;
-  background-color: #00632F;
-  border-top: 1px solid #CCC;
+  background-color: ${greenSacimex};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 30px;
+  padding-top: ${medLength1};
   position: relative;
   z-index: 100;
 `;
 
-const RedesContenedor = styled.div`
+const RedesContenedor = styled.ul`
   display: flex;
-  gap: 35px;
-  margin-bottom: 30px;
+  gap: ${medLength1};
+  list-style: none;
+  margin-bottom: ${medLength1};
 
   @media (min-width: 850px) {
     background-color: rgba(0, 0, 0, .50);    
-    bottom: 50px;
+    bottom: ${medLength2};
     clip-path: polygon(0% 0%, 80% 0, 100% 50%, 80% 100%, 0% 100%);
     flex-direction: column;
     gap: 0;
-    height: 180px;
+    height: ${larLength2};
     justify-content: space-around;
     left: 0;
     margin: 0;
     opacity: ${({ $visible }) => $visible ? '1' : '0'};
-    padding-left: 10px;
+    padding-left: ${smaLength1};
     position: fixed;
     transform: translateX(${({ $visible }) => $visible ? '0' : '-10px'});
     transition: opacity 2s, transform 2s;
-    width: 60px;
+    width: ${medLength3};
     z-index: 20;
+  };
+
+  li {
+    transition: transform .3s;
+
+    &:hover {
+      transform: scale(105%);
+    };
   };
 `;
 
 const Redes = styled.a`
-  color: #FFFFFF;
+  color: ${whiteSacimex};
   text-decoration: none;
-  transition: transform .3s;
-
-  &:hover {
-    transform: scale(105%);
-  };
 
   svg {
-    font-size: 30px;
+    font-size: ${smaLength3};
   };
 `;
 
@@ -266,39 +281,41 @@ const AcercaDeContenedor = styled.div`
   };
 
   ${({ $textos }) => $textos && css`
-    gap: 50px;
-    padding: 0 10px;
+    gap: ${medLength2};
+    padding: 0 ${smaLength1};
   `};
 `;
 
-const TextosAcercaDeContenedor = styled.div`
+const TextosAcercaDeContenedor = styled.ul`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  max-width: 155px;
+  gap: ${smaLength1};
+  list-style: none;
+  max-width: ${larLength3};
   width: 45%;
 `;
 
-const TitulosAcercaDe = styled.h5`
-  color: #FFFFFF;
-  font-size: 0.875em;
+const TitulosAcercaDe = styled.p`
+  color: ${whiteSacimex};
+  font-size: ${smaFont};
+  font-weight: 800;
   text-align: center;
 `;
 
 const TextoAcercaDe = styled.a`
-  color: #FFFFFF;
+  color: ${whiteSacimex};
   cursor: pointer;
-  font-size: 0.75em;
+  font-size: ${smaFont};
   text-align: center;
   text-decoration: none;
 `;
 
 const ImagenEntidadesContenedor = styled.a`
   cursor: pointer;
-  max-width: 80px;
+  max-width: ${medLength3};
   opacity: ${({ $entidadActivo }) => $entidadActivo ? '1' : '0.1'};
-  ${({ $entidadActivo }) => $entidadActivo && ('transform: translateY(-5px);')}
+  ${({ $entidadActivo }) => $entidadActivo && (`transform: translateY(-${smaLength1});`)}
   transition: opacity .3s, transform .3s;
   width: 16%;  
 `;

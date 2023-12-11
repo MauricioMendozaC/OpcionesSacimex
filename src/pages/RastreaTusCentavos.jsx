@@ -6,15 +6,20 @@ import Titulo from '../components/Titulo';
 import Imagen from '../components/Imagen';
 import Calculadora from '../components/RastreaTusCentavos/Calculadora';
 import Footer from '../components/Footer';
+import Ventana from '../components/Ventana';
 import { EstilosGlobales, CentrarPrincipalContenedor } from '../utils/estilosPages';
 import ImagenGastosHormiga from '../assets/img/GastosHormiga.svg';
+import {greenSacimex, yellowSacimex, whiteSacimex,
+  text, label, disabled,
+  smaLength1, smaLength2, smaLength3,
+  medLength1, medLength2, medLength3,
+  larLength1, larLength2, larLength3,
+  smaFont, medFont, larFont} from '../utils/stylesRules';
 
 const RastreaTusCentavos = () => {
   const [mostrarAnimaciones, setMostrarAnimaciones] = useState(false);
   const [evitarScroll, setEvitarScroll] = useState(false);
-  const [estadoAviso, setEstadoAviso] = useState(null);
-  const [estadoDenuncia, setEstadoDenuncia] = useState(false);
-  const [estadoUNE, setEstadoUNE] = useState(false);
+  const [windowState, setWindowState] = useState(null);
 
   useEffect( () => {
     setMostrarAnimaciones(true);
@@ -34,33 +39,25 @@ const RastreaTusCentavos = () => {
     </Helmet>
     <Header
       mostrarAnimaciones={mostrarAnimaciones}
-      evitarScroll={manejarScroll}
-      barraVerde/>
+      evitarScroll={manejarScroll}/>
     <CentrarPrincipalContenedor>
-      <PrincipalContenedor
-        $mostrarAnimaciones={mostrarAnimaciones}>
-          <Titulo
-            texto='Calculadora'/>
-          <TextoImagenContenedor>
-            <StyledP>Nuestra calculadora interactiva te ayuda a rastrear y controlar esos pequeños gastos que suman con el tiempo. 
-              ¡Empieza a tomar el control de tus finanzas diarias y ahorra para tus metas más grandes!</StyledP>
-            <Imagen
-              tamano='300px'
-              imagen={ImagenGastosHormiga}
-              alt='Gastos hormiga'/>
-          </TextoImagenContenedor>
-          <Calculadora/>
+      <PrincipalContenedor $mostrarAnimaciones={mostrarAnimaciones}>
+        <Titulo texto='Calculadora'/>
+        <TextoImagenContenedor>
+          <StyledP>Nuestra calculadora interactiva te ayuda a rastrear y controlar esos pequeños gastos que suman con el tiempo. 
+            ¡Empieza a tomar el control de tus finanzas diarias y ahorra para tus metas más grandes!</StyledP>
+          <Imagen
+            tamano={larLength3}
+            imagen={ImagenGastosHormiga}
+            alt='Gastos hormiga'/>
+        </TextoImagenContenedor>
+        <Calculadora/>
       </PrincipalContenedor>
     </CentrarPrincipalContenedor>
-    <Footer
-      estadoAviso={estadoAviso}
-      estadoDenuncia={estadoDenuncia}
-      estadoUNE={estadoUNE}
-      setEstadoUNE={setEstadoUNE}
-      setEstadoAviso={setEstadoAviso}
-      evitarScroll={manejarScroll}
-      setEstadoDenuncia={setEstadoDenuncia}
-      manejarScroll={manejarScroll}/>
+    <Footer setWindowState={setWindowState}/>
+    <Ventana
+      windowState={windowState}
+      setWindowState={setWindowState}/>
   </>);
 };
 
@@ -70,11 +67,11 @@ const PrincipalContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  margin-top: 60px;
+  gap: ${medLength1};
+  margin-top: ${medLength3};
   max-width: 820px;
   opacity: ${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '1' : '0'};
-  padding: 30px 30px 60px;
+  padding: ${medLength1} ${medLength1} ${medLength3};
   transform: translateY(${({ $mostrarAnimaciones }) => $mostrarAnimaciones ? '0' : '-10px'});
   transition: opacity 2s, transform 2s;
   width: 100%;
@@ -84,12 +81,12 @@ const TextoImagenContenedor = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: ${smaLength1};
   justify-content: center;
 `;
 
 const StyledP = styled.p`
   min-width: 300px;
   text-align: justify;
-  width: calc(100% - 310px);
+  width: calc(100% - ${larLength3} - ${smaLength1});
 `;
