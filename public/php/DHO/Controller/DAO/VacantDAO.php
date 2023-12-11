@@ -25,7 +25,7 @@ class VacantDAO
         while($reg = mysqli_fetch_array($result))
         {
             $vacant = new VacantModel();
-            $vacant->createWithAll($reg[0],$reg[1],$reg[2],$reg[3]);
+            $vacant->createWithAll($reg[0],$reg[1],$reg[2]);
             array_push($vacants,$vacant);
         }
         $this->conexion->closeConection();
@@ -42,7 +42,7 @@ class VacantDAO
         while($reg = mysqli_fetch_array($result))
         {
             $vacantFind = new VacantModel();
-            $vacantFind->createWithAll($reg[0],$reg[1],$reg[2],$reg[3]);
+            $vacantFind->createWithAll($reg[0],$reg[1],$reg[2]);
         }
         $this->conexion->closeConection();
         return json_encode($vacantFind);
@@ -50,12 +50,11 @@ class VacantDAO
 
     public function storeVacant($vacant)
     {
-        $vacantName = $vacant->getVacantName();
         $idProfile = $vacant->getIdProfile();
         $idSucursal = $vacant->getIdSucursal();
         $errMsj=array();
-        $query = "insert into Vacantes (`nombreVacante`, `idPerfil`, `idSucursal`) values 
-                 ('$vacantName',
+        $query = "insert into Vacantes (`idPerfil`, `idSucursal`) values 
+                 (
                  $idProfile,
                  $idSucursal)";
         $result = $this->conexion->execute($query);
@@ -81,11 +80,9 @@ class VacantDAO
     public function updateVacant($vacant)
     {
         $id = $vacant->getIdVacant();
-        $name = $vacant->getVacantName();
         $idProfile = $vacant->getIdProfile();
         $idSucursal = $vacant->getIdSucursal();
         $query = "update Vacantes set 
-                  nombreVacante = '$name', 
                   idPerfil = $idProfile, 
                   idSucursal = $idSucursal
                   where idVacante = $id";
@@ -134,17 +131,30 @@ class VacantDAO
 
     public function infoPerSucursal($idSucursal)
     {
-        $query = "select * from vacantes v inner 
+        $query = "select * from Vacantes v inner 
                   join Perfiles p on v.idPerfil = p.idPerfil where idSucursal = $idSucursal";
         $result = $this->conexion->execute($query);
         $infoVacants = array();
+
+        if(!$result)
+        {
+            $errMsj['State'] = "Error";
+            $errMsj['Error message'] = mysqli_error($this->conexion->getCon());
+            $errMsj['query'] = $query;
+            return json_encode($errMsj);
+            //printf("Error: %s\n", mysqli_error($this->conexion->getCon()));
+        }
+        else
+        {
+
+        }
         //We use the constant MYSQL_ASSOC to retrieve only records with column name headers,
         //otherwise it will contain duplicated records, one for index columns and the other for column name
         while($reg = mysqli_fetch_array($result, MYSQLI_ASSOC))
         {
             array_push($infoVacants,$reg);
         }
-        $this->conexion->closeConection();
+        //$this->conexion->closeConection();
         return json_encode($infoVacants);
     }
 }

@@ -8,18 +8,17 @@
 
     if($selection=="insert"||$selection=="edit")
     {
-        $name         =   $datajson->name;
         $profile      =   $datajson->profile;
         $sucursal     =   $datajson->sucursal;
     }
-    if($selection=="persucursal") $sucursal = $_POST['sucursal'];
+    if($selection=="persucursal") $sucursal = $datajson->sucursal;
     if($selection=="edit"||$selection=="find"||$selection=="delete") $idVacant = $datajson->id;
     
     switch($selection)
     {
         case "insert" : $vacantDAO = new VacantDAO();
                         $vacant = new VacantModel();
-                        $vacant->createWithAll(0,$name,$profile,$sucursal);
+                        $vacant->createWithAll(0,$profile,$sucursal);
                         //the connection is closed in the store method
                         $output = $vacantDAO->storeVacant($vacant);
                         echo($output);
@@ -38,7 +37,7 @@
                         break;
         case "edit":    $vacantDAO = new VacantDAO();
                         $vacant = new VacantModel();
-                        $vacant->createWithAll($idvacant,$name,$profile,$sucursal);
+                        $vacant->createWithAll($idvacant,$profile,$sucursal);
                         $output = $vacantDAO->updatevacant($vacant);
                         echo ($output);
                         break;
